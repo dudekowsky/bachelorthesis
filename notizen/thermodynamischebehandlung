@@ -1,0 +1,30 @@
+zahl der möglichen zustände:
+N! / (N-L)!
+N ist Zahl der möglichen Plätze
+L ist Zahl der bindenden Teile (Liganden)
+
+Annahme: Liganden sind ununterscheidbar, sollten daher nicht mehrfach gezählt
+werden für die zustände
+->
+
+Gibbs Faktor:
+
+mögliche zustände = N! / L! (N-L)!
+
+---------
+
+Wahrscheinlichkeit von verschiedenen energetischen Zuständen
+
+p(E_i) = 1/Z * exp(-E_i / (kB*T))
+
+p ist wahrscheinlichkeit
+E_i ist der i-te Energiezustand
+Z ist Zustandssumme
+kB ist boltzmannkonstannte
+T ist temperatur
+
+Gilt weil
+Sum[i = 1 -> N] p(E_i) =! 1,
+also die summe aller wahrscheinlichkeiten muss 1 sein.
+daher gilt:
+Z = Sum[i = 1 -> N] exp(-E_i / (kB*T))
