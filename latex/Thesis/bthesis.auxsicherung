@@ -66,7 +66,6 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Verbindung Stat. Mech und Chemie}{6}{subsection.2.2.4}}
 \newlabel{mechchem}{{\relax 2.16}{6}{Verbindung Stat. Mech und Chemie}{equation.2.2.16}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Crowding}{6}{subsection.2.2.5}}
-\citation{frontphy}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Simulationsmethoden}{7}{section.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Random Walk}{7}{subsection.2.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Gittermodell}{8}{subsection.2.3.2}}
@@ -83,4 +82,3 @@
 \newlabel{fig:mean}{{\relax 4.2}{13}{Mittlere Zeiten gegen Crowderkonzentration}{figure.4.2}{}}
 \bibdata{bthesis_datenbank}
 \bibcite{phybio}{{1}{2013}{{et~al.}}{{}}}
-\bibcite{frontphy}{{2}{2015}{{Gomez and Klumpp}}{{}}}

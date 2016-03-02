@@ -164,6 +164,34 @@ Ligand noch Rezeptor in einer zu betrachtenden Reaktion sind.
 
 
 \chapter{Grundlagen}
+\section{Rezeptor-Ligandenbindung}
+
+Aus dem Massenwirkungsgesetz ist für eine Reaktion zwischen Liganden L und Rezeptoren R der Begriff
+der Dissoziationskonstante gegeben:
+\begin{equation}
+K_d = \frac{[L][R]}{LR}
+\end{equation}
+Das umschreiben als
+
+\begin{equation}
+\label{er}
+[LR] = \frac{[L][R]}{K_d}
+\end{equation}
+
+Uns werden später die Bindewahrscheinlichkeiten interessieren. Diese sind nun gerade gegeben durch:
+\begin{equation}
+p_{bound} = \frac{[LR]}{[R]+[LR]}
+\end{equation}
+
+Setzen wir nun \ref{er} ein erhalten wir:
+
+\begin{equation}
+\label{pbounddiss}
+p_{bound} = \frac{[L]/K_d}{1+([L]/K_d)}
+\end{equation}
+
+
+
 \section{Betrachtung mittels Statistischer Mechanik}
 Ein wichtiges Werkzeug zur Betrachtung einer Zelle ist der Formalismus der
 Statistischen Mechanik. Die Zelle kann als chemisches oder mechanisches Gleichgewicht
@@ -268,52 +296,148 @@ Nun können wir die Bindewahrscheinlichkeit $p_{bound}$ folgendermaßen ausdrüc
 p_{bound} = \frac{e^{-\beta\varepsilon_b}\frac{\Omega^{L-1}}{(L-1)!}e^{-\beta(L-1)\varepsilon_{sol}}}{\frac{\Omega^L}{L!}e^{-\beta L\varepsilon_{sol}} + e^{-\beta\varepsilon_b}\frac{\Omega^{L-1}}{(L-1)!}e^{-\beta(L-1)\varepsilon_b}}
 \end{equation}
 erweitern wir diesen Bruch um $(L!/\Omega^L)e^{\beta L\varepsilon_{sol}}$ und definieren
-$\delta\varepsilon = \varepsilon_b -\varepsilon_{sol}, so vereinfacht sich der Ausdruck zu:
+$\Delta\varepsilon = \varepsilon_b -\varepsilon_{sol}$, so vereinfacht sich der Ausdruck zu:
 
 \begin{equation}
-\end{equation} 
+\label{pboundeasy}
+p_{bound} = \frac{(L/\Omega)e^{-\beta\Delta\varepsilon}}{1+(L/\Omega)e^{-\beta\Delta\varepsilon}}
+\end{equation}
+\subsection{Verbindung Stat. Mech und Chemie}
+Vergleichen wir Gleichung \ref{pboundeasy} mit Gleichung \ref{pbounddiss} so erhalten wir folgende Identität:
+\begin{equation}
+\label{mechchem}
+K_d = \frac{1}{v}e^{\beta\Delta\varepsilon},
+\end{equation}
+Wobei $v$ die Größe eines Gitterzellenvolumens darstellt.
+Diese Gleichung erlaubt uns die chemische Betrachtung mit der statistischen Mechanik zu verbinden.
 
-Abbildung~\ref{fig:bildplatzhalter} verdeutlicht \dots
 
-Wie die Abb.~\ref{fig:bildplatzhalter} und
-Tab.~\ref{tab:tabellenplatzhalter} verdeutlichen \dots
+\subsection{Crowding}
+Das hergeleitete Gittermodell muss nun noch um Crowdermoleküle erweitert werden.
+Mit den selben Argumenten wie bei Gleichung \ref{zustaende} kommt man nun für C Crowdermoleküle auf die Zustandssumme
+\begin{equation}
+Z_{sol}(L,C) = \frac{\Omega!}{L!C!(\Omega-L-C)!}e^{-\beta L\varepsilon_L^{sol}}e^{-\beta C\varepsilon_C^{sol}}
+\end{equation}
+wobei $\varepsilon_C^{sol}$ und $\varepsilon_L^{sol}$ die Energien von Crowderpartikel und Ligand darstellen.
+Der Rezeptor ist nun entweder besetzt oder nicht besetzt, die Gewichte dieser beiden Zustände sind nun
+$Z_{sol}(L-1,)e^{-\beta\varepsilon_L^b}$ und $Z_sol(L,C)$. Die Bindewahrscheinlichkeit für ein Partikel ist daher:
+\begin{equation}
+p_{bound} = \frac{Z_{sol}(L-1,C)e^{-\beta\varepsilon_L^b}}{Z_{sol}(L-1,C)e^{-\beta\varepsilon_L^b}+Z_{sol}(L,C)}
+\end{equation}.
+Erweitert man den Bruch nun um $Z_{sol}(L-1,C)e^{-\beta\varepsilon_L^b}$ und geht davon aus dass
+$\Omega-L-C \gg 1$ gilt, nimmt die Gleichung folgende einfache Form an:
+\begin{equation}
+p_{bound} = \frac{1}{1+\frac{\Omega-L-C}{L}e^{\beta\Delta\varepsilon_L}}
+\end{equation}
+wobei wir die Energiedifferenz $\Delta\varepsilon_L = \varepsilon_L^b - \varepsilon_L^{sol}$ definiert haben.
+
+Führt man noch eine Crowderkonzentration $\phi_C = C/\Omega$ ein, gilt desweiteren:
+
+\begin{equation}
+p_{bound} = \frac{1}{1+\frac{\Omega}{L}(1-\phi_C)e^{\beta\Delta\varepsilon_L}}
+\end{equation}
+
+Im Vergleich mit Gleichung \ref{mechchem} erfahren wir nun, dass für die Dissoziationskonstante unter
+Einfluss von Crowdern gilt:
+\begin{equation}
+K_d{\phi_C} = (1-\phi_C)\cdot K_d(\phi_C = 0)
+\end{equation}
+Dieser Ausdruck beschreibt den Einfluss von Crowder bezüglich der Bindungswahrscheinlichkeit.
+
+
+
+\section{Simulationsmethoden}
+Diese Beschreibungen folgen im Wesentlichen den Bedingungen von \cite{frontphy}
+\subsection{Random Walk}
+Lässt man Bindungen und Wechselwirkungen außen vor, so handelt es sich bei der
+Bewegung eines Liganden in einer Zelle um einen \emph{Random Walk}.
+Im eindimensionalen Fall wird bei einem Random Walk ein Objekt auf
+einen diskreten Zahlenstrahl mit Schrittabstand $l$ gesetzt.
+Pro arbiträr definierten Zeitschritt $\tau$ bewegt sich das das Objekt nun mit gleicher Wahrscheinlichkeit
+nach Links oder nach Rechts. Auf ein dreidimensionales Gitter verallgemeinert ist die Wahrscheinlichkeit
+für jede Richtung (Vorne, Hinten, Oben, Unten, Links, Rechts) $\frac{1}{6}$.
+In einem freien Volumen $V = \Omega l^3$ mit Gitterabstand $l$ und $\Omega$ Gitterplätzen
+würde sich das Partikel also mit einer Diffusionskonstante $D = l^2 / (6\tau)$ bewegen.
+Wenn $P$ Partikel vorliegen, die sich bewegen sollen, so wählen wir $P$ mal zufällig ein Partikel aus,
+das sich bewegt, so dass auf Dauer jedes Partikel durchschnittlich einmal pro Zeitschritt bewegt wird.
+
+\subsection{Gittermodell}
+Wir betrachten nun ein dreidimensionales Gittervolumen
+$V = \Omega l^3$ mit Gitterabstand $l$ und $\Omega$ Gitterplätzen und statten es mit
+$R$ Rezeptoren, $L$ Liganden und $C$ Crowdern, alle zufällig platziert aus.
+Wir betrachten der Einfachheit halber, dass Rezeptor, Liganden und Crowder alle gleich groß sind.
+Wenn auf diesem Gitter Bewegung stattfindet, so gilt ein Volumenausschluss: Ein Gitterplatz kann nur
+von einem Partikel besetzt sein, und sollte ein Partikel sich auf einen besetzten Gitterplatz bewegen
+"wollen", so passiert nichts. Desweiteren ist es für Crowderpartikel verboten, den Platz am Rezeptor zu
+besetzen.
+\subsection{Bindung}
+Sobald ein Ligand auf einen Rezeptorplatz kommen, soll mit einer Wahrscheinlichkeit von
+1 eine Bindung eingegangen werden. Da das System so in einen energetisch niedrigeren
+Zustand kommt, ist die Wahrscheinlichkeit dass es sich von diesem Platz löst verringert.
+Diese  Wahrscheinlichkeit, in einem Zeitschritt gebunden zu bleiben(im Folgenden: Stickyness), ist nun gerade da Verhältnis aus $\Omega$ und der Dissoziationskonstante ohne Crowdereinfluss:
+\begin{equation}
+Stickyness = \frac{\Omega}{e^{\beta\Delta\varepsilon_L}}
+\end{equation}
+
+\chapter{Programmbeschreibung}
+Zur Simulation des in der Theorie beschriebenen Sachverhalts wurde nun ein Computerprogramm geschrieben, das
+vereinfacht gesagt folgende Dinge tut:
+\begin{itemize}
+\item Erstelle ein Dreidimensionales Gitter mit $\Omega = l^3$ Plätzen und periodischen Randbedingungen
+\item Besetze dieses Gitter mit $L = \phi_L\Omega$ Liganden und $C = \phi_C\Omega$ Crowdern sowie 1 Rezeptor
+\item Gebe eine Stickyness vor
+\item Gebe N Zeitschritte vor
+\item Bewege N Zeitschritte lang zufällig $(C+L)$ Teilchen unter Beachtung von Volumenausschluss
+\item Speichere die Zeiten zu denen ein Ligand gebunden ist
+\item Gebe die Bindewahrscheinlichkeit, die mittlere Bindedauer und die mittlere ungebundene Dauer aus
+\end{itemize}
+
+\chapter{Ergebnisse}
+Besagte Simulation wurde nun einige Zeit lang laufen gelassen.
+Abbildung~\ref{fig:ProbGegenCrowder} zeigt den Verlauf der Bindewahrscheinlichkeit
+gegen die Crowderkonzentration für ein Gitter mit $\Omega = 8^3$ Plätzen und einer
+Stickyness von 500. Angelegt wurde folgender Fit für für $K_d$ :
+\begin{equation}
+P_b(\phi_C) = \frac{1}{1+(512K_d)(1-\phi_C)}
+\end{equation}
+Das Ergebnis ist
+\begin{equation}
+K_d = 0.002033 \pm 0.0000206
+\end{equation}
+und weicht vom Theoretischen Wert $K_{d_{theoretisch}} = 1/500 $ um 7\% ab.
+
+Abbildung \ref{fig:mean} zeigt die mittlere Zeiten für den gebundenen und ungebundenen
+Zustand. Interessant hierbei ist, dass die ungebundene Zustand anscheinend nicht von
+der Crowderkonzentration beeinflusst wird. Die gebundene Zeit hingegen schon.
+Gefittet wurde die Funktion auf $t(\phi) = \frac{b}{1-x}$ mit $b = 505 \pm 6$.
+
+Dies Ergibt Sinn, da im Falle der kompletten Besetzung des Volumens durch Crowdern der
+Ligand ständig gebunden wäre.
+
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/bild}
-  \caption{Bildbeschreibung}
-  \label{fig:bildplatzhalter}
+  \includegraphics[width=0.9\linewidth]{ProbgegenCrowder.png}
+  \caption{Bindewahrscheinlichkeit gegen Crowderkonzentration}
+  \label{fig:ProbGegenCrowder}
 \end{figure}
 
-Text\dots
-\begin{table}
+\begin{figure}
   \centering
-  \begin{tabular}{llll}
-    \toprule
-    $A$-Wert&$B$-Wert&$C$-Wert&$D$-Wert\\
-    \midrule
-    aaaaaa&bbbbbbb&cccccc&ddddddd\\
-    aaaaaa&bbbbbbb&cccccc&ddddddd\\
-    \bottomrule
-  \end{tabular}
-  \caption{Tabellenbeschreibung}
-  \label{tab:tabellenplatzhalter}
-\end{table}
-
+  \includegraphics[width=0.9\linewidth]{meantimes.png}
+  \caption{Mittlere Zeiten gegen Crowderkonzentration}
+  \label{fig:mean}
+\end{figure}
 
 %%\appendix
 %%\chapter{erster Anhang}
-%%Text\dots
 %%\chapter{zweiter Anhang}
-%%Text\dots
 
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.
 %% Ein Beispiel fuer eine solche Datenbank finden Sie in bthesis_datenbank.bib
 \bibliography{bthesis_datenbank}
 
-%%\chapter*{Danksagung}
-%%Dank\dots
 
 %% Dieser Befehl MUSS am Ende stehen und erzeugt die Erklaerung ueber die
 %% benutzten Mittel

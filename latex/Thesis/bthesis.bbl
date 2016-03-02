@@ -5,16 +5,16 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[David~Gomez(1990)]{frontphy}
-Stefan~Klumpp David~Gomez.
-\newblock Biochemical reactions in crowded environments: revisiting the effects
-  of volume exclusion with simulations.
-\newblock \emph{Front. Phys.}, 3:45, DOI: 10.3389/fphy.2015.00045:\penalty0
-  1117--1135, 1990.
-
 \bibitem[et~al.(2013)]{phybio}
 Rob~Phillips et~al.
 \newblock \emph{Physical Biology of the Cell}.
 \newblock Garland Science, 2013.
+
+\bibitem[Gomez and Klumpp(2015)]{frontphy}
+David Gomez and Stefan Klumpp.
+\newblock Biochemical reactions in crowded environments: revisiting the effects
+  of volume exclusion with simulations.
+\newblock \emph{Front. Phys.}, 3:45, DOI: 10.3389/fphy.2015.00045:\penalty0
+  1117--1135, 2015.
 
 \end{thebibliography}
