@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-%%    2009/03/12 v1.0 GAUBM Vorlage f�r Aschlussarbeiten Physik
+%%    2009/03/12 v1.0 GAUBM Vorlage f�r Aschlussarbeiten Physik
 %% Template fuer Bachelor- und Masterarbeiten
-%% an der Fakultaet fuer Physik (c) Thomas Pruschke der GA Universit�t
+%% an der Fakultaet fuer Physik (c) Thomas Pruschke der GA Universit�t
 %% Verbesserungsvorschlaege bitte an pruschke@theorie.physik.uni-goettingen.de
 %%
 %% Benoetigte Pakete: datenumber
@@ -11,7 +11,7 @@
 %%%%%%%%%% Bitte vor dem Veraendern diese Datei umbenennen! %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% scrbook - Ersatz f�r LaTeX book Klasse aus dem KOMA Script
+%% scrbook - Ersatz f�r LaTeX book Klasse aus dem KOMA Script
 %% Moegliche Optionen: diejenigen der Klasse scrbook ausser titlepage
 
 %% deutsche Arbeit:
@@ -29,7 +29,7 @@
 \usepackage{babel}     %% Sprachen-Unterstuetzung
 \usepackage{calc}      %% ermoeglicht Rechnen mit Laengen und Zaehlern
 \usepackage[T1]{fontenc}       %% Unterstutzung von Umlauten etc.
-\usepackage[latin1]{inputenc}  %% 
+\usepackage[utf8x]{inputenc}  %%
 %% in aktuellem Linux & MacOS X wird standardmaessig UTF8 kodiert!
 %\usepackage[utf8]{inputenc}    %% Wenn latin1 nicht geht ...
 
@@ -69,43 +69,43 @@
 %%                   Ab hier muessen die Anpassungen geschehen
 %%
 %% Hier den eigenen Namen einsetzen
-\ThesisAuthor{Liliane}{Musterfrau}
+\ThesisAuthor{William}{Bode}
 %% Hier den Geburtsort einsetzen
-\PlaceOfBirth{Dortdorf}
+\PlaceOfBirth{Helmstedt}
 %% Titel Arbeit. Das erste Argument ist der deutsche, das zweite der
 %% englische Titel.
-\ThesisTitle{Hier steht das Thema der Arbeit in deutsch}{Here comes the title of the thesis in english}
+\ThesisTitle{Molecular Crowding}{}
 %% Erst- und Zweitgutacher/in
 %% Ist der/die Betreuer/in nicht identisch mit dem/r Erstgutachter/in,
 %% muss diese/r als optionales Argument angegeben werden.
-\FirstReferee[Dr.\ \ldots]{Prof.\ Dr.\ \dots}
-\Institute{Institut f\"ur Theoretische Physik}
-\SecondReferee{Prof.\ Dr.\ \dots}
+\FirstReferee[Dr.\ \ldots]{Prof.\ Dr.\ Stefan Klumpp}
+\Institute{Institut für nichtlineare Dynamik / Theoretische Biophysik}
+%\SecondReferee{Prof.\ Dr.\ \dots}
 %% Beginn und Ende des Anfertigungszeitraumes
-\ThesisBegin{1}{4}{2009}
-\ThesisEnd{15}{7}{2009}
+\ThesisBegin{1}{2}{2016}
+\ThesisEnd{1}{3}{2016}
 %% DO NOT TOUCH THESE LINES!!!!
 \frontmatter
 \maketitle
 \cleardoublepage
 %% Zusammenfassung. Falls nicht gewuenscht, bitte auskommentieren.
-\begin{abstract}
-  Hier werden auf einer halben Seite die Kernaussagen der Arbeit
-  zusammengefasst.
+%%\begin{abstract}
+%%  Hier werden auf einer halben Seite die Kernaussagen der Arbeit
+%%  zusammengefasst.
 %% Optional: Stichwoerter. Wenn nicht gewuenscht, koennen die beiden
 %% folgenden Zeilen geloescht werden
-  \bigskip\par
-  \textbf{Stichw�rter:} Physik, Bachelorarbeit
-\end{abstract}
+%%  \bigskip\par
+%%  \textbf{Stichwörter:} Biophysik, Molecular Crowding
+%%\end{abstract}
 %% So laesst sich in die andere Sprache umschalten (Englisch bzw. Deutsch)
-\begin{otherlanguage}{english}
-\begin{abstract}
-  Here the key results of the thesis can be presented in about
-  half a page.
-  \bigskip\par
-  \textbf{Keywords:} Physics, Bachelor thesis
-\end{abstract}
-\end{otherlanguage}
+%%\begin{otherlanguage}{english}
+%%\begin{abstract}
+%%  Here the key results of the thesis can be presented in about
+%%  half a page.
+%%  \bigskip\par
+%%  \textbf{Keywords:} Physics, Bachelor thesis
+%%\end{abstract}
+%%\end{otherlanguage}
 
 %% Ende des Vorspanns
 \cleardoublepage
@@ -153,92 +153,125 @@
 
 \mainmatter   %% Anfang Hauptteil
 
-\chapter{Einleitung}
-Diese Vorlage \verb!GAUBM!
-f�r Bachelor- bzw.\ Masterarbeiten ist eine �berarbeitung der
-Vorlage von Simon Dreher f�r Abschlu�arbeiten am
-Institut f�r Mikrosystemtechnologie (IMTEK)
-an der Universit�t Freiburg. Die eigentliche Datei mit der Klassendefinition
-ist \verb!GAUBN.cls!, die Sie zusammen mit dieser Datei erhalten haben. Weitere
-Dateien sind \verb!datenumber.sty! und die zugeh�rigen Sprachdefinitionen
-\verb!\datenumber*.ldf!. Im Verzeichnis \verb!figures! finden sich die
-von der Klasse ben�tigten Logos (Universit�t und Physik) sowie Beispielbilder
-f�r die �bersetzung dieser Beispieldatei (\verb!bthesis.tex!).
-Sie k�nnen diese Datei als Vorlage f�r Ihre Arbeit nutzen und entsprechend
-modifizieren. Bitte denken Sie daran, sie vorher unter einem eigenen Namen
-abzuspeichern.
-Um die Datei anzupassen, gehen Sie wie folgt vor:
+\chapter{Motivation}
+Das Innere einer Zelle ist so eng besetzt, dass die mittleren Abstände zwischen
+benachbarten Proteinen vergleichbar mit der Größe der Proteine selbst ist.
+Daher sind Betrachtungen, die von einer freien Bewegung in einer Zelle ausgehen,
+nicht ausreichend für eine korrekte Beschreibung von Diffusionskinetik und Gleichgewichtszuständen.
+Daher soll in diesem Spezialisierungspraktikum der Einfluss von \emph{Crowding}
+untersucht werden, also dem dichten Besetzen einer Zelle mit Proteinen, die weder
+Ligand noch Rezeptor in einer zu betrachtenden Reaktion sind.
 
-Bei den Parametern zu \verb!\documentclass[...]{GAUBM}! in der Pr�ambel
-kann man durch Umschalten
-zwischen \verb!english,ngerman! und \verb!ngerman,english! eine
-deutsche Arbeit (erste Variante) mit Englisch als Alternativsprache bzw.\ eine
-englische Arbeit (zweite Variante) mit deutsch als Alternativsprache
-w�hlen. Im laufenden Text kann man mit 
-\begin{verbatim}
-\begin{otherlanguage}{english/ngerman}
-...
-\end{otherlanguage}
-\end{verbatim}
-zur alternativen Sprache wechseln.
-
-Nach \verb!\begin{document}! m�ssen zuerst ein paar Befehle mit
-Information �ber die Arbeit aufgerufen werden:
-\begin{enumerate}
-\item \verb!\ThesisAuthor{Vorname}{Nachname}!: Die Argumente sind der
-Vorname und Nachname der Autorin bzw.\ des Autors der Arbeit.
-\item \verb!\PlaceOfBirth{Wohnort}!: Der Geburtsort der Autorin bzw.\ des Autors.
-\item \verb!\ThesisTitle{Deutscher Titel}{English title}!: Der deutsche und englische Titel der Arbeit gem�� Antrag.
-\item \verb!\Institute{Institut}!: Das Institut, an dem die Arbeit angefertigt wurde.
-\item \verb!\FirstReferee[Betreuer/in]{Erste/r Gutachter/in}!: Voller Titel
-und Name des/r Erstgutachter/in. Ist der Betreuer der Arbeit \emph{nicht}
-identisch mit dem/r Erstgutachter/in, so mu� der volle Titel und der Name
-des/r Betreuer/in als optionales Argument in eckigen Klammern erscheinen.
-\item \verb!\SecondReferee{Zweite/r Gutachter/in}!: Voller Titel
-und Name des/r Zweitgutachter/in.
-\item \verb!\ThesisBegin{Tag}{Monat}{Jahr}!: Datum des Beginns der Anfertigung
-der Arbeit gem�� Antrag.
-\item \verb!\ThesisEnd{Tag}{Monat}{Jahr}!: Datum der Fertigstellung der Arbeit.
-\item Optional kann mit
-\begin{verbatim} 
-\begin{abstract}
-...
-\end{abstract}
-\end{verbatim}
-eine maximal eine halbe Seite lange Zusammenfassung eingef�gt werden.
-
-Falls man die Zusammenfassung in der alternativen Sprache verfassen m�chte,
-dann geht das mit der Befehlsfolge
-\begin{verbatim} 
-\begin{otherlanguage}{english/ngerman}
-\begin{abstract}
-...
-\end{abstract}
-\end{otherlanguage}
-\end{verbatim}
-\end{enumerate}
 
 \chapter{Grundlagen}
-In diesem Kapitel werden die theoretischen Grundlagen erl�utert.
+\section{Betrachtung mittels Statistischer Mechanik}
+Ein wichtiges Werkzeug zur Betrachtung einer Zelle ist der Formalismus der
+Statistischen Mechanik. Die Zelle kann als chemisches oder mechanisches Gleichgewicht
+betrachtet werden, in der die niedrige Energiezustände und Entropieerhöhung angestrebt
+werden. Das Ziel soll nun sein, eine Boltzmannverteilung herzuleiten, welche die
+Wahrscheinlichkeit eines Mikrozustands basierend auf einer Energie beschreibt.
+Zunächst wird die Boltzmannverteilung nur für Liganden und Rezeptor hergeleitet,
+dann um Crowding erweitert
+Die folgenden Berechnungen sind im wesentlichen Kapitel 6 und 14 von
+\cite{phybio} nachvollzogen.
 
-Wichtige Gleichungen, die in der Arbeit h�ufiger zitiert werden,
-sollten eine Gleichungsnummer erhalten.
+\subsection{Partikelarrangements Zählen}
+
+Betrachtet man ein Gitter mit $\Omega$ Plätzen auf dem $L$ Liganden zu verteilen
+sind, so gibt es für den ersten Liganden $\Omega$ mögliche Plätze. Danach gibt es
+für den nächsten der $L - 1$ möglichen Plätze $\Omega - 1$ mögliche Plätze.
+Dieses Argument wiederholt man insgesamt $L$-mal und kommt auf die möglichen Arrangements:
+
 \begin{equation}
-  \label{eq:pythagoras}
-  a^2+b^2=c^2
+\text{Anzahl Arrangements} = \frac{\Omega!}{(\Omega\text{-}L)!}
 \end{equation}
-Zum Beispiel wird in Gleichung~\ref{eq:pythagoras} der Satz des Pythagoras
-angegeben.
 
-Gerade im Bereich der Grundlagen wird viel Literatur zitiert, z.B.\
-\cite{Menz97}. Falls
-mehrere Literaturzitate auf einmal zitiert werden, ist folgendes
-z.B.\ m�glich \cite{Horn90,DINEN6232,Menz97,Knuth84}.
+In unserem Fall sind die Liganden aber ununterscheidbar. Wenn also 2 Liganden
+Plätze tauschen würden, so würde sich daraus kein anderer Zustand ergeben. Um
+dieses Überzählen zu verhindern, führt man den \emph{Gibbs-Faktor} $\frac{1}{L!}$
+ein:
 
-\section{Unterkapitel Gliederungsebene 2}
-Hier sollte etwas Text stehen.
-\subsection{Unterkapitel Gliederungsebene 3}
-Noch ein paar Beispiele zu Abbildungen und Tabellen:
+\begin{equation}
+\label{zustaende}
+\text{Anzahl Zustände} = \frac{\Omega!}{L!(\Omega\text{-}L)!}
+\end{equation}
+
+\subsection{Wahrscheinlichkeit von Mikrozuständen}
+Das Grundsätzliche Ziel der statistischen Mechanik ist es, Wahrscheinlichkeitsaussagen
+über das Auftreten verschiedener Mikrozustände zu treffen. Der wesentliche Unterschied
+zwischen zwei Mikrozuständen ist die Energie $E_i$, wobei $i$ den $i$-ten Mikrozustand
+bezeichnet. Aus der Statistischen Mechanik ist nun genau die Wahrscheinlichkeit
+bekannt, mit der jeweils ein Mikrozustand auftritt:
+\begin{equation}
+  \label{eq:boltzmann}
+  p(E_i) = \frac{1}{Z} e^{\text{-}E_i\text{/}k_bT}
+\end{equation}
+
+Der Faktor $\frac{1}{Z}$ dient der Normierung der Verteilung.
+Z ist bekannt als die Zustandssumme. Die Gleichung \ref{eq:boltzmann}
+ist bekannt als Boltzmann-Verteilung. Die Normalisierungskonstante $\frac{1}{Z}$
+kann durch die Anforderung $ \sum_{i=1}^{N} p(E_i) = 1$ bestimmt werden, was bedeutet:
+\begin{equation}
+Z = \sum_{i=1}^{N}e^{\text{-}E_i\beta}
+\end{equation}
+
+$\beta$ ist hier die inverse Temperatur $\frac{1}{k_bT}$
+
+\subsection{Bindewahrscheinlichkeit}
+Diese Werkzeuge können nun angewandt werden, um die Bindewahrscheinlichkeit eines
+Liganden an einem Rezeptor zu berechnen.
+
+Hierzu bilden wir das Verhältnis aus dem statistischen Gewicht des gebundenen
+Zustands und der Summe der statistischen Gewichte der gebundenen und ungebundenen
+Zustände. Das Gewicht des gebundenen Zustands ist
+$$e^{\text{-}\beta\varepsilon_b} \cdot \sum_{Lösung}e^{\text{-}\beta(L\text{-}1)\varepsilon_{sol}}$$
+Wobei der erste Term den gebundenen Liganden beschreibt und der zweite Term die Summe
+über alle ungebundenen Liganden in der Lösung ist. Wir haben hier $\varepsilon_b$ als
+die Bindungsenergie und $\varepsilon_{sol}$ als die Energie für ein freies Teilchen
+in der Lösung eingeführt. Die Summe über die Lösung ist eine Anweisung dafür,
+über alle Konfigurationen von $L-1$ Teilchen auf $\Omega$ Plätzen zu summieren,
+wobei jede davon das Gewicht $e^{-\beta(L-1)\varepsilon_{sol}}$ hat.
+Da der Boltzmannfaktor für all diese Zustände gleich ist, gilt es nur
+die Anzahl an Konfigurationen zu finden, das führt zu:
+
+\begin{equation}
+\label{gebundenerligand}
+\sum_{Lösung}e^{\text{-}\beta(L\text{-}1)\varepsilon_{sol}} = \frac{\Omega!}{(L-1)![\Omega-(L-1)]!}e^{-\beta(L-1)\varepsilon_{sol}}
+\end{equation}
+
+Desweiteren benötigen wir für die weitere Betrachtung die Zustandssumme,
+welche eine Summe ist aus den möglichen gebundenen und ungebundenen Zuständen, also:
+
+\begin{equation}
+Z(L,\Omega) = \sum_{Lösung}e^{-\beta L\varepsilon_{sol}} + e^{-\beta\varepsilon_b}\sum_{Lösung}e^{-b(L-1)\varepsilon_{sol}}
+\end{equation}
+
+Wir haben den zweiten Term schon in \ref{gebundenerligand} bestimmt, daher fehlt noch der erste.
+Hierzu kommen wir mit Gleichung \ref{zustaende} auf:
+
+\begin{equation}
+\sum_{Lösung}e^{-\beta L\varepsilon_{sol}} = e^{-\beta L\varepsilon_{sol}}\frac{\Omega!}{L!(\Omega\text{-}L)!}
+\end{equation}
+
+Somit können wir die Zustandssumme wie folgt ausdrücken:
+\begin{equation}
+Z(L,\Omega) = e^{-\beta L\varepsilon_{sol}}\frac{\Omega!}{L!(\Omega\text{-}L)}! + e^{-\beta\varepsilon_b}e^{-\beta(L-1)\varepsilon_{sol}} \frac{\Omega!}{(L-1)![\Omega-(L-1)]!}
+\end{equation}
+
+Man kann nun folgende Näherung rechtfertigen:\cite{phybio}
+\begin{equation}
+\frac{\Omega!}{(\Omega-L)!} \approx \Omega^L
+\end{equation}
+
+Nun können wir die Bindewahrscheinlichkeit $p_{bound}$ folgendermaßen ausdrücken:
+\begin{equation}
+p_{bound} = \frac{e^{-\beta\varepsilon_b}\frac{\Omega^{L-1}}{(L-1)!}e^{-\beta(L-1)\varepsilon_{sol}}}{\frac{\Omega^L}{L!}e^{-\beta L\varepsilon_{sol}} + e^{-\beta\varepsilon_b}\frac{\Omega^{L-1}}{(L-1)!}e^{-\beta(L-1)\varepsilon_b}}
+\end{equation}
+erweitern wir diesen Bruch um $(L!/\Omega^L)e^{\beta L\varepsilon_{sol}}$ und definieren
+$\delta\varepsilon = \varepsilon_b -\varepsilon_{sol}, so vereinfacht sich der Ausdruck zu:
+
+\begin{equation}
+\end{equation} 
 
 Abbildung~\ref{fig:bildplatzhalter} verdeutlicht \dots
 
@@ -267,36 +300,22 @@ Text\dots
   \label{tab:tabellenplatzhalter}
 \end{table}
 
-Text\dots
 
-\chapter{Experimentelle Vorgehensweise}
-Text\dots
-\chapter{Ergebnisse}
-Text\dots
-\chapter{Diskussion}
-Text\dots
-\section{Unterkapitel}
-Text\dots
-\subsection{Unterkapitel}
-Text\dots
-\chapter{Zusammenfassung}
-Text\dots
-
-\appendix
-\chapter{erster Anhang}
-Text\dots
-\chapter{zweiter Anhang}
-Text\dots
+%%\appendix
+%%\chapter{erster Anhang}
+%%Text\dots
+%%\chapter{zweiter Anhang}
+%%Text\dots
 
 \cleardoublepage
 %% Bibliographie. Das Argument muss der Name der BIBTeX-Datenbank stehen.
 %% Ein Beispiel fuer eine solche Datenbank finden Sie in bthesis_datenbank.bib
-\bibliography{bthesis_datenbank} 
+\bibliography{bthesis_datenbank}
 
-\chapter*{Danksagung}
-Dank\dots
+%%\chapter*{Danksagung}
+%%Dank\dots
 
 %% Dieser Befehl MUSS am Ende stehen und erzeugt die Erklaerung ueber die
 %% benutzten Mittel
-\Declaration
+%%\Declaration
 \end{document}

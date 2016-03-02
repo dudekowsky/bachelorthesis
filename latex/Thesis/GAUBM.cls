@@ -1,27 +1,27 @@
-%% 
+%%
 %% This is file `GAUBM.cls', based on the class file `IMTEKda.cls'
-%% 
+%%
 %% Copyright (C) 2005-09 by Simon Dreher
-%% Adapted to Bachelor and Master theses at the department 
-%% for Physics of the University of Goettingen 
-%% 
+%% Adapted to Bachelor and Master theses at the department
+%% for Physics of the University of Goettingen
+%%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either
 %% version 1.3 of this license or (at your option) any later
 %% version. The latest version of this license is in:
-%% 
+%%
 %%    http://www.latex-project.org/lppl.txt
-%% 
+%%
 %% and version 1.3 or later is part of all distributions of
 %% LaTeX version 2005/12/01 or later.
-%% 
+%%
 %% This work has the LPPL maintenance status `maintained'.
 %% The Current Maintainer of this work is Thomas Pruschke
 %% This work consists of all files listed in README.
-%% 
+%%
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesClass{GAUBM}
-[2009/03/12 v1.0 GAU Vorlage für Abschlussarbeit Physik]
+[2009/03/12 v1.0 GAU Vorlage fï¿½r Abschlussarbeit Physik]
 \newif\if@nomtotoc\@nomtotocfalse
 \newif\if@englishpreamble\@englishpreambletrue
 \newif\if@preamblelangdef\@preamblelangdeffalse
@@ -137,19 +137,19 @@
   \begin{tabular}[t]{p{0.175\textwidth}p{0.825\textwidth-4\tabcolsep}}
     \bfseries\large Erkl\"arung&nach
     \if@bachelor\S13(8)%
-    \else\S18(8)\fi{}  der Prüfungsordnung für den 
-    Bachelor-Studiengang Physik und den Master-Studiengang Physik 
-    an der Universität Göttingen:\\[1em]
-    &Hiermit erkläre ich, dass ich diese Abschlussarbeit
-    selbständig verfasst habe, keine anderen als die
+    \else\S18(8)\fi{}  der Prï¿½fungsordnung fï¿½r den
+    Bachelor-Studiengang Physik und den Master-Studiengang Physik
+    an der Universitï¿½t Gï¿½ttingen:\\[1em]
+    &Hiermit erklï¿½re ich, dass ich diese Abschlussarbeit
+    selbstï¿½ndig verfasst habe, keine anderen als die
     angegebenen Quellen und Hilfsmittel benutzt habe und alle Stellen,
-    die wörtlich oder sinngemä\ss{} aus veröffentlichten Schriften
-    entnommen wurden, als solche kenntlich gemacht habe. 
-    
-    Darüberhinaus erkläre ich, dass diese Abschlussarbeit nicht, auch nicht
-    auszugsweise, im Rahmen einer nichtbestandenen Prüfung an dieser oder
+    die wï¿½rtlich oder sinngemï¿½\ss{} aus verï¿½ffentlichten Schriften
+    entnommen wurden, als solche kenntlich gemacht habe.
+
+    Darï¿½berhinaus erklï¿½re ich, dass diese Abschlussarbeit nicht, auch nicht
+    auszugsweise, im Rahmen einer nichtbestandenen Prï¿½fung an dieser oder
     einer anderen Hochschule eingereicht wurde.\\[1em]
-    &\begin{center}Göttingen, den \today\end{center}\\[1.5cm]
+    &\begin{center}Gï¿½ttingen, den \today\end{center}\\[1.5cm]
     &\begin{center}(\@ThesisAuthor)\end{center}
     %\begin{minipage}[t]{0.76\textwidth-4\tabcolsep}
     %  \@author\end{minipage}
@@ -190,7 +190,7 @@
 \def\s@bject{%
   % \if@diplom\if@englishpreamble{Diploma Thesis}\else{Diplomarbeit}\fi%
   % \else%
-  \if@bachelor\if@englishpreamble{Bachelor's Thesis}\else{Bachelorarbeit}\fi%
+  \if@bachelor\if@englishpreamble{Bachelor's Thesis}\else{Spezialisierungspraktikum}\fi%
   \else
   \if@englishpreamble{Master's Thesis}\else{Masterarbeit}\fi%
   \fi}
@@ -237,7 +237,7 @@
     \begin{tabular}[t]{p{0.24\linewidth}p{0.76\textwidth-4\tabcolsep}}
       \bfseries Thesis period:&
       \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
-        \dateselectlanguage{english}\setdatebynumber{\the@countbegin}\datedate\ 
+        \dateselectlanguage{english}\setdatebynumber{\the@countbegin}\datedate\
         until \setdatebynumber{\the@countend}\datedate\end{minipage}\\&\\
         \if@ExtraSupervisor\bfseries Supervisor:&
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
@@ -267,17 +267,17 @@
       \begin{tabular}[t]{p{0.24\linewidth}p{0.76\textwidth-4\tabcolsep}}
         \bfseries Bearbeitungszeit:&
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
-          \dateselectlanguage{ngerman}\setdatebynumber{\the@countbegin}\datedate\ 
+          \dateselectlanguage{ngerman}\setdatebynumber{\the@countbegin}\datedate\
           bis \setdatebynumber{\the@countend}\datedate\end{minipage}\\&\\
-        \if@ExtraSupervisor\bfseries Betreuer/in:&
-        \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
-          \@ExtraSupervisor\end{minipage}\\&\\\fi
-        \bfseries Erstgutachter/in:&
+        %\if@ExtraSupervisor\bfseries Betreuer/in:&
+        %\begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
+        %  \@ExtraSupervisor\end{minipage}\\&\\\fi
+        \bfseries Gutachter:&
         \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
           \@FirstReferee\end{minipage}\\&\\
-        \bfseries Zweitgutachter/in:&
-        \begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
-          \@SecondReferee\end{minipage}\\
+        %\bfseries Zweitgutachter/in:&
+        %\begin{minipage}[t]{0.76\textwidth-4\tabcolsep}%
+        %  \@SecondReferee\end{minipage}\\
       \end{tabular}
     }
     \fi
@@ -328,5 +328,5 @@
   }
 }
 \endinput
-%% 
+%%
 %% End of file `GAUBM.cls'.
