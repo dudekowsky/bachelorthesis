@@ -1,10 +1,10 @@
 class Simulation
-  def initialize(size = 10, crowder_percentage = 0, stickyness = 10, duration = 300000)
+  def initialize(size = 10, crowder_percentage = 0, stickyness = 10, duration = 300000, tillfoundmode = false)
     @duration = duration
     target = [rand(size),rand(size),rand(size)]
     @cell = Cell.new(size, target, stickyness)
     #puts "Starting point is:"
-    @cell.place_particle
+    @cell.place_particle(:x, tillfoundmode)
     @cell.place_crowder(crowder_percentage)
   end
 
@@ -12,8 +12,11 @@ class Simulation
     #print_target_coordinates
     #print_cell
     steps = 0
+    # puts steps
+    # p @cell.get_target
     until target_is_found?
       steps += 1
+      # puts target_is_found?
       #print_cell
       move_random_n if mode == :n
       move_random_all if mode == :all

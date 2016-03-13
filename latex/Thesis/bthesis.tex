@@ -158,7 +158,10 @@ Das Innere einer Zelle ist so eng besetzt, dass die mittleren Abstände zwischen
 benachbarten Proteinen vergleichbar mit der Größe der Proteine selbst ist.
 Daher sind Betrachtungen, die von einer freien Bewegung in einer Zelle ausgehen,
 nicht ausreichend für eine korrekte Beschreibung von Diffusionskinetik und Gleichgewichtszuständen.
-Daher soll in diesem Spezialisierungspraktikum der Einfluss von \emph{Crowding}
+Es wurde argumentiert, dass dieser Fakt offensichtlich, aber nicht ausreichend
+beachtet wird\cite{ellis}.
+Daher soll in diesem Spezialisierungspraktikum der Einfluss von \emph{Crowding} auf die Bindung
+von Liganden an Rezeptoren
 untersucht werden, also dem dichten Besetzen einer Zelle mit Proteinen, die weder
 Ligand noch Rezeptor in einer zu betrachtenden Reaktion sind. Durch den
 Volumenausschluss der durch Crowderpartikel stattfindet, verändert sich das
@@ -171,7 +174,7 @@ um weitere Effekte wie zum Beispiel unspezifische Anziehungskräfte zu untersuch
 
 \chapter{Grundlagen}
 \section{Rezeptor-Ligandenbindung}
-Im Herzen des Betrachteten Systems steht die Gleichgewichtsreaktion zwischen
+Im Herzen des betrachteten Systems steht die Gleichgewichtsreaktion zwischen
 Rezeptor und Ligand. Aus dem Massenwirkungsgesetz ist für eine Reaktion zwischen Liganden
 L und Rezeptoren R der Begriff der Dissoziationskonstante gegeben:
 \begin{equation}
@@ -205,7 +208,7 @@ betrachtet werden, in der die niedrige Energiezustände und Entropieerhöhung an
 werden. Das Ziel soll nun sein, eine Boltzmannverteilung herzuleiten, welche die
 Wahrscheinlichkeit eines Mikrozustands basierend auf seiner Energie beschreibt.
 Zunächst wird die Boltzmannverteilung nur für Liganden und Rezeptor hergeleitet,
-dann um Crowding erweitert
+dann um Crowding erweitert.
 Die folgenden Berechnungen sind im wesentlichen Kapitel 6 und 14 von
 \cite{phybio} nachvollzogen.
 
@@ -227,29 +230,29 @@ ein:
 
 \begin{equation}
 \label{zustaende}
-\text{Anzahl Zustände} = \frac{\Omega!}{L!(\Omega-L)!}
+\text{Anzahl Zustände} = \frac{\Omega!}{L!(\Omega-L)!} = \binom{\Omega}{L}
 \end{equation}
 
 \subsection{Wahrscheinlichkeit von Mikrozuständen}
-Das Grundsätzliche Ziel der statistischen Mechanik ist es, Wahrscheinlichkeitsaussagen
+Das grundsätzliche Ziel der statistischen Mechanik ist es, Wahrscheinlichkeitsaussagen
 über das Auftreten verschiedener Mikrozustände zu treffen. Der wesentliche Unterschied
 zwischen zwei Mikrozuständen ist die Energie $E_i$, wobei $i$ den $i$-ten Mikrozustand
 bezeichnet. Aus der Statistischen Mechanik ist nun genau die Wahrscheinlichkeit
 bekannt, mit der jeweils ein Mikrozustand auftritt:
 \begin{equation}
   \label{eq:boltzmann}
-  p(E_i) = \frac{1}{Z} e^{-E_i/k_bT}
+  p(E_i) = \frac{1}{Z} e^{-E_i/k_BT}
 \end{equation}
 
 Der Faktor $\frac{1}{Z}$ dient der Normierung der Verteilung.
-Z ist bekannt als die Zustandssumme. Die Gleichung \ref{eq:boltzmann}
+$Z$ ist bekannt als die Zustandssumme. Die Gleichung \ref{eq:boltzmann}
 ist bekannt als Boltzmann-Verteilung. Die Normalisierungskonstante $\frac{1}{Z}$
 kann durch die Anforderung $ \sum_{i=1}^{N} p(E_i) = 1$ bestimmt werden, was bedeutet:
 \begin{equation}
 Z = \sum_{i=1}^{N}e^{-E_i\beta}
 \end{equation}
 
-$\beta$ ist hier die inverse Temperatur $\frac{1}{k_bT}$
+$\beta$ ist hier die inverse Temperatur $\frac{1}{k_BT}$
 
 \subsection{Bindewahrscheinlichkeit}
 Diese Werkzeuge können nun angewandt werden, um die Bindewahrscheinlichkeit eines
@@ -259,7 +262,7 @@ Hierzu bilden wir das Verhältnis aus dem statistischen Gewicht des gebundenen
 Zustands und der Summe der statistischen Gewichte der gebundenen und ungebundenen
 Zustände. Das Gewicht des gebundenen Zustands ist
 $$e^{-\beta\varepsilon_b} \sum_{Lösung}e^{-\beta(L-1)\varepsilon_{sol}}$$
-Wobei der erste Faktor den gebundenen Liganden beschreibt und der zweite FAktor die Summe
+Wobei der erste Faktor den gebundenen Liganden beschreibt und der zweite Faktor die Summe
 über alle ungebundenen Liganden in der Lösung ist. Wir haben hier $\varepsilon_b$ als
 die Bindungsenergie und $\varepsilon_{sol}$ als die Energie für ein freies Teilchen
 in der Lösung eingeführt. Die Summe über die Lösung ist eine Anweisung dafür,
@@ -326,7 +329,7 @@ Z_{sol}(L,C) = \frac{\Omega!}{L!C!(\Omega-L-C)!}e^{-\beta L\varepsilon_L^{sol}}e
 \end{equation}
 wobei $\varepsilon_C^{sol}$ und $\varepsilon_L^{sol}$ die Energien von Crowderpartikel und Ligand darstellen.
 Der Rezeptor ist nun entweder besetzt oder nicht besetzt, die Gewichte dieser beiden Zustände sind nun
-$Z_{sol}(L-1,)e^{-\beta\varepsilon_L^b}$ und $Z_sol(L,C)$. Die Bindewahrscheinlichkeit für ein Partikel ist daher:
+$Z_{sol}(L-1,)e^{-\beta\varepsilon_L^b}$ und $Z_{sol}(L,C)$. Die Bindewahrscheinlichkeit für ein Partikel ist daher:
 \begin{equation}
 p_{bound} = \frac{Z_{sol}(L-1,C)e^{-\beta\varepsilon_L^b}}{Z_{sol}(L-1,C)e^{-\beta\varepsilon_L^b}+Z_{sol}(L,C)}.
 \end{equation}
@@ -363,7 +366,8 @@ Pro arbiträr definierten Zeitschritt $\tau$ bewegt sich das das Objekt nun mit 
 nach Links oder nach Rechts. Auf ein dreidimensionales Gitter verallgemeinert ist die Wahrscheinlichkeit
 für jede Richtung (Vorne, Hinten, Oben, Unten, Links, Rechts) $\frac{1}{6}$.
 In einem freien Volumen $V = \Omega l^3$ mit Gitterabstand $l$ und $\Omega$ Gitterplätzen
-würde sich das Partikel also mit einer Diffusionskonstante $D = l^2 / (6\tau)$ bewegen.
+würde sich das Partikel also mittels Diffusion bewegen. Über die Diffusionskonstante $D = l^2 / (6\tau)$
+können wir für ein bestimmtes Partikel $\tau$ bestimmen.
 Wenn $P$ Partikel vorliegen, die sich bewegen sollen, so wählen wir $P$ mal zufällig ein Partikel aus,
 das sich bewegt, so dass auf Dauer jedes Partikel durchschnittlich einmal pro Zeitschritt bewegt wird.
 
@@ -383,12 +387,13 @@ Zustand kommt, ist die Wahrscheinlichkeit dass es sich von diesem Platz löst ve
 Hierbei kommen 2 Effekte zum Tragen: Zum einen das Überwinden der Potentialbarriere und zum anderen
 die Eingeengtheit durch Crowder. Die effektive Affinität ist das Produkt aus der Affinität $K_a$ des Potenzials und
 des inversen Crowding Faktors $1/(1-\phi_c)$
-Diese Größe die beschreibt, wie lange das Partikel(im Folgenden: Affinität, $K_a$), ist nun gerade das Inverse und der Dissoziationskonstante:
+Die Affinität beschreibt, wie lange das Partikel im
+Mittel gebunden ist und ist gerade das Inverse und der Dissoziationskonstante:
 \begin{equation}
 K_{a_{effektiv}} = K_a(\phi_c = 0) / =\frac{1}{e^{\beta\Delta\varepsilon_L}(1-\phi_C)}
 \end{equation}
 
-\chapter{Programmbeschreibung}
+\subsection{Programmbeschreibung}
 Zur Simulation des in der Theorie beschriebenen Sachverhalts wurde nun ein Computerprogramm geschrieben, das
 vereinfacht gesagt folgende Dinge tut:
 \begin{itemize}
@@ -413,14 +418,14 @@ Das Ergebnis ist
 \begin{equation}
 K_d = 0.002033 \pm 0.0000206
 \end{equation}
-und weicht vom Theoretischen Wert $K_{d_{theoretisch}} = 1/500 $ um 7\% ab.
+und weicht vom theoretischen Wert $K_{d_{theoretisch}} = 1/500 $ um 1.5\% ab.
 
 Abbildung \ref{fig:mean} zeigt die mittlere Zeiten für den gebundenen und ungebundenen
-Zustand. Interessant hierbei ist, dass die ungebundene Zustand anscheinend nicht von
+Zustand. Interessant hierbei ist, dass die ungebundene Zeit anscheinend nicht von
 der Crowderkonzentration beeinflusst wird. Die gebundene Zeit hingegen schon.
 Gefittet wurde die Funktion auf $t(\phi_C) = \frac{b}{1-\phi_C}$ mit $b = 505 \pm 6$.
 
-Dies Ergibt Sinn, da im Falle der kompletten Besetzung des Volumens durch Crowdern der
+Dies ergibt Sinn, da im Falle der kompletten Besetzung des Volumens durch Crowder der
 Ligand ständig gebunden wäre.
 
 
@@ -439,11 +444,11 @@ Ligand ständig gebunden wäre.
 \end{figure}
 
 \chapter{Ausblick}
-Ziel dieser Arbeit war es, ein Programm zu schreiben, mit der man eine Zelle
-in der Crowding stattfindet beschreiben kann. In einer Bachelorarbeit kann man
-dieses Programm noch erweitern, so zum beispiel um nicht-spezifische Anziehungskräfte oder
+Ziel dieser Arbeit war es, ein Programm zu schreiben, mit der man eine Zelle,
+in der Crowding stattfindet, beschreiben kann. In einer Bachelorarbeit kann man
+dieses Programm noch erweitern, so zum Beispiel um nicht-spezifische Anziehungskräfte oder
 verschieden große Volumina der Partikel. Empfehlenswert wären noch weitere, längere,
-Simulationsdurchläufe als auch welche auf größeren Gittern um Gitterartefakte zu
+Simulationsdurchläufe als auch welche auf größeren Gittern, um Gitterartefakte zu
 minimieren. Interessanter Aspekt ist auch die weitere statistische Analyse, um mehr
 über die Verteilungen der einzelnen Größen zu erfahren.
 

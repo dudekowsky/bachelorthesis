@@ -24,8 +24,8 @@ class Cell
     return @target
   end
 
-  def place_particle(type = :x)
-    unless type == :x
+  def place_particle(type = :x, tillfoundmode = false)
+    unless type == :x && !(tillfoundmode)
       x,y,z = rand(@size),rand(@size),rand(@size)
       @grid[x][y][z] = type
       return [x,y,z]
@@ -33,6 +33,8 @@ class Cell
     x,y,z = @target[0],@target[1],@target[2]
     @grid[x][y][z] = type
     return [x,y,z]
+
+
   end
 
   def place_crowder(crowder_percentage)
