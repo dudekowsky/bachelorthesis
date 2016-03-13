@@ -34,7 +34,7 @@
 %\usepackage[utf8]{inputenc}    %% Wenn latin1 nicht geht ...
 
 \usepackage{amsmath,amssymb} %% zusaetzliche Mathe-Symbole
-
+\usepackage{tabularx}
 \usepackage{lmodern} %% type1-taugliche CM-Schrift als Variante zur
                      %% "normalen" EC-Schrift
 %% Paket fuer bibtex-Datenbanken
@@ -405,9 +405,12 @@ vereinfacht gesagt folgende Dinge tut:
 \item Speichere die Zeiten zu denen ein Ligand gebunden ist
 \item Gebe die Bindewahrscheinlichkeit, die mittlere Bindedauer und die mittlere ungebundene Dauer aus
 \end{itemize}
+Eine alternative Implementierung platziert zufällig ein Crowderpartikel und gibt
+die mittlere Dauer aus, die das Partikel braucht um zum Ligand zu kommen
+
 
 \chapter{Ergebnisse}
-Besagte Simulation wurde nun einige Zeit lang laufen gelassen.
+Besagte Simulationen wurde nun einige Zeit lang laufen gelassen.
 Abbildung~\ref{fig:ProbGegenCrowder} zeigt den Verlauf der Bindewahrscheinlichkeit
 gegen die Crowderkonzentration für ein Gitter mit $\Omega = 8^3$ Plätzen und einer
 Affinität von 500. Angelegt wurde folgender Fit für für $K_d$ :
@@ -428,6 +431,33 @@ Gefittet wurde die Funktion auf $t(\phi_C) = \frac{b}{1-\phi_C}$ mit $b = 505 \p
 Dies ergibt Sinn, da im Falle der kompletten Besetzung des Volumens durch Crowder der
 Ligand ständig gebunden wäre.
 
+Die Simulation zur Bestimmung der Zeit bis zur Bindung wurde für verschiedene
+Konzentration 10000 mal durchgeführt.
+Die Abbildungen \ref{fig:cr00}-\ref{fig:cr80} zeigen die mittlere Zeiten bis zur Bindung
+gegen Crowderkonzentration. Aufgrund der Darstellung durch \emph{gnuplot} wird durch einzelne
+Ausreißer der exponentielle Zusammenhang verschleiert, doch die Fits auf das
+Format $f(x) = a*exp(-b*x)$ haben alle einen Standardfehler von
+$\sigma < 2\%$.
+Wie aus Tabelle \ref{tab} ersichtlich ist, sind der normierte Vorfaktor $a_1 = a / 10000$,
+der Exponentialfaktor $b$ und das Inverse des Mittelwerts $\frac{1}{\mu}$ alle
+im gleichen Bereich. Somit ist von einer Exponentialverteilung vom Format
+$f_{\lambda}(x) = \lambda*exp(-\lambda*x)$ auszugeben, für deren Mittelwert $\mu = \frac{1}{\lambda}$ gilt.
+Die mittleren Zeiten in Abhängigkeit zur Crowderkonzentration scheinen einen
+quadratisch-exponentiellen Zusammenhang zu haben, wie in Abb. \ref{fig:suchgegencrowder} zu sehen.
+
+\begin{table}
+\begin{tabular}{l || r | r |  r}
+Crowderkonzentration in $\%$ & $a_1$ & $b$ & $\frac{1}{\mu}$ \\ \hline
+0 & 142.1 E-6 & 142.1 E-6 & 143.0 E-6 \\
+20 & 13.63 E-6 & 137.7 E-6 & 134.4 E-6 \\
+30 & 128.1 E-6 & 128.8 E-6 & 127.1 E-6 \\
+50 & 109.7 E-6 & 110.4 E-6 & 109.5 E-6 \\
+60 & 97.00 E-6 & 98.5 E-6 & 94.7 E-6 \\
+80 & 64.4 E-6 & 66.3 E-6 &  61.8 E-6 \\
+\end{tabular}
+\caption{Vergleichstabelle zur Exponentialverteilung}
+\label{tab}
+\end{table}
 
 \begin{figure}
   \centering
@@ -442,6 +472,58 @@ Ligand ständig gebunden wäre.
   \caption{Mittlere Zeiten gegen Crowderkonzentration}
   \label{fig:mean}
 \end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{find0.png}
+  \caption{Zeit bis Bindung, 0$\%$ Crowder}
+  \label{fig:cr00}
+
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{find20.png}
+  \caption{Zeit bis Bindung, 20$\%$ Crowder}
+  \label{fig:cr20}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{find30.png}
+  \caption{Zeit bis Bindung, 30$\%$ Crowder}
+  \label{fig:cr30}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{find60.png}
+  \caption{Zeit bis Bindung, 60$\%$ Crowder}
+  \label{fig:cr60}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{find80.png}
+  \caption{Zeit bis Bindung, 80$\%$ Crowder}
+  \label{fig:cr80}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{comparison.png}
+  \caption{Zeit bis Bindung, vergleich der Plots}
+  \label{fig:comp}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{suchzeitgegencrowder.png}
+  \caption{Mittlere Zeit bis Bindung gegen Crowderkonzentration}
+  \label{fig:suchgegencrowder}
+\end{figure}
+
+
 
 \chapter{Ausblick}
 Ziel dieser Arbeit war es, ein Programm zu schreiben, mit der man eine Zelle,

@@ -1,0 +1,7 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{etc.}]\begingroup et cetera\nomeqref {1.0}\nompageref{2}
+
+\end{thenomenclature}

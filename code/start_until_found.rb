@@ -3,7 +3,7 @@ require_relative "lib/simulation"
 require "descriptive_statistics"
 
 start_time_total = Time.now
-crowder_percentages = [20,30,50,60,80]
+crowder_percentages = [0]
 crowder_percentages.each do |crowder_percentage|
   size = 8
   stickyness = 100

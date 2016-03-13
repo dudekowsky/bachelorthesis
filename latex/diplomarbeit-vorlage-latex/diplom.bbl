@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{referenzA}
+Autor des Titels.
+\newblock {\em Titel der Referenz}.
+\newblock Herausgeber, \url{http://www.eine.url.der.referenz.de}, Das Jahr.
+\newblock ein paar zusätzliche Sachen.
+
+\end{thebibliography}
