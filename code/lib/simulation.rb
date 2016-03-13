@@ -1,10 +1,17 @@
 class Simulation
-  def initialize(size = 10, crowder_percentage = 0, stickyness = 10, duration = 300000, tillfoundmode = false)
+  def initialize(params)
+    size = params[:size]
+    crowder_percentage = params[:crowder_percentage]
+    stickyness = params[:stickyness]
+    duration = params[:duration]
+    tillfoundmode = params[:place_random]
+    ligand_percentage = params[:ligand_percentage]
+
     @duration = duration
     target = [rand(size),rand(size),rand(size)]
     @cell = Cell.new(size, target, stickyness)
     #puts "Starting point is:"
-    @cell.place_particle(:x, tillfoundmode)
+    @cell.place_particle(:x, tillfoundmode, ligand_percentage)
     @cell.place_crowder(crowder_percentage)
   end
 

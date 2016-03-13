@@ -24,15 +24,27 @@ class Cell
     return @target
   end
 
-  def place_particle(type = :x, tillfoundmode = false)
+  def place_particle(type = :x, tillfoundmode = false, ligand_percentage = 0)
+    if ligand_percentage != 0
+      ligand_total = (@size ** 3) / 100 * ligand_percentage
+    else
+      ligand_total = 1
+    end
+    i = 0
     unless type == :x && !(tillfoundmode)
-      x,y,z = rand(@size),rand(@size),rand(@size)
+      while i < ligand_total
+        x,y,z = rand(@size),rand(@size),rand(@size)
+        if (@grid[x][y][z] == :_) && (@target != [x,y,z])
+          @grid[x][y][z] = type
+          i+=1
+        end
+      end
+    else
+      x,y,z = @target[0],@target[1],@target[2]
       @grid[x][y][z] = type
       return [x,y,z]
     end
-    x,y,z = @target[0],@target[1],@target[2]
-    @grid[x][y][z] = type
-    return [x,y,z]
+
 
 
   end

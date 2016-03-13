@@ -14,15 +14,12 @@ java_import 'java.util.concurrent.TimeUnit'
 
 class SimStarter
   #include Callable
-  def initialize(style,size, crowder_percentage, duration, stickyness)
-    @duration = duration
-    @stickyness = stickyness
-    @style = style
-    @size = size
-    @crowder_percentage = crowder_percentage
+  def initialize(params)
+
+    @params = params
   end
   def call
-    sim = Simulation.new(@size, @crowder_percentage, @stickyness, @duration)
+    sim = Simulation.new(@params)
     return sim.start_with_duration
     # puts "random-" + style.to_s + " simulation:"
     # puts "N = " + n.to_s + ", Size = " + size.to_s + ", Crowder = " + crowder_percentage.to_s + "%"
@@ -37,12 +34,20 @@ end
 
 # sim = SimStarter.new
 # sim.call
-def multithread(num_threads, style, size, crowder_percentage, duration, stickyness)
+def multithread(params)
   executor = ThreadPoolExecutor.new(4, # core_pool_treads
                                     4, # max_pool_threads
                                     60, # keep_alive_time
                                     TimeUnit::SECONDS,
                                     LinkedBlockingQueue.new)
+  num_threads = params[:sims]
+  style = params[:style]
+  size = params[:size]
+  crowder_percentage = params[:crowder_percentage]
+  duration = params[:duration]
+  stickyness = params[:stickyness]
+  ligand_percentage= params[:ligand_percentage]
+
   num_sims = 1
   total_time = 0.0
 
@@ -53,7 +58,7 @@ def multithread(num_threads, style, size, crowder_percentage, duration, stickyne
     t_0 = Time.now
 
     num_threads.times do
-      task = FutureTask.new(SimStarter.new(style,size,crowder_percentage,duration, stickyness))
+      task = FutureTask.new(SimStarter.new(params))
       executor.execute(task)
       tasks << task
     end
@@ -70,7 +75,7 @@ def multithread(num_threads, style, size, crowder_percentage, duration, stickyne
   end
   executor.shutdown()
   puts "Random-#{style} Simulation"
-  puts "Size = #{size}^3, #{crowder_percentage}% Crowders, #{stickyness} stickyness"
+  puts "Size = #{size}^3,#{ligand_percentage}% Ligands #{crowder_percentage}% Crowders, #{stickyness} stickyness"
   puts "#{num_threads} simulations done. Duration = #{duration} steps"
   p steps_array.map{|subarr| subarr.sum / duration}
   mean = steps_array.map{|subarr| subarr.sum / duration}.mean
@@ -105,32 +110,32 @@ def multithread(num_threads, style, size, crowder_percentage, duration, stickyne
   puts "Bound probability #{mean}, Std. Deviation: #{stdDeviation}, relative: #{stdDeviation.to_f/mean}"
   puts "completion time: #{total_time/ 1000 }s"
   puts "-------------"
-  File.open("./ergebnisse/boundlength-random-#{style}#{size}lengthunits#{crowder_percentage}crowderpercent#{stickyness}stickyness#{duration}duration", 'w') do |file|
-    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
-    file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
-    boundlength_arr.each do |val|
-      file.write(val)
-      file.write("\n")
-    end
-  end
-
-  File.open("./ergebnisse/unboundlength-random-#{style}#{size}lengthunits#{crowder_percentage}crowderpercent#{stickyness}stickyness#{duration}duration", 'w') do |file|
-    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
-    file.write("#max: #{unboundlength_arr.max}, min: #{unboundlength_arr.min}")
-    unboundlength_arr.each do |val|
-      file.write(val)
-      file.write("\n")
-    end
-  end
-
-  File.open("./ergebnisse/onoffgegenzeit-random-#{style}#{size}lengthunits#{crowder_percentage}crowderpercent#{stickyness}stickyness", 'w') do |file|
-    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
-    file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
-    steps_array.each_with_index do |val,idx|
-      file.write("#{idx}\t#{val}")
-      file.write("\n")
-    end
-  end
+  # File.open("./ergebnisse/boundlength-random-#{style}#{size}lengthunits#{crowder_percentage}crowderpercent#{stickyness}stickyness#{duration}duration", 'w') do |file|
+  #   file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
+  #   file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
+  #   boundlength_arr.each do |val|
+  #     file.write(val)
+  #     file.write("\n")
+  #   end
+  # end
+  #
+  # File.open("./ergebnisse/unboundlength-random-#{style}#{size}lengthunits#{crowder_percentage}crowderpercent#{stickyness}stickyness#{duration}duration", 'w') do |file|
+  #   file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
+  #   file.write("#max: #{unboundlength_arr.max}, min: #{unboundlength_arr.min}")
+  #   unboundlength_arr.each do |val|
+  #     file.write(val)
+  #     file.write("\n")
+  #   end
+  # end
+  #
+  # File.open("./ergebnisse/onoffgegenzeit-random-#{style}#{size}lengthunits#{crowder_percentage}crowderpercent#{stickyness}stickyness", 'w') do |file|
+  #   file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
+  #   file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
+  #   steps_array.each_with_index do |val,idx|
+  #     file.write("#{idx}\t#{val}")
+  #     file.write("\n")
+  #   end
+  # end
 
 end
 
@@ -144,11 +149,23 @@ end
 startzeit = Time.now
 sims = 8
 size = 8
-duration = 1000000
+duration = 10000
 [:n].each do |style|
-  [0,10,20,30,40,50,60,70,80].each do |crowder_percentage|
-    [500].each do |stickyness|
-      multithread(sims, style, size, crowder_percentage, duration, stickyness)
+  [30].each do |crowder_percentage|
+    [5].each do |stickyness|
+      [0,10,50].each do |ligand_percentage|
+        params = {
+          sims: sims,
+          style: style,
+          size: size,
+          crowder_percentage: crowder_percentage,
+          duration: duration,
+          stickyness: stickyness,
+          ligand_percentage: ligand_percentage,
+          place_random: true
+        }
+        multithread(params)
+      end
     end
   end
 end
