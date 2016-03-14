@@ -1,36 +1,27 @@
 class Simulation
   def initialize(params)
-    size = params[:size]
-    crowder_percentage = params[:crowder_percentage]
-    stickyness = params[:stickyness]
-    duration = params[:duration]
-    tillfoundmode = params[:place_random]
-    ligand_percentage = params[:ligand_percentage]
-
+    size = params[:size] || 5
+    crowder_percentage = params[:crowder_percentage] || 0
+    stickyness = params[:stickyness] || 1
+    duration = params[:duration] || 10000
+    tillfoundmode = params[:place_random] || true
+    ligand_percentage = params[:ligand_percentage] || 0
+    @enzymatic = tillfoundmode
     @duration = duration
     target = [rand(size),rand(size),rand(size)]
     @cell = Cell.new(size, target, stickyness)
-    #puts "Starting point is:"
     @cell.place_particle(:x, tillfoundmode, ligand_percentage)
     @cell.place_crowder(crowder_percentage)
   end
 
   def start(mode = :n)
-    #print_target_coordinates
-    #print_cell
     steps = 0
-    # puts steps
-    # p @cell.get_target
     until target_is_found?
       steps += 1
-      # puts target_is_found?
-      #print_cell
       move_random_n if mode == :n
       move_random_all if mode == :all
     end
-    #print_cell
-    #puts "It took " + steps.to_s + " steps to find its mark"
-    return steps
+  return steps
   end
 
   def start_with_duration(mode = :n)
@@ -49,13 +40,16 @@ class Simulation
           bound_arr << 0
         end
         steps += 1
-        #puts "steps: #{steps}"
       end
     end
     if mode == :all
       while steps < @duration do
         move_random_all
         if target_is_found?
+          if @enzymatic
+            @cell.place_particle(:x, true)
+            free_target
+          end
           bound_arr << 1
         else
           bound_arr << 0
@@ -68,6 +62,10 @@ class Simulation
     # puts "Total steps: #{steps}"
     # puts "Ratio: #{bound_time.to_f/steps}"
     return bound_arr
+  end
+
+  def free_target
+    @cell.free_target
   end
 
   def target_is_found?

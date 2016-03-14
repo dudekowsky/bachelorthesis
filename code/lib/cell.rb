@@ -24,6 +24,11 @@ class Cell
     return @target
   end
 
+  def free_target
+    x,y,z = @target[0],@target[1],@target[2]
+    @grid[x][y][z] = :_
+  end
+
   def place_particle(type = :x, tillfoundmode = false, ligand_percentage = 0)
     if ligand_percentage != 0
       ligand_total = (@size ** 3) / 100 * ligand_percentage
@@ -59,7 +64,6 @@ class Cell
         i += 1
       end
     end
-    #print_grid
   end
 
   #decides a random order in which to check all cells
@@ -97,7 +101,6 @@ class Cell
         if move_particle(x,y,z,@grid, val)
           @grid[x][y][z] = :_
         end
-        #print_grid
       end
     end
   end
@@ -171,7 +174,6 @@ class Cell
   def illegal?(x,y,z,type)
     return true if @grid[x][y][z] != :_
     if (type == :o) &&  (@target == [x,y,z])
-      #print_grid
       return true
     else
       return false
