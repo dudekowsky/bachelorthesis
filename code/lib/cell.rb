@@ -1,10 +1,11 @@
 class Cell
-  def initialize(size, target, stickyness)
+  def initialize(size, target, stickyness, attraction)
     @stickyness = stickyness.ceil.abs
     @stickyness = 1 if stickyness == 0
     @size = size
     @grid = generate_grid(@size)
     @target = target
+    @attraction = attraction
   end
 
   def generate_grid(size)
@@ -147,15 +148,15 @@ class Cell
     if @metropolis == true
       count_before = count(before)
       count_after = count(after)
-      prop(count_before, count_after)
+      return (prop(count_before, count_after) > rand)
     else
       count_before = count(before)
-      prop(count_before)
+      return (prop(count_before) > rand)
     end
   end
 
   def prop(before, after = 0)
-    exp(-(before-after)*@attraction)
+    exp(-(before - after)*@attraction)
   end
 
   def count(coordinates)
@@ -172,51 +173,52 @@ class Cell
   end
 
   def move_particle(x,y,z,grid, type)
-    if [x,y,z] == @target
+    before = [x,y,z]
+    if before == @target
       sticky_dice = rand(@stickyness)
       if sticky_dice > 0
         return false
       end
     end
-    dice = rand(6)
-    case dice
-    when 0
-      unless illegal?(x,y,((z-1) % @size),type)
-        grid[x][y][(z-1) % @size] = type
-        return true
-      end
-    when 1
-      unless illegal?(x,y,((z+1) % @size),type)
-        grid[x][y][(z+1) % @size] = type
-        return true
-      end
-    when 2
-      unless illegal?(x, ((y-1) % @size), z, type)
-        grid[x][(y-1) % @size][z] = type
-        return true
-      end
-    when 3
-      unless illegal?(x, ((y+1) % @size), z, type)
-        grid[x][(y+1) % @size][z] = type
-        return true
-      end
-    when 4
-      unless illegal?((x-1) % @size, y, z, type)
-        grid[(x-1) % @size][y][z] = type
-        return true
-      end
-    else
-      unless illegal?((x+1) % @size, y, z, type)
-        grid[(x+1) % @size][y][z] = type
-        return true
-      end
-    end
-    return false
+    after = next_field(before)
+    return false if illegal?(after,type)
+    return false if (@attraction > 0) && weak_attraction_check(before, after)
+    set(after, type)
+    return true
   end
 
-  def illegal?(x,y,z,type)
-    return true if access([x,y,z]) != :_
-    if (type == :o) &&  (@target == [x,y,z])
+  def set(co, type)
+    @grid[co[0]][co[1]][co[2]] = type
+  end
+
+  def next_field(before)
+    after = [0,0,0]
+    (0..2).each do |i|
+      after[i] = before[i]
+    end
+    dice = rand(6)
+
+    case dice
+    when 0
+      after[2] = (after[2] - 1) % @size
+    when 1
+      after[2] = (after[2] + 1) % @size
+    when 2
+      after[1] = (after[1] - 1) % @size
+    when 3
+      after[1] = (after[1] + 1) % @size
+    when 4
+      after[0] = (after[0] - 1) % @size
+    else
+      after[0] = (after[0] + 1) % @size
+    end
+
+    after
+  end
+
+  def illegal?(coords,type)
+    return true if access(coords) != :_
+    if (type == :o) &&  (@target == coords)
       return true
     else
       return false

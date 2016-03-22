@@ -184,28 +184,32 @@ startzeit = Time.now
 sims = 4
 size = 6
 duration = 10000
+attractions = [0,0.5]
 crowder_percentages = [0,10,20,30,40,50,60]
 enzymmode = [false]
 stickynesses = [60]
 [:n].each do |style|
-  crowder_percentages.each do |crowder_percentage|
-    stickynesses.each do |stickyness|
-      [0,3,5,8,10,20].each do |ligand_percentage|
-        enzymmode.each do |place_random|
-          next if crowder_percentage + ligand_percentage >= 99
-          path_to_file = "./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}V#{place_random}enz#{stickyness}aff"
-          File.delete(path_to_file) if File.exist?(path_to_file)
-          params = {
-            sims: sims,
-            style: style,
-            size: size,
-            crowder_percentage: crowder_percentage,
-            duration: duration,
-            stickyness: stickyness,
-            ligand_percentage: ligand_percentage,
-            place_random: place_random
-          }
-          multithread(params)
+  attractions.each do |attraction|
+    crowder_percentages.each do |crowder_percentage|
+      stickynesses.each do |stickyness|
+        [0,3,5,8,10,20].each do |ligand_percentage|
+          enzymmode.each do |place_random|
+            next if crowder_percentage + ligand_percentage >= 99
+            path_to_file = "./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}V#{place_random}enz#{stickyness}aff"
+            File.delete(path_to_file) if File.exist?(path_to_file)
+            params = {
+              sims: sims,
+              style: style,
+              size: size,
+              crowder_percentage: crowder_percentage,
+              duration: duration,
+              stickyness: stickyness,
+              ligand_percentage: ligand_percentage,
+              place_random: place_random,
+              attraction: attraction
+            }
+            multithread(params)
+          end
         end
       end
     end
@@ -227,3 +231,4 @@ puts "Total Completion Time = #{ Time.now - startzeit}"
 #style: 2 possibilities:
 # :n means size^3 random grid points are checked in one step
 # :all means all size^3 grid points are checked in random order in one step
+# attraction = E_pot * \beta

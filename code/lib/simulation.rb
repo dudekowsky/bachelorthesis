@@ -3,6 +3,7 @@ class Simulation
     size = params[:size] || 5
     crowder_percentage = params[:crowder_percentage] || 0
     stickyness = params[:stickyness] || 1
+    attraction = params[:attraction] || 0.5
     @stickyness = stickyness
     duration = params[:duration] || 10000
     tillfoundmode = params[:place_random] || true
@@ -10,7 +11,7 @@ class Simulation
     @enzymatic = tillfoundmode
     @duration = duration
     target = [rand(size),rand(size),rand(size)]
-    @cell = Cell.new(size, target, stickyness)
+    @cell = Cell.new(size, target, stickyness,attraction)
     @cell.place_particle(:x, tillfoundmode, ligand_percentage)
     @cell.place_crowder(crowder_percentage)
   end
