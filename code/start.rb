@@ -183,7 +183,7 @@ File.delete("makefile") if File.exist?("makefile")
 startzeit = Time.now
 sims = 4
 size = 6
-duration = 100000
+duration = 10000
 crowder_percentages = [0,10,20,30,40,50,60]
 enzymmode = [false]
 stickynesses = [60]

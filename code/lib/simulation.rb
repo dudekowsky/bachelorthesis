@@ -3,6 +3,7 @@ class Simulation
     size = params[:size] || 5
     crowder_percentage = params[:crowder_percentage] || 0
     stickyness = params[:stickyness] || 1
+    @stickyness = stickyness
     duration = params[:duration] || 10000
     tillfoundmode = params[:place_random] || true
     ligand_percentage = params[:ligand_percentage] || 0
@@ -46,7 +47,7 @@ class Simulation
       while steps < @duration do
         move_random_all
         if target_is_found?
-          if @enzymatic
+          if @enzymatic && reacts?
             @cell.place_particle(:x, true)
             free_target
           end
@@ -62,6 +63,11 @@ class Simulation
     # puts "Total steps: #{steps}"
     # puts "Ratio: #{bound_time.to_f/steps}"
     return bound_arr
+  end
+
+  def reacts?
+    return true if rand(@stickyness) == 0
+    return false
   end
 
   def free_target

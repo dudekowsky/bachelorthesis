@@ -13,7 +13,7 @@ class Cell
   end
 
   def target_is_found?
-    if @grid[@target[0]][@target[1]][@target[2]] == :x
+    if access(@target) == :x
       true
     else
       false
@@ -39,7 +39,7 @@ class Cell
     unless type == :x && !(tillfoundmode)
       while i < ligand_total
         x,y,z = rand(@size),rand(@size),rand(@size)
-        if (@grid[x][y][z] == :_) && (@target != [x,y,z])
+        if (access([x,y,z]) == :_) && (@target != [x,y,z])
           @grid[x][y][z] = type
           i+=1
         end
@@ -59,7 +59,7 @@ class Cell
     i = 0
     while i < crowder_total
       x,y,z = rand(@size),rand(@size),rand(@size)
-      if (@grid[x][y][z] == :_) && (@target != [x,y,z])
+      if (access([x,y,z]) == :_) && (@target != [x,y,z])
         @grid[x][y][z] = :o
         i += 1
       end
@@ -81,7 +81,7 @@ class Cell
       x = val % @size
       y = (val / @size) % @size
       z = val / (@size ** 2)
-      type = @grid[x][y][z]
+      type = access([x,y,z])
       if (type == :x) || (type == :o)
         if move_particle(x,y,z, @grid, type)
           @grid[x][y][z] = :_
@@ -96,7 +96,7 @@ class Cell
   def move_random_n
     (@size**3).times do
       x,y,z = rand(@size),rand(@size),rand(@size)
-      val = @grid[x][y][z]
+      val = access([x,y,z])
       if (val == :x) || (val == :o)
         if move_particle(x,y,z,@grid, val)
           @grid[x][y][z] = :_
@@ -105,7 +105,9 @@ class Cell
     end
   end
 
-
+  def access(arr)
+    return @grid[arr[0]][arr[1]][arr[2]]
+  end
 
   def make_move
     #Method DOES NOT WORK YET!
@@ -126,6 +128,47 @@ class Cell
       end
     end
     @grid = virtual_grid
+  end
+
+  #has 2 possibilities:
+  # a)Metropolis-rate and b)simple detachment rate
+  # for a) it checks energy before and after the move.
+  # energy checking is done by counting surrounding particles
+  # before and after the move
+  # probability of moving is then exp( -delta_N * att)
+  # with delta_E = N_before - N_after and att = E_0/(kB*T)
+  # with E_0 being the weak attraction potential of a single
+  # crowder
+  # b) works by just checking the number of particles before
+  # the move and calculating the propbability by
+  # exp(-N*att)
+  def weak_attraction_check(before,after)
+    true unless access(before) == :x
+    if @metropolis == true
+      count_before = count(before)
+      count_after = count(after)
+      prop(count_before, count_after)
+    else
+      count_before = count(before)
+      prop(count_before)
+    end
+  end
+
+  def prop(before, after = 0)
+    exp(-(before-after)*@attraction)
+  end
+
+  def count(coordinates)
+    arr = []
+    particles = 0
+    coordinates.each do |dim|
+      arr << ((dim + 1) % @size)
+      arr << ((dim - 1) % @size)
+    end
+    arr.each do |coord|
+    particles += 1 if grid[coord[0]][coord[1]][coord[2]] != :_
+    end
+    particles
   end
 
   def move_particle(x,y,z,grid, type)
@@ -172,7 +215,7 @@ class Cell
   end
 
   def illegal?(x,y,z,type)
-    return true if @grid[x][y][z] != :_
+    return true if access([x,y,z]) != :_
     if (type == :o) &&  (@target == [x,y,z])
       return true
     else
