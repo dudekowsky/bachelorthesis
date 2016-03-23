@@ -1,11 +1,12 @@
 class Cell
-  def initialize(size, target, stickyness, attraction)
+  def initialize(size, target, stickyness, attraction, metropolis)
     @stickyness = stickyness.ceil.abs
     @stickyness = 1 if stickyness == 0
     @size = size
     @grid = generate_grid(@size)
     @target = target
     @attraction = attraction
+    @metropolis = metropolis
   end
 
   def generate_grid(size)
