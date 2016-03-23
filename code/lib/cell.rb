@@ -26,8 +26,7 @@ class Cell
   end
 
   def free_target
-    x,y,z = @target[0],@target[1],@target[2]
-    @grid[x][y][z] = :_
+    set @target, :_
   end
 
   def place_particle(type = :x, tillfoundmode = false, ligand_percentage = 0)
@@ -41,13 +40,12 @@ class Cell
       while i < ligand_total
         x,y,z = rand(@size),rand(@size),rand(@size)
         if (access([x,y,z]) == :_) && (@target != [x,y,z])
-          @grid[x][y][z] = type
+          set([x,y,z],type)
           i+=1
         end
       end
     else
-      x,y,z = @target[0],@target[1],@target[2]
-      @grid[x][y][z] = type
+      set @target,type
       return [x,y,z]
     end
 
@@ -61,7 +59,7 @@ class Cell
     while i < crowder_total
       x,y,z = rand(@size),rand(@size),rand(@size)
       if (access([x,y,z]) == :_) && (@target != [x,y,z])
-        @grid[x][y][z] = :o
+        set([x,y,z],:o)
         i += 1
       end
     end
@@ -85,7 +83,7 @@ class Cell
       type = access([x,y,z])
       if (type == :x) || (type == :o)
         if move_particle(x,y,z, @grid, type)
-          @grid[x][y][z] = :_
+          set([x,y,z],:_)
         end
       end
     end
@@ -100,7 +98,7 @@ class Cell
       val = access([x,y,z])
       if (val == :x) || (val == :o)
         if move_particle(x,y,z,@grid, val)
-          @grid[x][y][z] = :_
+          set([x,y,z],:_)
         end
       end
     end
@@ -143,20 +141,21 @@ class Cell
   # b) works by just checking the number of particles before
   # the move and calculating the propbability by
   # exp(-N*att)
-  def weak_attraction_check(before,after)
-    true unless access(before) == :x
+  def held_by_weak_attraction?(before,after)
+    false unless access(before) == :x
     if @metropolis == true
       count_before = count(before)
       count_after = count(after)
-      return (prop(count_before, count_after) > rand)
+      return (prop(count_before, count_after) < rand)
     else
       count_before = count(before)
-      return (prop(count_before) > rand)
+      bool = (prop(count_before) < rand)
+      return bool
     end
   end
 
   def prop(before, after = 0)
-    exp(-(before - after)*@attraction)
+    Math.exp(-(before - after)*@attraction)
   end
 
   def count(coordinates)
@@ -167,7 +166,7 @@ class Cell
       arr << ((dim - 1) % @size)
     end
     arr.each do |coord|
-    particles += 1 if grid[coord[0]][coord[1]][coord[2]] != :_
+      particles += 1 if access(coord) != :_
     end
     particles
   end
@@ -182,7 +181,7 @@ class Cell
     end
     after = next_field(before)
     return false if illegal?(after,type)
-    return false if (@attraction > 0) && weak_attraction_check(before, after)
+    return false if (@attraction > 0) && held_by_weak_attraction?(before, after)
     set(after, type)
     return true
   end

@@ -57,12 +57,8 @@ class Simulation
           bound_arr << 0
         end
         steps += 1
-        #puts "steps: #{steps}"
       end
     end
-    # puts "Bound steps: #{bound_time}"
-    # puts "Total steps: #{steps}"
-    # puts "Ratio: #{bound_time.to_f/steps}"
     return bound_arr
   end
 

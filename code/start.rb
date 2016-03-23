@@ -48,6 +48,7 @@ def multithread(params)
   stickyness = params[:stickyness]
   ligand_percentage= params[:ligand_percentage]
   enzymatic = params[:place_random]
+  attraction = params[:attraction]
 
   num_sims = 1
   total_time = 0.0
@@ -75,7 +76,7 @@ def multithread(params)
 
   end
   executor.shutdown()
-  puts "Random-#{style} Simulation"
+  puts "Random-#{style} Simulation, Weak attraction = #{attraction}"
   puts "Size = #{size}^3,#{ligand_percentage}% Ligands #{crowder_percentage}% Crowders, #{stickyness} stickyness, enyzmatic mode: #{enzymatic}"
   puts "#{num_threads} simulations done. Duration = #{duration} steps"
   p steps_array.map{|subarr| subarr.sum / duration}
@@ -111,8 +112,8 @@ def multithread(params)
   puts "Bound probability #{mean}, Std. Deviation: #{stdDeviation}, relative: #{stdDeviation.to_f/mean}"
   puts "completion time: #{total_time/ 1000 }s"
   puts "-------------"
-  File.open("./ergebnisse/boundlength-r-#{style}#{size}lig#{ligand_percentage}len#{crowder_percentage}cro#{stickyness}sti#{duration}dur#{enzymatic}enz", 'w') do |file|
-    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
+  File.open("./ergebnisse/boundlength-r-#{style}#{size}lig#{ligand_percentage}len#{crowder_percentage}cro#{stickyness}sti#{duration}dur#{enzymatic}enz#{attraction}att", 'w') do |file|
+    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness}, attraction = #{attraction}\n")
     file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
     boundlength_arr.each do |val|
       file.write(val)
@@ -120,8 +121,8 @@ def multithread(params)
     end
   end
 
-  File.open("./ergebnisse/unboundlength-r-#{style}#{size}lig#{ligand_percentage}len#{crowder_percentage}cro#{stickyness}sti#{duration}dur#{enzymatic}enz", 'w') do |file|
-    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
+  File.open("./ergebnisse/unboundlength-r-#{style}#{size}lig#{ligand_percentage}len#{crowder_percentage}cro#{stickyness}sti#{duration}dur#{enzymatic}enz#{attraction}att", 'w') do |file|
+    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness}, #{attraction}att \n")
     file.write("#max: #{unboundlength_arr.max}, min: #{unboundlength_arr.min}")
     unboundlength_arr.each do |val|
       file.write(val)
@@ -129,8 +130,8 @@ def multithread(params)
     end
   end
 
-  File.open("./ergebnisse/onoffgegenzeit-r-#{style}#{size}lig#{ligand_percentage}len#{crowder_percentage}cro#{stickyness}sti#{duration}dur#{enzymatic}enz", 'w') do |file|
-    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness} \n")
+  File.open("./ergebnisse/onoffgegenzeit-r-#{style}#{size}lig#{ligand_percentage}len#{crowder_percentage}cro#{stickyness}sti#{duration}dur#{enzymatic}enz#{attraction}att", 'w') do |file|
+    file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness}, #{attraction}att \n")
     file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
     steps_array.each_with_index do |val,idx|
       file.write("#{idx}\t#{val}")
@@ -138,7 +139,7 @@ def multithread(params)
     end
   end
 
-  File.open("./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}#{enzymatic}enz#{stickyness}aff","a") do |file|
+  File.open("./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}V#{enzymatic}enz#{stickyness}aff#{attraction}att","a") do |file|
     file.write("#{ligand_percentage}\t#{mean}\t#{stdDeviation}\n")
   end
 
@@ -154,15 +155,19 @@ def makefile(params)
   size = params[:size]
   enz = params[:enzymmode]
   sti = params[:stickynesses]
+  attractions = params[:attractions]
   File.open("makefile", "a") do |f|
   sti.each do |stickyness|
     helptext = ""
-    c_arr.each_with_index do |c,ind|
-      enz.each do |bool|
-          helptext += "'./ergebnisse/PgegenLmit#{c}C#{size}#{bool}enz#{stickyness}aff' with lines title 'C#{c} Aff#{stickyness}'"
-          helptext += ", " unless ind - c.size == -1
+    attractions.each_with_index do |attraction, ind_att|
+      enz.each_with_index do |enzy, ind_enz|
+        c_arr.each_with_index do |crowder_percentage,ind_c|
+          helptext += "'./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}V#{enzy}enz#{stickyness}aff#{attraction}att' with lines title 'C#{crowder_percentage} Aff#{stickyness} Att#{attraction}'"
+          helptext += ", " unless (ind_c - c_arr.size == -1) && ((ind_enz - enz.size == -1) && (ind_att - attractions.size == -1))
+          puts (ind_c - c_arr.size == -1) && ((ind_enz - enz.size == -1) && (ind_att - attractions.size == -1))
         end
       end
+    end
       text = <<-END
 set terminal png
 set xlabel 'Ligandenanteil in \\%'
@@ -182,21 +187,31 @@ File.delete("makefile") if File.exist?("makefile")
 
 startzeit = Time.now
 sims = 4
-size = 6
-duration = 10000
-attractions = [0,0.5]
-crowder_percentages = [0,10,20,30,40,50,60]
-enzymmode = [false]
+size = 8
+duration = 100000
+attractions = [0.05,0.1,0.4]
+crowder_percentages = [30]
+ligand_percentages = [3,5,8,10,20]
+enzymmode = [true,false]
 stickynesses = [60]
-[:n].each do |style|
+styles = [:n]
+
+sims_done = 0
+total_sims = 1
+[attractions, crowder_percentages,ligand_percentages,enzymmode,stickynesses,styles].each do |par_arr|
+  total_sims = par_arr.length * total_sims
+end
+
+
+styles.each do |style|
   attractions.each do |attraction|
     crowder_percentages.each do |crowder_percentage|
       stickynesses.each do |stickyness|
-        [0,3,5,8,10,20].each do |ligand_percentage|
-          enzymmode.each do |place_random|
-            next if crowder_percentage + ligand_percentage >= 99
-            path_to_file = "./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}V#{place_random}enz#{stickyness}aff"
-            File.delete(path_to_file) if File.exist?(path_to_file)
+        enzymmode.each do |enzy|
+          path_to_file = "./ergebnisse/PgegenLmit#{crowder_percentage}C#{size}V#{enzy}enz#{stickyness}aff#{attraction}att"
+          #File.delete(path_to_file) if File.exist?(path_to_file)
+          ligand_percentages.each do |ligand_percentage|
+            next if crowder_percentage + ligand_percentage >= 90
             params = {
               sims: sims,
               style: style,
@@ -205,17 +220,23 @@ stickynesses = [60]
               duration: duration,
               stickyness: stickyness,
               ligand_percentage: ligand_percentage,
-              place_random: place_random,
+              place_random: enzy,
               attraction: attraction
             }
-            multithread(params)
+            #multithread(params)
+            sims_done += 1
+            sims_left = total_sims - sims_done
+            time_spent = Time.now - startzeit
+            est_finish = Time.now + (time_spent * sims_left / sims_done)
+            puts "#{sims_done} of #{total_sims} Sims done"
+            puts "Time spent: #{time_spent}. Estimated finish: #{est_finish}"
           end
         end
       end
     end
   end
 end
-makeparams = {crowder_percentages: crowder_percentages, enzymmode: enzymmode, size: size, stickynesses: stickynesses}
+makeparams = {crowder_percentages: crowder_percentages, enzymmode: enzymmode, size: size, stickynesses: stickynesses,attractions: attractions}
 makefile(makeparams)
 %x{gnuplot makefile}
 puts "Total Completion Time = #{ Time.now - startzeit}"
