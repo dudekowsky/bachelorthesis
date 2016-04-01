@@ -1,0 +1,1982 @@
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.349, 0.323, 0.426, 0.409]
+23.184615384615384 mean sticky time
+38.353846153846156 mean unbound time
+Bound probability 0.37675, Std. Deviation: 0.04220411709774296, relative: 0.11202154505041263
+completion time: 1.613s
+-------------
+1 of 180 Sims done
+Time spent: 2.129. Estimated finish: 2016-03-24 00:40:15 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.468, 0.56, 0.435, 0.537]
+22.727272727272727 mean sticky time
+22.727272727272727 mean unbound time
+Bound probability 0.5, Std. Deviation: 0.05054206169122904, relative: 0.10108412338245808
+completion time: 0.943s
+-------------
+2 of 180 Sims done
+Time spent: 3.141. Estimated finish: 2016-03-24 00:38:35 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.627, 0.605, 0.728, 0.654]
+23.339285714285715 mean sticky time
+12.375 mean unbound time
+Bound probability 0.6535, Std. Deviation: 0.04638156961552724, relative: 0.07097409275520618
+completion time: 0.854s
+-------------
+3 of 180 Sims done
+Time spent: 4.073. Estimated finish: 2016-03-24 00:37:56 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.771, 0.622, 0.654, 0.643]
+23.391304347826086 mean sticky time
+11.391304347826088 mean unbound time
+Bound probability 0.6725000000000001, Std. Deviation: 0.05801939330947886, relative: 0.08627419079476409
+completion time: 0.833s
+-------------
+4 of 180 Sims done
+Time spent: 4.932. Estimated finish: 2016-03-24 00:37:34 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.839, 0.868, 0.759, 0.877]
+33.43 mean sticky time
+6.57 mean unbound time
+Bound probability 0.83575, Std. Deviation: 0.046483195888406804, relative: 0.05561854129632881
+completion time: 1.019s
+-------------
+5 of 180 Sims done
+Time spent: 5.973. Estimated finish: 2016-03-24 00:37:27 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.331, 0.424, 0.303, 0.28]
+19.970149253731343 mean sticky time
+39.73134328358209 mean unbound time
+Bound probability 0.3345, Std. Deviation: 0.054738012386275035, relative: 0.16364129263460397
+completion time: 0.645s
+-------------
+6 of 180 Sims done
+Time spent: 6.648. Estimated finish: 2016-03-24 00:37:11 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.375, 0.596, 0.403, 0.641]
+25.1875 mean sticky time
+24.506172839506174 mean unbound time
+Bound probability 0.50375, Std. Deviation: 0.11626989077142887, relative: 0.23080871617157095
+completion time: 0.907s
+-------------
+7 of 180 Sims done
+Time spent: 7.585. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.546, 0.586, 0.599, 0.603]
+26.522727272727273 mean sticky time
+18.931818181818183 mean unbound time
+Bound probability 0.5835, Std. Deviation: 0.022544400635190965, relative: 0.038636504944628905
+completion time: 1.041s
+-------------
+8 of 180 Sims done
+Time spent: 8.652. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.691, 0.661, 0.612, 0.538]
+21.384615384615383 mean sticky time
+12.803418803418804 mean unbound time
+Bound probability 0.6255, Std. Deviation: 0.05785542325486866, relative: 0.09249468146261976
+completion time: 1.268s
+-------------
+9 of 180 Sims done
+Time spent: 9.938. Estimated finish: 2016-03-24 00:37:11 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.781, 0.801, 0.775, 0.755]
+24.503937007874015 mean sticky time
+6.9921259842519685 mean unbound time
+Bound probability 0.778, Std. Deviation: 0.01640121946685674, relative: 0.02108125895482871
+completion time: 1.749s
+-------------
+10 of 180 Sims done
+Time spent: 11.742. Estimated finish: 2016-03-24 00:37:23 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.24, 0.411, 0.445, 0.339]
+20.797101449275363 mean sticky time
+36.642857142857146 mean unbound time
+Bound probability 0.35875, Std. Deviation: 0.0785187079618609, relative: 0.2188674786393335
+completion time: 1.065s
+-------------
+11 of 180 Sims done
+Time spent: 12.828. Estimated finish: 2016-03-24 00:37:22 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.554, 0.477, 0.342, 0.509]
+20.236559139784948 mean sticky time
+22.774193548387096 mean unbound time
+Bound probability 0.47050000000000003, Std. Deviation: 0.07907117047318826, relative: 0.16805774808329066
+completion time: 0.798s
+-------------
+12 of 180 Sims done
+Time spent: 13.645. Estimated finish: 2016-03-24 00:37:17 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.613, 0.651, 0.585, 0.688]
+22.651785714285715 mean sticky time
+12.946902654867257 mean unbound time
+Bound probability 0.63425, Std. Deviation: 0.03888042566639413, relative: 0.06130142004949804
+completion time: 0.885s
+-------------
+13 of 180 Sims done
+Time spent: 14.552. Estimated finish: 2016-03-24 00:37:13 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.683, 0.633, 0.651, 0.694]
+25.34285714285714 mean sticky time
+12.752380952380953 mean unbound time
+Bound probability 0.66525, Std. Deviation: 0.024416951079117136, relative: 0.0367034213891276
+completion time: 0.813s
+-------------
+14 of 180 Sims done
+Time spent: 15.382. Estimated finish: 2016-03-24 00:37:10 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.827, 0.867, 0.877, 0.868]
+31.84259259259259 mean sticky time
+5.146788990825688 mean unbound time
+Bound probability 0.8597499999999999, Std. Deviation: 0.019305115902267998, relative: 0.022454336612117477
+completion time: 1.036s
+-------------
+15 of 180 Sims done
+Time spent: 16.44. Estimated finish: 2016-03-24 00:37:09 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.473, 0.244, 0.396, 0.403]
+27.071428571428573 mean sticky time
+43.578947368421055 mean unbound time
+Bound probability 0.379, Std. Deviation: 0.08355537086268003, relative: 0.22046271995430086
+completion time: 0.573s
+-------------
+16 of 180 Sims done
+Time spent: 17.029. Estimated finish: 2016-03-24 00:37:03 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.37, 0.41, 0.643, 0.526]
+23.76829268292683 mean sticky time
+25.01219512195122 mean unbound time
+Bound probability 0.48725, Std. Deviation: 0.10662404747522954, relative: 0.21882821441812114
+completion time: 0.585s
+-------------
+17 of 180 Sims done
+Time spent: 17.633. Estimated finish: 2016-03-24 00:36:59 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.556, 0.647, 0.466, 0.592]
+22.61 mean sticky time
+17.217821782178216 mean unbound time
+Bound probability 0.56525, Std. Deviation: 0.06583074889441863, relative: 0.1164630674823859
+completion time: 0.625s
+-------------
+18 of 180 Sims done
+Time spent: 18.276. Estimated finish: 2016-03-24 00:36:55 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.646, 0.585, 0.723, 0.618]
+27.361702127659573 mean sticky time
+15.191489361702128 mean unbound time
+Bound probability 0.6429999999999999, Std. Deviation: 0.05098529199681022, relative: 0.07929283358757423
+completion time: 0.627s
+-------------
+19 of 180 Sims done
+Time spent: 18.914. Estimated finish: 2016-03-24 00:36:51 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.824, 0.829, 0.832, 0.804]
+32.245098039215684 mean sticky time
+6.970588235294118 mean unbound time
+Bound probability 0.8222499999999999, Std. Deviation: 0.010917302780448989, relative: 0.013277352119731212
+completion time: 0.951s
+-------------
+20 of 180 Sims done
+Time spent: 19.88. Estimated finish: 2016-03-24 00:36:51 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.279, 0.38, 0.311, 0.266]
+20.6 mean sticky time
+45.31147540983606 mean unbound time
+Bound probability 0.309, Std. Deviation: 0.044141816908686474, relative: 0.1428537764035161
+completion time: 1.301s
+-------------
+21 of 180 Sims done
+Time spent: 21.197. Estimated finish: 2016-03-24 00:36:54 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.513, 0.474, 0.398, 0.491]
+22.333333333333332 mean sticky time
+25.285714285714285 mean unbound time
+Bound probability 0.469, Std. Deviation: 0.04326083679264653, relative: 0.09224059017621862
+completion time: 1.415s
+-------------
+22 of 180 Sims done
+Time spent: 22.635. Estimated finish: 2016-03-24 00:36:57 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.734, 0.742, 0.741, 0.611]
+28.565656565656564 mean sticky time
+11.72 mean unbound time
+Bound probability 0.7070000000000001, Std. Deviation: 0.055511260119006485, relative: 0.07851663383169233
+completion time: 1.039s
+-------------
+23 of 180 Sims done
+Time spent: 23.688. Estimated finish: 2016-03-24 00:36:57 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.764, 0.862, 0.691, 0.868]
+33.177083333333336 mean sticky time
+8.489583333333334 mean unbound time
+Bound probability 0.7962499999999999, Std. Deviation: 0.07346555315248093, relative: 0.0922644309607296
+completion time: 0.957s
+-------------
+24 of 180 Sims done
+Time spent: 24.66. Estimated finish: 2016-03-24 00:36:57 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.87, 0.831, 0.807, 0.843]
+27.694214876033058 mean sticky time
+5.363636363636363 mean unbound time
+Bound probability 0.83775, Std. Deviation: 0.022686725193381243, relative: 0.02708054335229035
+completion time: 1.123s
+-------------
+25 of 180 Sims done
+Time spent: 25.794. Estimated finish: 2016-03-24 00:36:58 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.479, 0.259, 0.424, 0.369]
+20.413333333333334 mean sticky time
+32.92 mean unbound time
+Bound probability 0.38275, Std. Deviation: 0.0813460970176197, relative: 0.21253062578084836
+completion time: 0.895s
+-------------
+26 of 180 Sims done
+Time spent: 26.727. Estimated finish: 2016-03-24 00:36:57 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.422, 0.568, 0.399, 0.573]
+24.22222222222222 mean sticky time
+24.853658536585368 mean unbound time
+Bound probability 0.4905, Std. Deviation: 0.08043164800002543, relative: 0.1639788950051487
+completion time: 1.205s
+-------------
+27 of 180 Sims done
+Time spent: 27.948. Estimated finish: 2016-03-24 00:36:58 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.574, 0.507, 0.554, 0.614]
+24.445652173913043 mean sticky time
+19.032608695652176 mean unbound time
+Bound probability 0.56225, Std. Deviation: 0.03852515412039255, relative: 0.06851961604338382
+completion time: 0.923s
+-------------
+28 of 180 Sims done
+Time spent: 28.894. Estimated finish: 2016-03-24 00:36:58 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.738, 0.638, 0.712, 0.631]
+24.276785714285715 mean sticky time
+11.4375 mean unbound time
+Bound probability 0.6797500000000001, Std. Deviation: 0.04624053957297642, relative: 0.06802580297605945
+completion time: 0.973s
+-------------
+29 of 180 Sims done
+Time spent: 29.879. Estimated finish: 2016-03-24 00:36:57 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.786, 0.882, 0.789, 0.843]
+27.5 mean sticky time
+5.833333333333333 mean unbound time
+Bound probability 0.8250000000000001, Std. Deviation: 0.039968737783422664, relative: 0.04844695488899717
+completion time: 1.08s
+-------------
+30 of 180 Sims done
+Time spent: 30.968. Estimated finish: 2016-03-24 00:36:58 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.567, 0.421, 0.563, 0.5]
+28.095890410958905 mean sticky time
+26.698630136986303 mean unbound time
+Bound probability 0.51275, Std. Deviation: 0.05926371149362819, relative: 0.11558012968040601
+completion time: 0.688s
+-------------
+31 of 180 Sims done
+Time spent: 31.665. Estimated finish: 2016-03-24 00:36:56 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.404, 0.522, 0.345, 0.483]
+22.487179487179485 mean sticky time
+28.794871794871796 mean unbound time
+Bound probability 0.4385, Std. Deviation: 0.06871135277375931, relative: 0.15669635752282624
+completion time: 0.699s
+-------------
+32 of 180 Sims done
+Time spent: 32.379. Estimated finish: 2016-03-24 00:36:54 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.695, 0.669, 0.581, 0.738]
+26.83 mean sticky time
+13.17 mean unbound time
+Bound probability 0.67075, Std. Deviation: 0.05737758708764251, relative: 0.08554243322794262
+completion time: 0.805s
+-------------
+33 of 180 Sims done
+Time spent: 33.197. Estimated finish: 2016-03-24 00:36:53 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.667, 0.634, 0.744, 0.674]
+26.398058252427184 mean sticky time
+12.436893203883495 mean unbound time
+Bound probability 0.67975, Std. Deviation: 0.04005230954639195, relative: 0.05892211775857587
+completion time: 0.797s
+-------------
+34 of 180 Sims done
+Time spent: 34.007. Estimated finish: 2016-03-24 00:36:52 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.783, 0.877, 0.844, 0.836]
+34.08163265306123 mean sticky time
+6.73469387755102 mean unbound time
+Bound probability 0.835, Std. Deviation: 0.03372684390808009, relative: 0.04039142983003604
+completion time: 0.964s
+-------------
+35 of 180 Sims done
+Time spent: 34.982. Estimated finish: 2016-03-24 00:36:52 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.347, 0.391, 0.329, 0.292]
+23.033898305084747 mean sticky time
+44.76271186440678 mean unbound time
+Bound probability 0.33975, Std. Deviation: 0.0356186397831248, relative: 0.10483779185614364
+completion time: 0.715s
+-------------
+36 of 180 Sims done
+Time spent: 35.712. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.567, 0.557, 0.488, 0.565]
+28.644736842105264 mean sticky time
+23.986842105263158 mean unbound time
+Bound probability 0.54425, Std. Deviation: 0.032690786163688375, relative: 0.06006575317168282
+completion time: 0.723s
+-------------
+37 of 180 Sims done
+Time spent: 36.446. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.52, 0.558, 0.608, 0.752]
+28.022988505747126 mean sticky time
+17.95402298850575 mean unbound time
+Bound probability 0.6094999999999999, Std. Deviation: 0.08799289744064573, relative: 0.14436898677710538
+completion time: 0.791s
+-------------
+38 of 180 Sims done
+Time spent: 37.254. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.597, 0.679, 0.654, 0.677]
+23.486486486486488 mean sticky time
+12.54954954954955 mean unbound time
+Bound probability 0.65175, Std. Deviation: 0.033101170674161996, relative: 0.0507881406584764
+completion time: 0.934s
+-------------
+39 of 180 Sims done
+Time spent: 38.201. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.82, 0.883, 0.812, 0.858]
+35.50526315789474 mean sticky time
+6.6 mean unbound time
+Bound probability 0.8432499999999999, Std. Deviation: 0.028786932799449123, relative: 0.03413807625194085
+completion time: 1.063s
+-------------
+40 of 180 Sims done
+Time spent: 39.278. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.527, 0.404, 0.489, 0.462]
+31.89830508474576 mean sticky time
+35.898305084745765 mean unbound time
+Bound probability 0.4705, Std. Deviation: 0.044802343688695574, relative: 0.09522283461996935
+completion time: 1.426s
+-------------
+41 of 180 Sims done
+Time spent: 40.718. Estimated finish: 2016-03-24 00:36:51 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.506, 0.797, 0.436, 0.429]
+31.420289855072465 mean sticky time
+26.55072463768116 mean unbound time
+Bound probability 0.5419999999999999, Std. Deviation: 0.1502714211019514, relative: 0.27725354446854505
+completion time: 1.249s
+-------------
+42 of 180 Sims done
+Time spent: 41.979. Estimated finish: 2016-03-24 00:36:52 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.806, 0.71, 0.724, 0.754]
+37.89873417721519 mean sticky time
+12.734177215189874 mean unbound time
+Bound probability 0.7485, Std. Deviation: 0.03680692869555951, relative: 0.04917425343428124
+completion time: 1.24s
+-------------
+43 of 180 Sims done
+Time spent: 43.23. Estimated finish: 2016-03-24 00:36:53 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.743, 0.644, 0.731, 0.759]
+35.51851851851852 mean sticky time
+13.864197530864198 mean unbound time
+Bound probability 0.71925, Std. Deviation: 0.04456666355023673, relative: 0.06196268828673859
+completion time: 1.257s
+-------------
+44 of 180 Sims done
+Time spent: 44.496. Estimated finish: 2016-03-24 00:36:54 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.916, 0.877, 0.85, 0.899]
+43.19512195121951 mean sticky time
+5.654320987654321 mean unbound time
+Bound probability 0.8855000000000001, Std. Deviation: 0.02472347063015225, relative: 0.027920350796332295
+completion time: 1.417s
+-------------
+45 of 180 Sims done
+Time spent: 45.925. Estimated finish: 2016-03-24 00:36:56 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.257, 0.511, 0.344, 0.408]
+28.14814814814815 mean sticky time
+45.925925925925924 mean unbound time
+Bound probability 0.38, Std. Deviation: 0.09269573884488974, relative: 0.243936154854973
+completion time: 1.161s
+-------------
+46 of 180 Sims done
+Time spent: 47.094. Estimated finish: 2016-03-24 00:36:56 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.592, 0.662, 0.396, 0.654]
+36.57142857142857 mean sticky time
+26.5 mean unbound time
+Bound probability 0.576, Std. Deviation: 0.10739646176667088, relative: 0.18645219056713697
+completion time: 1.422s
+-------------
+47 of 180 Sims done
+Time spent: 48.528. Estimated finish: 2016-03-24 00:36:58 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.818, 0.834, 0.669, 0.688]
+38.08860759493671 mean sticky time
+12.544303797468354 mean unbound time
+Bound probability 0.7522499999999999, Std. Deviation: 0.07427104078979907, relative: 0.09873185880996888
+completion time: 1.878s
+-------------
+48 of 180 Sims done
+Time spent: 50.416. Estimated finish: 2016-03-24 00:37:01 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.654, 0.821, 0.743, 0.735]
+34.741176470588236 mean sticky time
+12.31764705882353 mean unbound time
+Bound probability 0.73825, Std. Deviation: 0.05911588196077258, relative: 0.08007569517205904
+completion time: 1.808s
+-------------
+49 of 180 Sims done
+Time spent: 52.237. Estimated finish: 2016-03-24 00:37:04 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.862, 0.848, 0.878, 0.932]
+46.31578947368421 mean sticky time
+6.315789473684211 mean unbound time
+Bound probability 0.88, Std. Deviation: 0.03184336665618134, relative: 0.0361856439274788
+completion time: 1.616s
+-------------
+50 of 180 Sims done
+Time spent: 53.866. Estimated finish: 2016-03-24 00:37:06 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.405, 0.364, 0.476, 0.313]
+42.108108108108105 mean sticky time
+64.26315789473684 mean unbound time
+Bound probability 0.3895, Std. Deviation: 0.05963430220938281, relative: 0.15310475535143211
+completion time: 1.077s
+-------------
+51 of 180 Sims done
+Time spent: 54.96. Estimated finish: 2016-03-24 00:37:06 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.672, 0.427, 0.512, 0.62]
+32.333333333333336 mean sticky time
+26.014705882352942 mean unbound time
+Bound probability 0.55775, Std. Deviation: 0.09502203691775925, relative: 0.17036671791619767
+completion time: 1.187s
+-------------
+52 of 180 Sims done
+Time spent: 56.16. Estimated finish: 2016-03-24 00:37:06 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.707, 0.719, 0.674, 0.803]
+37.701298701298704 mean sticky time
+14.246753246753247 mean unbound time
+Bound probability 0.72575, Std. Deviation: 0.0475466875817864, relative: 0.06551386507996748
+completion time: 1.142s
+-------------
+53 of 180 Sims done
+Time spent: 57.312. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.767, 0.779, 0.687, 0.737]
+38.57142857142857 mean sticky time
+13.205128205128204 mean unbound time
+Bound probability 0.7425, Std. Deviation: 0.035507041555161975, relative: 0.047820931387423535
+completion time: 1.202s
+-------------
+54 of 180 Sims done
+Time spent: 58.524. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.951, 0.911, 0.885, 0.872]
+58.37096774193548 mean sticky time
+6.245901639344262 mean unbound time
+Bound probability 0.9047499999999999, Std. Deviation: 0.030169313880166367, relative: 0.033345469886892916
+completion time: 1.246s
+-------------
+55 of 180 Sims done
+Time spent: 59.778. Estimated finish: 2016-03-24 00:37:08 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.408, 0.35, 0.359, 0.285]
+28.612244897959183 mean sticky time
+51.96 mean unbound time
+Bound probability 0.3505, Std. Deviation: 0.04378641341786285, relative: 0.12492557323213369
+completion time: 1.055s
+-------------
+56 of 180 Sims done
+Time spent: 60.841. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.705, 0.536, 0.395, 0.62]
+32.69565217391305 mean sticky time
+25.27536231884058 mean unbound time
+Bound probability 0.5640000000000001, Std. Deviation: 0.11441372295314926, relative: 0.2028612109098391
+completion time: 1.005s
+-------------
+57 of 180 Sims done
+Time spent: 61.858. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.596, 0.707, 0.69, 0.646]
+32.18292682926829 mean sticky time
+16.597560975609756 mean unbound time
+Bound probability 0.65975, Std. Deviation: 0.04301380592321492, relative: 0.06519712909922687
+completion time: 1.104s
+-------------
+58 of 180 Sims done
+Time spent: 62.975. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.788, 0.783, 0.659, 0.704]
+36.675 mean sticky time
+13.160493827160494 mean unbound time
+Bound probability 0.7335, Std. Deviation: 0.05440817953212551, relative: 0.0741761138815617
+completion time: 1.032s
+-------------
+59 of 180 Sims done
+Time spent: 64.022. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.05
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.882, 0.836, 0.891, 0.846]
+44.87012987012987 mean sticky time
+7.077922077922078 mean unbound time
+Bound probability 0.86375, Std. Deviation: 0.02324193408475295, relative: 0.026908172601740027
+completion time: 1.125s
+-------------
+60 of 180 Sims done
+Time spent: 65.156. Estimated finish: 2016-03-24 00:37:07 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.488, 0.297, 0.378, 0.455]
+24.892307692307693 mean sticky time
+36.646153846153844 mean unbound time
+Bound probability 0.40449999999999997, Std. Deviation: 0.07379193722894122, relative: 0.18242753332247522
+completion time: 0.538s
+-------------
+61 of 180 Sims done
+Time spent: 65.704. Estimated finish: 2016-03-24 00:37:06 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.64, 0.516, 0.543, 0.529]
+28.20253164556962 mean sticky time
+22.15 mean unbound time
+Bound probability 0.557, Std. Deviation: 0.04886205071423016, relative: 0.0877236098998746
+completion time: 0.591s
+-------------
+62 of 180 Sims done
+Time spent: 66.307. Estimated finish: 2016-03-24 00:37:04 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.713, 0.548, 0.654, 0.739]
+24.34862385321101 mean sticky time
+12.34862385321101 mean unbound time
+Bound probability 0.6635, Std. Deviation: 0.07345236551670747, relative: 0.1107043941472607
+completion time: 0.683s
+-------------
+63 of 180 Sims done
+Time spent: 67.004. Estimated finish: 2016-03-24 00:37:03 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.696, 0.706, 0.764, 0.715]
+26.19090909090909 mean sticky time
+10.172727272727272 mean unbound time
+Bound probability 0.72025, Std. Deviation: 0.026137855688636764, relative: 0.036289976658988914
+completion time: 0.749s
+-------------
+64 of 180 Sims done
+Time spent: 67.766. Estimated finish: 2016-03-24 00:37:03 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.812, 0.773, 0.831, 0.834]
+27.083333333333332 mean sticky time
+6.25 mean unbound time
+Bound probability 0.8125, Std. Deviation: 0.024315632831575635, relative: 0.029926932715785396
+completion time: 1.098s
+-------------
+65 of 180 Sims done
+Time spent: 68.877. Estimated finish: 2016-03-24 00:37:03 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.469, 0.38, 0.411, 0.209]
+19.32894736842105 mean sticky time
+33.30263157894737 mean unbound time
+Bound probability 0.36725, Std. Deviation: 0.09678939766317382, relative: 0.26355179758522485
+completion time: 0.555s
+-------------
+66 of 180 Sims done
+Time spent: 69.446. Estimated finish: 2016-03-24 00:37:01 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.385, 0.496, 0.493, 0.399]
+18.46875 mean sticky time
+22.95876288659794 mean unbound time
+Bound probability 0.44325000000000003, Std. Deviation: 0.05149939320030867, relative: 0.11618588426465576
+completion time: 0.709s
+-------------
+67 of 180 Sims done
+Time spent: 70.163. Estimated finish: 2016-03-24 00:37:00 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.562, 0.553, 0.676, 0.675]
+22.833333333333332 mean sticky time
+14.073394495412844 mean unbound time
+Bound probability 0.6165, Std. Deviation: 0.05908680055646946, relative: 0.09584233666905022
+completion time: 0.852s
+-------------
+68 of 180 Sims done
+Time spent: 71.027. Estimated finish: 2016-03-24 00:37:00 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.704, 0.755, 0.743, 0.636]
+27.02857142857143 mean sticky time
+11.066666666666666 mean unbound time
+Bound probability 0.7095, Std. Deviation: 0.04643543905251677, relative: 0.06544811705781081
+completion time: 0.961s
+-------------
+69 of 180 Sims done
+Time spent: 71.998. Estimated finish: 2016-03-24 00:37:00 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.858, 0.82, 0.886, 0.826]
+31.9811320754717 mean sticky time
+5.700934579439252 mean unbound time
+Bound probability 0.8475, Std. Deviation: 0.02650943228362315, relative: 0.0312795661163695
+completion time: 1.1s
+-------------
+70 of 180 Sims done
+Time spent: 73.109. Estimated finish: 2016-03-24 00:37:00 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.224, 0.215, 0.345, 0.366]
+18.548387096774192 mean sticky time
+45.23809523809524 mean unbound time
+Bound probability 0.2875, Std. Deviation: 0.06847809868855881, relative: 0.23818469109063936
+completion time: 0.499s
+-------------
+71 of 180 Sims done
+Time spent: 73.618. Estimated finish: 2016-03-24 00:36:59 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.471, 0.394, 0.49, 0.569]
+19.835051546391753 mean sticky time
+21.4020618556701 mean unbound time
+Bound probability 0.481, Std. Deviation: 0.062237448533820836, relative: 0.12939178489359843
+completion time: 0.58s
+-------------
+72 of 180 Sims done
+Time spent: 74.206. Estimated finish: 2016-03-24 00:36:57 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.621, 0.523, 0.555, 0.659]
+22.245283018867923 mean sticky time
+15.49056603773585 mean unbound time
+Bound probability 0.5895000000000001, Std. Deviation: 0.05346727971385864, relative: 0.09069937186405196
+completion time: 0.625s
+-------------
+73 of 180 Sims done
+Time spent: 74.841. Estimated finish: 2016-03-24 00:36:56 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.702, 0.786, 0.728, 0.629]
+27.35576923076923 mean sticky time
+11.10576923076923 mean unbound time
+Bound probability 0.71125, Std. Deviation: 0.05638871784319981, relative: 0.07928114986741626
+completion time: 0.644s
+-------------
+74 of 180 Sims done
+Time spent: 75.499. Estimated finish: 2016-03-24 00:36:56 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.793, 0.741, 0.801, 0.636]
+25.39316239316239 mean sticky time
+8.870689655172415 mean unbound time
+Bound probability 0.74275, Std. Deviation: 0.06579656146030734, relative: 0.08858507096641849
+completion time: 0.852s
+-------------
+75 of 180 Sims done
+Time spent: 76.363. Estimated finish: 2016-03-24 00:36:55 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.343, 0.465, 0.302, 0.467]
+20.75 mean sticky time
+31.467532467532468 mean unbound time
+Bound probability 0.39425000000000004, Std. Deviation: 0.07320305663017086, relative: 0.18567674478166354
+completion time: 0.562s
+-------------
+76 of 180 Sims done
+Time spent: 76.936. Estimated finish: 2016-03-24 00:36:54 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.381, 0.381, 0.418, 0.447]
+22.28767123287671 mean sticky time
+32.067567567567565 mean unbound time
+Bound probability 0.40675, Std. Deviation: 0.027716195626384225, relative: 0.06814061616812347
+completion time: 0.569s
+-------------
+77 of 180 Sims done
+Time spent: 77.514. Estimated finish: 2016-03-24 00:36:53 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.635, 0.505, 0.695, 0.697]
+24.823529411764707 mean sticky time
+14.392156862745098 mean unbound time
+Bound probability 0.633, Std. Deviation: 0.07798717843338093, relative: 0.12320249357564128
+completion time: 0.605s
+-------------
+78 of 180 Sims done
+Time spent: 78.128. Estimated finish: 2016-03-24 00:36:52 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.765, 0.604, 0.616, 0.598]
+24.6 mean sticky time
+13.495238095238095 mean unbound time
+Bound probability 0.6457499999999999, Std. Deviation: 0.06915336217422838, relative: 0.10708999175257977
+completion time: 0.617s
+-------------
+79 of 180 Sims done
+Time spent: 78.754. Estimated finish: 2016-03-24 00:36:51 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.758, 0.881, 0.785, 0.827]
+32.18811881188119 mean sticky time
+7.3431372549019605 mean unbound time
+Bound probability 0.81275, Std. Deviation: 0.0464455326161731, relative: 0.057146149020206836
+completion time: 0.76s
+-------------
+80 of 180 Sims done
+Time spent: 79.522. Estimated finish: 2016-03-24 00:36:51 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.361, 0.27, 0.348, 0.568]
+23.8 mean sticky time
+37.738461538461536 mean unbound time
+Bound probability 0.38675, Std. Deviation: 0.11028004125860669, relative: 0.28514554947280335
+completion time: 0.733s
+-------------
+81 of 180 Sims done
+Time spent: 80.263. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.531, 0.528, 0.627, 0.53]
+26.38095238095238 mean sticky time
+20.988235294117647 mean unbound time
+Bound probability 0.554, Std. Deviation: 0.04216040796766558, relative: 0.07610181943621945
+completion time: 0.793s
+-------------
+82 of 180 Sims done
+Time spent: 81.065. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.589, 0.699, 0.553, 0.676]
+28.93103448275862 mean sticky time
+17.04597701149425 mean unbound time
+Bound probability 0.62925, Std. Deviation: 0.060176303475703775, relative: 0.09563178939325193
+completion time: 0.863s
+-------------
+83 of 180 Sims done
+Time spent: 81.94. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.716, 0.769, 0.716, 0.716]
+27.5188679245283 mean sticky time
+10.121495327102803 mean unbound time
+Bound probability 0.72925, Std. Deviation: 0.022949673200287644, relative: 0.0314702409328593
+completion time: 0.877s
+-------------
+84 of 180 Sims done
+Time spent: 82.826. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.821, 0.839, 0.89, 0.787]
+30.336363636363636 mean sticky time
+6.027272727272727 mean unbound time
+Bound probability 0.8342499999999999, Std. Deviation: 0.03721138938550938, relative: 0.044604602200191044
+completion time: 1.071s
+-------------
+85 of 180 Sims done
+Time spent: 83.929. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.322, 0.404, 0.625, 0.464]
+30.76271186440678 mean sticky time
+36.416666666666664 mean unbound time
+Bound probability 0.45375, Std. Deviation: 0.11097831995484524, relative: 0.24458031945971404
+completion time: 0.725s
+-------------
+86 of 180 Sims done
+Time spent: 84.666. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.477, 0.613, 0.461, 0.355]
+24.126582278481013 mean sticky time
+26.50632911392405 mean unbound time
+Bound probability 0.4765, Std. Deviation: 0.09169923663804405, relative: 0.19244330878917956
+completion time: 0.773s
+-------------
+87 of 180 Sims done
+Time spent: 85.448. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.645, 0.651, 0.718, 0.665]
+33.4875 mean sticky time
+16.308641975308642 mean unbound time
+Bound probability 0.6697500000000001, Std. Deviation: 0.02878693279944911, relative: 0.04298160925636298
+completion time: 0.824s
+-------------
+88 of 180 Sims done
+Time spent: 86.281. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.7, 0.769, 0.733, 0.649]
+30.329787234042552 mean sticky time
+12.094736842105263 mean unbound time
+Bound probability 0.71275, Std. Deviation: 0.04416092730004659, relative: 0.06195850901444628
+completion time: 0.878s
+-------------
+89 of 180 Sims done
+Time spent: 87.167. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.822, 0.88, 0.824, 0.89]
+37.130434782608695 mean sticky time
+6.3478260869565215 mean unbound time
+Bound probability 0.854, Std. Deviation: 0.0312089730686545, relative: 0.036544464951586066
+completion time: 1.082s
+-------------
+90 of 180 Sims done
+Time spent: 88.257. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.474, 0.379, 0.359, 0.482]
+28.71186440677966 mean sticky time
+38.43333333333333 mean unbound time
+Bound probability 0.4235, Std. Deviation: 0.055029537523043015, relative: 0.12993987608746876
+completion time: 0.649s
+-------------
+91 of 180 Sims done
+Time spent: 88.928. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.457, 0.6, 0.486, 0.721]
+30.186666666666667 mean sticky time
+23.14666666666667 mean unbound time
+Bound probability 0.566, Std. Deviation: 0.10423770910759693, relative: 0.18416556379434088
+completion time: 0.676s
+-------------
+92 of 180 Sims done
+Time spent: 89.613. Estimated finish: 2016-03-24 00:36:47 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.773, 0.728, 0.754, 0.658]
+34.27058823529412 mean sticky time
+12.63953488372093 mean unbound time
+Bound probability 0.72825, Std. Deviation: 0.04359114015485256, relative: 0.059857384352698335
+completion time: 0.729s
+-------------
+93 of 180 Sims done
+Time spent: 90.352. Estimated finish: 2016-03-24 00:36:47 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.732, 0.752, 0.628, 0.744]
+27.46153846153846 mean sticky time
+10.895238095238096 mean unbound time
+Bound probability 0.714, Std. Deviation: 0.0501597448159378, relative: 0.0702517434396888
+completion time: 0.759s
+-------------
+94 of 180 Sims done
+Time spent: 91.121. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.842, 0.825, 0.857, 0.798]
+34.604166666666664 mean sticky time
+7.0625 mean unbound time
+Bound probability 0.8305, Std. Deviation: 0.021914607000811104, relative: 0.026387245034089228
+completion time: 0.879s
+-------------
+95 of 180 Sims done
+Time spent: 92.009. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.459, 0.471, 0.344, 0.321]
+30.673076923076923 mean sticky time
+46.25 mean unbound time
+Bound probability 0.39875, Std. Deviation: 0.06688189216820947, relative: 0.16772888318046264
+completion time: 0.666s
+-------------
+96 of 180 Sims done
+Time spent: 92.684. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.527, 0.501, 0.578, 0.596]
+27.185185185185187 mean sticky time
+21.926829268292682 mean unbound time
+Bound probability 0.5505, Std. Deviation: 0.03817394399325276, relative: 0.06934413077793417
+completion time: 0.689s
+-------------
+97 of 180 Sims done
+Time spent: 93.383. Estimated finish: 2016-03-24 00:36:45 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.622, 0.56, 0.649, 0.464]
+24.945652173913043 mean sticky time
+18.532608695652176 mean unbound time
+Bound probability 0.57375, Std. Deviation: 0.07110687378868515, relative: 0.12393354908703294
+completion time: 0.727s
+-------------
+98 of 180 Sims done
+Time spent: 94.139. Estimated finish: 2016-03-24 00:36:45 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.602, 0.692, 0.544, 0.651]
+26.763440860215052 mean sticky time
+16.247311827956988 mean unbound time
+Bound probability 0.62225, Std. Deviation: 0.055282795696310415, relative: 0.088843384003713
+completion time: 0.76s
+-------------
+99 of 180 Sims done
+Time spent: 94.906. Estimated finish: 2016-03-24 00:36:44 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.788, 0.822, 0.835, 0.756]
+28.580357142857142 mean sticky time
+7.133928571428571 mean unbound time
+Bound probability 0.8002499999999999, Std. Deviation: 0.03077641142173659, relative: 0.038458495997171625
+completion time: 0.887s
+-------------
+100 of 180 Sims done
+Time spent: 95.801. Estimated finish: 2016-03-24 00:36:44 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.572, 0.466, 0.467, 0.514]
+37.388888888888886 mean sticky time
+36.018181818181816 mean unbound time
+Bound probability 0.50475, Std. Deviation: 0.04340146886915231, relative: 0.08598607007261477
+completion time: 1.146s
+-------------
+101 of 180 Sims done
+Time spent: 96.955. Estimated finish: 2016-03-24 00:36:45 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.577, 0.511, 0.55, 0.59]
+31.82857142857143 mean sticky time
+25.314285714285713 mean unbound time
+Bound probability 0.557, Std. Deviation: 0.030224162519414805, relative: 0.0542624102682492
+completion time: 1.198s
+-------------
+102 of 180 Sims done
+Time spent: 98.162. Estimated finish: 2016-03-24 00:36:45 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.597, 0.712, 0.647, 0.619]
+30.294117647058822 mean sticky time
+16.764705882352942 mean unbound time
+Bound probability 0.64375, Std. Deviation: 0.04320517908769734, relative: 0.06711484130127741
+completion time: 1.356s
+-------------
+103 of 180 Sims done
+Time spent: 99.528. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.726, 0.761, 0.728, 0.868]
+40.56578947368421 mean sticky time
+12.06578947368421 mean unbound time
+Bound probability 0.7707499999999999, Std. Deviation: 0.05784191819087608, relative: 0.07504627725056903
+completion time: 1.25s
+-------------
+104 of 180 Sims done
+Time spent: 100.79. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.836, 0.831, 0.84, 0.846]
+38.98837209302326 mean sticky time
+7.436781609195402 mean unbound time
+Bound probability 0.8382499999999999, Std. Deviation: 0.005494315243958983, relative: 0.006554506703201889
+completion time: 1.351s
+-------------
+105 of 180 Sims done
+Time spent: 102.148. Estimated finish: 2016-03-24 00:36:47 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.609, 0.236, 0.504, 0.566]
+29.015151515151516 mean sticky time
+31.119402985074625 mean unbound time
+Bound probability 0.47875, Std. Deviation: 0.14503684876609804, relative: 0.30294903136521784
+completion time: 1.143s
+-------------
+106 of 180 Sims done
+Time spent: 103.3. Estimated finish: 2016-03-24 00:36:47 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.417, 0.53, 0.488, 0.753]
+30.38888888888889 mean sticky time
+25.166666666666668 mean unbound time
+Bound probability 0.547, Std. Deviation: 0.12560453813457537, relative: 0.22962438415827305
+completion time: 1.177s
+-------------
+107 of 180 Sims done
+Time spent: 104.487. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.747, 0.622, 0.604, 0.766]
+37.52054794520548 mean sticky time
+17.273972602739725 mean unbound time
+Bound probability 0.68475, Std. Deviation: 0.07234422921007591, relative: 0.10565057204830364
+completion time: 1.214s
+-------------
+108 of 180 Sims done
+Time spent: 105.709. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.754, 0.66, 0.73, 0.816]
+35.23809523809524 mean sticky time
+12.53012048192771 mean unbound time
+Bound probability 0.74, Std. Deviation: 0.055839054433254834, relative: 0.07545818166656058
+completion time: 1.269s
+-------------
+109 of 180 Sims done
+Time spent: 106.992. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.901, 0.845, 0.922, 0.838]
+46.74666666666667 mean sticky time
+6.586666666666667 mean unbound time
+Bound probability 0.8765000000000001, Std. Deviation: 0.03586432768085863, relative: 0.04091765850639889
+completion time: 1.326s
+-------------
+110 of 180 Sims done
+Time spent: 108.327. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.472, 0.552, 0.17, 0.413]
+30.32075471698113 mean sticky time
+44.31481481481482 mean unbound time
+Bound probability 0.40175, Std. Deviation: 0.14260500517162783, relative: 0.3549595648329255
+completion time: 0.959s
+-------------
+111 of 180 Sims done
+Time spent: 109.295. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.684, 0.619, 0.573, 0.651]
+36.6231884057971 mean sticky time
+21.347826086956523 mean unbound time
+Bound probability 0.63175, Std. Deviation: 0.040971789074923284, relative: 0.06485443462591735
+completion time: 1.011s
+-------------
+112 of 180 Sims done
+Time spent: 110.314. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.674, 0.726, 0.65, 0.732]
+44.87096774193548 mean sticky time
+19.64516129032258 mean unbound time
+Bound probability 0.6955, Std. Deviation: 0.0346229692545281, relative: 0.04978140798638117
+completion time: 1.016s
+-------------
+113 of 180 Sims done
+Time spent: 111.34. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.601, 0.672, 0.664, 0.71]
+37.81428571428572 mean sticky time
+19.32857142857143 mean unbound time
+Bound probability 0.6617500000000001, Std. Deviation: 0.039143166708890585, relative: 0.05915098860429253
+completion time: 1.021s
+-------------
+114 of 180 Sims done
+Time spent: 112.369. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.859, 0.885, 0.902, 0.918]
+57.483870967741936 mean sticky time
+7.032258064516129 mean unbound time
+Bound probability 0.891, Std. Deviation: 0.02185177338341218, relative: 0.024524998185647788
+completion time: 1.103s
+-------------
+115 of 180 Sims done
+Time spent: 113.483. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.318, 0.613, 0.351, 0.346]
+34.638297872340424 mean sticky time
+49.416666666666664 mean unbound time
+Bound probability 0.40700000000000003, Std. Deviation: 0.11959724077084721, relative: 0.293850714424686
+completion time: 0.947s
+-------------
+116 of 180 Sims done
+Time spent: 114.439. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.344, 0.608, 0.339, 0.426]
+29.603448275862068 mean sticky time
+39.36206896551724 mean unbound time
+Bound probability 0.42924999999999996, Std. Deviation: 0.10882870715027354, relative: 0.25353222399597797
+completion time: 0.989s
+-------------
+117 of 180 Sims done
+Time spent: 115.486. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.64, 0.603, 0.609, 0.565]
+40.28333333333333 mean sticky time
+26.383333333333333 mean unbound time
+Bound probability 0.60425, Std. Deviation: 0.02665872277510686, relative: 0.044118697186771805
+completion time: 1.007s
+-------------
+118 of 180 Sims done
+Time spent: 116.506. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.586, 0.767, 0.771, 0.684]
+40.69565217391305 mean sticky time
+17.02857142857143 mean unbound time
+Bound probability 0.7020000000000001, Std. Deviation: 0.07544203072558428, relative: 0.10746728023587503
+completion time: 1.032s
+-------------
+119 of 180 Sims done
+Time spent: 117.55. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.1
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.86, 0.901, 0.852, 0.86]
+51.0735294117647 mean sticky time
+7.75 mean unbound time
+Bound probability 0.86825, Std. Deviation: 0.019188212527486783, relative: 0.022099870460681584
+completion time: 1.095s
+-------------
+120 of 180 Sims done
+Time spent: 118.655. Estimated finish: 2016-03-24 00:36:50 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.411, 0.355, 0.238, 0.318]
+24.036363636363635 mean sticky time
+48.69090909090909 mean unbound time
+Bound probability 0.3305, Std. Deviation: 0.06283510165504627, relative: 0.1901213363238919
+completion time: 0.547s
+-------------
+121 of 180 Sims done
+Time spent: 119.211. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.66, 0.552, 0.551, 0.472]
+26.607142857142858 mean sticky time
+21.011904761904763 mean unbound time
+Bound probability 0.5587500000000001, Std. Deviation: 0.06686319989351394, relative: 0.11966568213604283
+completion time: 0.571s
+-------------
+122 of 180 Sims done
+Time spent: 119.793. Estimated finish: 2016-03-24 00:36:49 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.594, 0.586, 0.541, 0.7]
+26.604395604395606 mean sticky time
+17.16304347826087 mean unbound time
+Bound probability 0.6052500000000001, Std. Deviation: 0.05831541391433313, relative: 0.09634930014759706
+completion time: 0.649s
+-------------
+123 of 180 Sims done
+Time spent: 120.451. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.677, 0.574, 0.773, 0.691]
+24.45945945945946 mean sticky time
+11.576576576576576 mean unbound time
+Bound probability 0.67875, Std. Deviation: 0.070726144388055, relative: 0.10420058105054143
+completion time: 0.666s
+-------------
+124 of 180 Sims done
+Time spent: 121.125. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.854, 0.776, 0.809, 0.8]
+26.768595041322314 mean sticky time
+6.289256198347108 mean unbound time
+Bound probability 0.80975, Std. Deviation: 0.028252212302756024, relative: 0.03489004297963078
+completion time: 0.949s
+-------------
+125 of 180 Sims done
+Time spent: 122.084. Estimated finish: 2016-03-24 00:36:48 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.343, 0.436, 0.375, 0.34]
+23.34375 mean sticky time
+38.55384615384615 mean unbound time
+Bound probability 0.3735, Std. Deviation: 0.03860375629391522, relative: 0.1033567772260113
+completion time: 0.529s
+-------------
+126 of 180 Sims done
+Time spent: 122.621. Estimated finish: 2016-03-24 00:36:47 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.618, 0.549, 0.535, 0.483]
+24.55056179775281 mean sticky time
+20.166666666666668 mean unbound time
+Bound probability 0.54625, Std. Deviation: 0.04817351450745523, relative: 0.08818950024248097
+completion time: 0.553s
+-------------
+127 of 180 Sims done
+Time spent: 123.221. Estimated finish: 2016-03-24 00:36:47 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.662, 0.675, 0.492, 0.64]
+26.26595744680851 mean sticky time
+16.28723404255319 mean unbound time
+Bound probability 0.6172500000000001, Std. Deviation: 0.07338724344189528, relative: 0.11889387353891497
+completion time: 0.624s
+-------------
+128 of 180 Sims done
+Time spent: 123.855. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.563, 0.621, 0.722, 0.684]
+26.428571428571427 mean sticky time
+14.242424242424242 mean unbound time
+Bound probability 0.6475, Std. Deviation: 0.060673305497558006, relative: 0.0937039467143753
+completion time: 0.669s
+-------------
+129 of 180 Sims done
+Time spent: 124.532. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.788, 0.777, 0.78, 0.8]
+25.778688524590162 mean sticky time
+7.008196721311475 mean unbound time
+Bound probability 0.7862499999999999, Std. Deviation: 0.00889873586527885, relative: 0.011317947046459588
+completion time: 0.896s
+-------------
+130 of 180 Sims done
+Time spent: 125.442. Estimated finish: 2016-03-24 00:36:46 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.496, 0.359, 0.505, 0.223]
+22.614285714285714 mean sticky time
+34.04225352112676 mean unbound time
+Bound probability 0.39575, Std. Deviation: 0.11530259103766922, relative: 0.2913520935885514
+completion time: 0.562s
+-------------
+131 of 180 Sims done
+Time spent: 126.012. Estimated finish: 2016-03-24 00:36:45 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.508, 0.575, 0.445, 0.448]
+23.24705882352941 mean sticky time
+23.53488372093023 mean unbound time
+Bound probability 0.494, Std. Deviation: 0.053089546993735005, relative: 0.10746871861079961
+completion time: 0.566s
+-------------
+132 of 180 Sims done
+Time spent: 126.586. Estimated finish: 2016-03-24 00:36:45 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.532, 0.48, 0.748, 0.561]
+25.788888888888888 mean sticky time
+18.655555555555555 mean unbound time
+Bound probability 0.58025, Std. Deviation: 0.10110483420687658, relative: 0.17424357467794324
+completion time: 0.592s
+-------------
+133 of 180 Sims done
+Time spent: 127.186. Estimated finish: 2016-03-24 00:36:44 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.697, 0.663, 0.673, 0.666]
+28.71276595744681 mean sticky time
+13.840425531914894 mean unbound time
+Bound probability 0.67475, Std. Deviation: 0.01334868907421246, relative: 0.019783162762819505
+completion time: 0.621s
+-------------
+134 of 180 Sims done
+Time spent: 127.815. Estimated finish: 2016-03-24 00:36:44 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.814, 0.887, 0.803, 0.859]
+43.11538461538461 mean sticky time
+8.166666666666666 mean unbound time
+Bound probability 0.84075, Std. Deviation: 0.03395861451826326, relative: 0.040390858778784726
+completion time: 0.755s
+-------------
+135 of 180 Sims done
+Time spent: 128.578. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.438, 0.308, 0.365, 0.427]
+22.28985507246377 mean sticky time
+35.17142857142857 mean unbound time
+Bound probability 0.3845, Std. Deviation: 0.05220392705534709, relative: 0.13577094162639036
+completion time: 0.576s
+-------------
+136 of 180 Sims done
+Time spent: 129.163. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.401, 0.523, 0.586, 0.442]
+24.70886075949367 mean sticky time
+25.924050632911392 mean unbound time
+Bound probability 0.488, Std. Deviation: 0.0716135462046113, relative: 0.1467490700914166
+completion time: 0.565s
+-------------
+137 of 180 Sims done
+Time spent: 129.738. Estimated finish: 2016-03-24 00:36:42 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.659, 0.74, 0.706, 0.601]
+36.08 mean sticky time
+17.253333333333334 mean unbound time
+Bound probability 0.6765, Std. Deviation: 0.052223079189186075, relative: 0.07719597810670521
+completion time: 0.593s
+-------------
+138 of 180 Sims done
+Time spent: 130.344. Estimated finish: 2016-03-24 00:36:42 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.712, 0.615, 0.612, 0.6]
+30.59036144578313 mean sticky time
+17.392857142857142 mean unbound time
+Bound probability 0.63475, Std. Deviation: 0.044952057794944156, relative: 0.07081852350522908
+completion time: 0.615s
+-------------
+139 of 180 Sims done
+Time spent: 130.966. Estimated finish: 2016-03-24 00:36:42 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 0% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.748, 0.884, 0.786, 0.805]
+46.042857142857144 mean sticky time
+11.26086956521739 mean unbound time
+Bound probability 0.8057500000000001, Std. Deviation: 0.049620434298784606, relative: 0.0615829156671233
+completion time: 0.753s
+-------------
+140 of 180 Sims done
+Time spent: 131.73. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.376, 0.401, 0.383, 0.295]
+23.852459016393443 mean sticky time
+41.721311475409834 mean unbound time
+Bound probability 0.36375, Std. Deviation: 0.04072698736710095, relative: 0.1119642264387655
+completion time: 0.747s
+-------------
+141 of 180 Sims done
+Time spent: 132.485. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.399, 0.404, 0.441, 0.604]
+27.582089552238806 mean sticky time
+32.11940298507463 mean unbound time
+Bound probability 0.46199999999999997, Std. Deviation: 0.0835733211018923, relative: 0.18089463441968032
+completion time: 0.829s
+-------------
+142 of 180 Sims done
+Time spent: 133.322. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.659, 0.628, 0.803, 0.667]
+30.296703296703296 mean sticky time
+13.659340659340659 mean unbound time
+Bound probability 0.6892499999999999, Std. Deviation: 0.06726951389745582, relative: 0.0975981340550683
+completion time: 0.861s
+-------------
+143 of 180 Sims done
+Time spent: 134.223. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.724, 0.707, 0.718, 0.561]
+28.829787234042552 mean sticky time
+13.72340425531915 mean unbound time
+Bound probability 0.6775, Std. Deviation: 0.06753702688155583, relative: 0.09968564853366174
+completion time: 0.963s
+-------------
+144 of 180 Sims done
+Time spent: 135.197. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.849, 0.84, 0.836, 0.81]
+41.17283950617284 mean sticky time
+8.209876543209877 mean unbound time
+Bound probability 0.83375, Std. Deviation: 0.014497844667397945, relative: 0.017388719241256907
+completion time: 1.254s
+-------------
+145 of 180 Sims done
+Time spent: 136.461. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.335, 0.435, 0.286, 0.597]
+28.5 mean sticky time
+39.779661016949156 mean unbound time
+Bound probability 0.41325, Std. Deviation: 0.11890411052608736, relative: 0.2877292450722017
+completion time: 0.74s
+-------------
+146 of 180 Sims done
+Time spent: 137.213. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.558, 0.633, 0.371, 0.515]
+28.45205479452055 mean sticky time
+25.986486486486488 mean unbound time
+Bound probability 0.51925, Std. Deviation: 0.09544206357785859, relative: 0.18380753698191352
+completion time: 0.801s
+-------------
+147 of 180 Sims done
+Time spent: 138.023. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.601, 0.556, 0.676, 0.696]
+30.46987951807229 mean sticky time
+17.72289156626506 mean unbound time
+Bound probability 0.63225, Std. Deviation: 0.0564994468999476, relative: 0.08936250992478861
+completion time: 0.863s
+-------------
+148 of 180 Sims done
+Time spent: 138.894. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.526, 0.727, 0.739, 0.713]
+28.177083333333332 mean sticky time
+13.489583333333334 mean unbound time
+Bound probability 0.67625, Std. Deviation: 0.0872335227994376, relative: 0.12899596717107223
+completion time: 0.878s
+-------------
+149 of 180 Sims done
+Time spent: 139.781. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.823, 0.89, 0.788, 0.786]
+31.60576923076923 mean sticky time
+6.79047619047619 mean unbound time
+Bound probability 0.8217500000000001, Std. Deviation: 0.042061710616664166, relative: 0.05118553162964912
+completion time: 1.147s
+-------------
+150 of 180 Sims done
+Time spent: 140.937. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.409, 0.285, 0.387, 0.442]
+37.146341463414636 mean sticky time
+60.41463414634146 mean unbound time
+Bound probability 0.38075, Std. Deviation: 0.05864458628040615, relative: 0.15402386416390323
+completion time: 0.66s
+-------------
+151 of 180 Sims done
+Time spent: 141.606. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.462, 0.326, 0.477, 0.418]
+26.714285714285715 mean sticky time
+36.203125 mean unbound time
+Bound probability 0.42075, Std. Deviation: 0.05884460468046327, relative: 0.13985645794524842
+completion time: 0.778s
+-------------
+152 of 180 Sims done
+Time spent: 142.394. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.636, 0.732, 0.742, 0.575]
+40.07462686567164 mean sticky time
+19.62686567164179 mean unbound time
+Bound probability 0.6712499999999999, Std. Deviation: 0.06928699372898207, relative: 0.10322084726850217
+completion time: 0.718s
+-------------
+153 of 180 Sims done
+Time spent: 143.12. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.632, 0.502, 0.679, 0.655]
+34.27777777777778 mean sticky time
+21.27777777777778 mean unbound time
+Bound probability 0.617, Std. Deviation: 0.06844340727929901, relative: 0.11092934729221882
+completion time: 0.783s
+-------------
+154 of 180 Sims done
+Time spent: 143.915. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.812, 0.854, 0.837, 0.847]
+54.91803278688525 mean sticky time
+10.655737704918034 mean unbound time
+Bound probability 0.8375, Std. Deviation: 0.01591383046283952, relative: 0.019001588612345695
+completion time: 0.881s
+-------------
+155 of 180 Sims done
+Time spent: 144.803. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.454, 0.261, 0.453, 0.596]
+33.92307692307692 mean sticky time
+42.18867924528302 mean unbound time
+Bound probability 0.44100000000000006, Std. Deviation: 0.11909869856551748, relative: 0.27006507611228453
+completion time: 0.66s
+-------------
+156 of 180 Sims done
+Time spent: 145.517. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.541, 0.454, 0.373, 0.608]
+33.49152542372882 mean sticky time
+34.30508474576271 mean unbound time
+Bound probability 0.494, Std. Deviation: 0.0886651002367899, relative: 0.1794840085764978
+completion time: 0.724s
+-------------
+157 of 180 Sims done
+Time spent: 146.248. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.64, 0.69, 0.696, 0.522]
+36.4 mean sticky time
+20.742857142857144 mean unbound time
+Bound probability 0.637, Std. Deviation: 0.06986415389883424, relative: 0.10967685070460634
+completion time: 0.74s
+-------------
+158 of 180 Sims done
+Time spent: 146.999. Estimated finish: 2016-03-24 00:36:39 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.611, 0.578, 0.79, 0.727]
+37.583333333333336 mean sticky time
+17.97222222222222 mean unbound time
+Bound probability 0.6765, Std. Deviation: 0.08576858399204224, relative: 0.12678282925652953
+completion time: 0.918s
+-------------
+159 of 180 Sims done
+Time spent: 147.926. Estimated finish: 2016-03-24 00:36:39 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 10% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.719, 0.718, 0.801, 0.756]
+49.9 mean sticky time
+17.050847457627118 mean unbound time
+Bound probability 0.7484999999999999, Std. Deviation: 0.03395953474357389, relative: 0.045370119897894315
+completion time: 0.89s
+-------------
+160 of 180 Sims done
+Time spent: 148.823. Estimated finish: 2016-03-24 00:36:39 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.449, 0.347, 0.462, 0.537]
+36.63265306122449 mean sticky time
+45.0 mean unbound time
+Bound probability 0.44875, Std. Deviation: 0.06766969410304736, relative: 0.15079597571709719
+completion time: 1.129s
+-------------
+161 of 180 Sims done
+Time spent: 149.961. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.501, 0.703, 0.603, 0.491]
+37.67213114754098 mean sticky time
+27.901639344262296 mean unbound time
+Bound probability 0.5745, Std. Deviation: 0.08616698903872641, relative: 0.14998605576801813
+completion time: 1.282s
+-------------
+162 of 180 Sims done
+Time spent: 151.3. Estimated finish: 2016-03-24 00:36:40 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.595, 0.734, 0.703, 0.587]
+37.41428571428571 mean sticky time
+19.728571428571428 mean unbound time
+Bound probability 0.6547499999999999, Std. Deviation: 0.06474710418234934, relative: 0.09888828435639457
+completion time: 1.356s
+-------------
+163 of 180 Sims done
+Time spent: 152.664. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.63, 0.751, 0.715, 0.778]
+36.84615384615385 mean sticky time
+14.435897435897436 mean unbound time
+Bound probability 0.7185, Std. Deviation: 0.05576961538328914, relative: 0.07761950644855829
+completion time: 1.242s
+-------------
+164 of 180 Sims done
+Time spent: 153.916. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.863, 0.879, 0.857, 0.854]
+41.107142857142854 mean sticky time
+6.511904761904762 mean unbound time
+Bound probability 0.8632500000000001, Std. Deviation: 0.00965336728815392, relative: 0.01118258591155971
+completion time: 1.361s
+-------------
+165 of 180 Sims done
+Time spent: 155.289. Estimated finish: 2016-03-24 00:36:41 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.507, 0.431, 0.53, 0.444]
+37.490196078431374 mean sticky time
+40.15384615384615 mean unbound time
+Bound probability 0.478, Std. Deviation: 0.04156320488124082, relative: 0.08695231146703102
+completion time: 1.128s
+-------------
+166 of 180 Sims done
+Time spent: 156.475. Estimated finish: 2016-03-24 00:36:42 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.634, 0.669, 0.699, 0.693]
+44.916666666666664 mean sticky time
+21.75 mean unbound time
+Bound probability 0.67375, Std. Deviation: 0.025547749411640917, relative: 0.03791873753119246
+completion time: 1.175s
+-------------
+167 of 180 Sims done
+Time spent: 157.658. Estimated finish: 2016-03-24 00:36:42 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.664, 0.705, 0.763, 0.528]
+45.08474576271186 mean sticky time
+22.71186440677966 mean unbound time
+Bound probability 0.665, Std. Deviation: 0.08656500447640489, relative: 0.130172939062263
+completion time: 1.289s
+-------------
+168 of 180 Sims done
+Time spent: 158.958. Estimated finish: 2016-03-24 00:36:42 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.754, 0.808, 0.792, 0.739]
+42.36986301369863 mean sticky time
+12.424657534246576 mean unbound time
+Bound probability 0.77325, Std. Deviation: 0.027851166941440738, relative: 0.03601832129510603
+completion time: 1.215s
+-------------
+169 of 180 Sims done
+Time spent: 160.182. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.883, 0.883, 0.843, 0.887]
+42.63414634146341 mean sticky time
+6.146341463414634 mean unbound time
+Bound probability 0.874, Std. Deviation: 0.017972200755611446, relative: 0.02056315875928083
+completion time: 1.38s
+-------------
+170 of 180 Sims done
+Time spent: 161.575. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.387, 0.259, 0.217, 0.352]
+57.857142857142854 mean sticky time
+126.5909090909091 mean unbound time
+Bound probability 0.30374999999999996, Std. Deviation: 0.06853238285657373, relative: 0.22562101351958433
+completion time: 0.96s
+-------------
+171 of 180 Sims done
+Time spent: 162.546. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.777, 0.437, 0.393, 0.7]
+65.91428571428571 mean sticky time
+47.02777777777778 mean unbound time
+Bound probability 0.57675, Std. Deviation: 0.16476100115015083, relative: 0.2856714367579555
+completion time: 0.97s
+-------------
+172 of 180 Sims done
+Time spent: 163.523. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.894, 0.813, 0.745, 0.671]
+89.22857142857143 mean sticky time
+24.36111111111111 mean unbound time
+Bound probability 0.78075, Std. Deviation: 0.08244505746253075, relative: 0.10559725579574863
+completion time: 0.977s
+-------------
+173 of 180 Sims done
+Time spent: 164.511. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.761, 0.693, 0.613, 0.717]
+64.74418604651163 mean sticky time
+28.27906976744186 mean unbound time
+Bound probability 0.6960000000000001, Std. Deviation: 0.05376802023508026, relative: 0.07725290263660957
+completion time: 1.018s
+-------------
+174 of 180 Sims done
+Time spent: 165.54. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: true
+4 simulations done. Duration = 1000 steps
+[0.816, 0.869, 0.896, 0.888]
+119.62068965517241 mean sticky time
+18.310344827586206 mean unbound time
+Bound probability 0.86725, Std. Deviation: 0.031171902412268675, relative: 0.035943387042108595
+completion time: 1.086s
+-------------
+175 of 180 Sims done
+Time spent: 166.638. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,3% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.449, 0.37, 0.372, 0.809]
+74.07407407407408 mean sticky time
+74.07407407407408 mean unbound time
+Bound probability 0.5, Std. Deviation: 0.18122223925335437, relative: 0.36244447850670874
+completion time: 0.985s
+-------------
+176 of 180 Sims done
+Time spent: 167.639. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,5% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.58, 0.701, 0.379, 0.455]
+66.09375 mean sticky time
+58.90625 mean unbound time
+Bound probability 0.5287499999999999, Std. Deviation: 0.12263844217862518, relative: 0.23194031617706892
+completion time: 0.961s
+-------------
+177 of 180 Sims done
+Time spent: 168.607. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,8% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.723, 0.49, 0.662, 0.482]
+78.56666666666666 mean sticky time
+53.0 mean unbound time
+Bound probability 0.58925, Std. Deviation: 0.10551629021151189, relative: 0.179068799680122
+completion time: 1.03s
+-------------
+178 of 180 Sims done
+Time spent: 169.649. Estimated finish: 2016-03-24 00:36:43 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,10% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.519, 0.757, 0.714, 0.682]
+76.34285714285714 mean sticky time
+37.94285714285714 mean unbound time
+Bound probability 0.668, Std. Deviation: 0.09004720984017217, relative: 0.13480121233558706
+completion time: 1.041s
+-------------
+179 of 180 Sims done
+Time spent: 170.702. Estimated finish: 2016-03-24 00:36:44 +0100
+Random-n Simulation, Weak attraction = 0.4
+Size = 6^3,20% Ligands 30% Crowders, 20 stickyness, enyzmatic mode: false
+4 simulations done. Duration = 1000 steps
+[0.83, 0.869, 0.855, 0.903]
+108.03125 mean sticky time
+16.96875 mean unbound time
+Bound probability 0.86425, Std. Deviation: 0.026375888610623174, relative: 0.030518818178331703
+completion time: 1.172s
+-------------
+180 of 180 Sims done
+Time spent: 171.883. Estimated finish: 2016-03-24 00:36:44 +0100
+makefile created
+Total Completion Time = 171.968

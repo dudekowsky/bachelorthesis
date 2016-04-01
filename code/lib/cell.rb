@@ -142,12 +142,27 @@ class Cell
   # b) works by just checking the number of particles before
   # the move and calculating the propbability by
   # exp(-N*att)
+  def rec_energy(pos)
+    return @receptor_energy if pos == @target
+    return 0
+  end
+
   def held_by_weak_attraction?(before,after)
-    false unless access(before) == :x
+    #false unless access(before) == :x
     if @metropolis == true
-      count_before = count(before)
-      count_after = count(after)
-      return (prop(count_before, count_after) < rand)
+      count_before = count_after = 0
+
+      if @attraction > 0
+        count_before = count(before)
+        count_after = count(after)
+      end
+
+
+      e_before = count_before*@attraction + rec_energy(before)
+      e_after = count_after*@attraction + rec_energy(after)
+
+      return (prop(e_before, e_after) < rand)
+
     else
       count_before = count(before)
       bool = (prop(count_before) < rand)
@@ -156,7 +171,7 @@ class Cell
   end
 
   def prop(before, after = 0)
-    Math.exp(-(before - after)*@attraction)
+    Math.exp(-(before - after))
   end
 
   def count(coordinates)
@@ -167,7 +182,7 @@ class Cell
       arr << ((dim - 1) % @size)
     end
     arr.each do |coord|
-      particles += 1 if access(coord) != :_
+      particles += 1 if access(coord) == :o
     end
     particles
   end

@@ -38,6 +38,10 @@ class Simulation
       while steps < @duration do
         move_random_n
         if target_is_found?
+          if @enzymatic && reacts?
+            @cell.place_particle(:x, true)
+            free_target
+          end
           bound_arr << 1
         else
           bound_arr << 0
