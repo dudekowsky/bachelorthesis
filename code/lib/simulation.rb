@@ -2,18 +2,19 @@ class Simulation
   def initialize(params)
     size = params[:size] || 5
     crowder_percentage = params[:crowder_percentage] || 0
-    stickyness = params[:stickyness] || 1
     attraction = params[:attraction] || 0.5
     metropolis = params[:metropolis] || false
-    @stickyness = stickyness
     duration = params[:duration] || 10000
-    tillfoundmode = params[:place_random] || true
+    enzymatic = params[:enzymatic] || true
     ligand_percentage = params[:ligand_percentage] || 0
-    @enzymatic = tillfoundmode
+    receptor_energy = params[:receptor_energy]
+    @stickyness = Math.exp(receptor_energy)
+    @enzymatic = enzymatic
     @duration = duration
     target = [rand(size),rand(size),rand(size)]
-    @cell = Cell.new(size, target, stickyness,attraction, metropolis)
-    @cell.place_particle(:x, tillfoundmode, ligand_percentage)
+    params[:target] = target
+    @cell = Cell.new(params)
+    @cell.place_particle(:x, enzymatic, ligand_percentage)
     @cell.place_crowder(crowder_percentage)
   end
 

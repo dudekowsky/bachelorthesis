@@ -1,12 +1,9 @@
 class Cell
-  def initialize(size, target, stickyness, attraction, metropolis)
-    @stickyness = stickyness.ceil.abs
-    @stickyness = 1 if stickyness == 0
-    @size = size
+  def initialize(params)
+    params.each do |key, val|
+      instance_variable_set "@#{key}", val
+    end
     @grid = generate_grid(@size)
-    @target = target
-    @attraction = attraction
-    @metropolis = metropolis
   end
 
   def generate_grid(size)
@@ -30,14 +27,14 @@ class Cell
     set @target, :_
   end
 
-  def place_particle(type = :x, tillfoundmode = false, ligand_percentage = 0)
+  def place_particle(type = :x, enzymatic = false, ligand_percentage = 0)
     if ligand_percentage != 0
       ligand_total = (@size ** 3) / 100 * ligand_percentage
     else
       ligand_total = 1
     end
     i = 0
-    unless type == :x && !(tillfoundmode)
+    unless type == :x && !(enzymatic)
       while i < ligand_total
         x,y,z = rand(@size),rand(@size),rand(@size)
         if (access([x,y,z]) == :_) && (@target != [x,y,z])
@@ -109,27 +106,6 @@ class Cell
     return @grid[arr[0]][arr[1]][arr[2]]
   end
 
-  def make_move
-    #Method DOES NOT WORK YET!
-    #Method can move particle multiple times
-    #in 1 timeunit.
-    #Also: Need to make order of checking tiles random
-    # interesting: in size = 3 grid it takes
-    # a mean of 30 with this method.
-    # normal is mean of 45
-    virtual_grid = generate_grid(@size)
-    @grid.each_with_index do |plane, xindex|
-      plane.each_with_index do |row, yindex|
-        row.each_with_index do |val, zindex|
-          if (val == :x) || (val == :o)
-            move_particle(xindex,yindex,zindex,virtual_grid, val)
-          end
-        end
-      end
-    end
-    @grid = virtual_grid
-  end
-
   #has 2 possibilities:
   # a)Metropolis-rate and b)simple detachment rate
   # for a) it checks energy before and after the move.
@@ -140,14 +116,17 @@ class Cell
   # with E_0 being the weak attraction potential of a single
   # crowder
   # b) works by just checking the number of particles before
-  # the move and calculating the propbability by
+  # the move and calculating the probability by
   # exp(-N*att)
   def rec_energy(pos)
     return @receptor_energy if pos == @target
     return 0
   end
-
-  def held_by_weak_attraction?(before,after)
+  ###
+  # calculates energy before and after move and
+  # calculates true or false, based if
+  # random number between 0 and 1 is bigg
+  def held_by_attraction?(before,after)
     #false unless access(before) == :x
     if @metropolis == true
       count_before = count_after = 0
@@ -160,17 +139,17 @@ class Cell
 
       e_before = count_before*@attraction + rec_energy(before)
       e_after = count_after*@attraction + rec_energy(after)
-
-      return (prop(e_before, e_after) < rand)
+      return (prob(e_before, e_after) < rand)
 
     else
+      puts "NOT IMPLEMENTED YET"
       count_before = count(before)
-      bool = (prop(count_before) < rand)
-      return bool
+      e_before = count_before*@attraction + rec_energy(before)
+      return (prob(e_before) < rand)
     end
   end
 
-  def prop(before, after = 0)
+  def prob(before, after = 0)
     Math.exp(-(before - after))
   end
 
@@ -189,15 +168,9 @@ class Cell
 
   def move_particle(x,y,z,grid, type)
     before = [x,y,z]
-    if before == @target
-      sticky_dice = rand(@stickyness)
-      if sticky_dice > 0
-        return false
-      end
-    end
     after = next_field(before)
     return false if illegal?(after,type)
-    return false if (@attraction > 0) && held_by_weak_attraction?(before, after)
+    return false if held_by_attraction?(before, after)
     set(after, type)
     return true
   end
