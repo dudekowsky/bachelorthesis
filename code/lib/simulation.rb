@@ -8,7 +8,7 @@ class Simulation
     enzymatic = params[:enzymatic] || true
     ligand_percentage = params[:ligand_percentage] || 0
     receptor_energy = params[:receptor_energy]
-    @stickyness = Math.exp(receptor_energy)
+    #@stickyness = Math.exp(receptor_energy)
     @enzymatic = enzymatic
     @duration = duration
     target = [rand(size),rand(size),rand(size)]
@@ -21,6 +21,7 @@ class Simulation
   def start(mode = :n)
     steps = 0
     until target_is_found?
+
       steps += 1
       move_random_n if mode == :n
       move_random_all if mode == :all
@@ -31,18 +32,16 @@ class Simulation
   def start_with_duration(mode = :n)
     # array for statistic analysis later on.
     # add 1 when bound and 0 when not bound
-
+    #print_cell
     bound_arr = []
     steps = 0
     bound_time = 0
     if mode == :n
       while steps < @duration do
+        puts steps if (steps % 10 == 0)
+        print_cell
         move_random_n
         if target_is_found?
-          if @enzymatic && reacts?
-            @cell.place_particle(:x, true)
-            free_target
-          end
           bound_arr << 1
         else
           bound_arr << 0
@@ -50,27 +49,23 @@ class Simulation
         steps += 1
       end
     end
-    if mode == :all
-      while steps < @duration do
-        move_random_all
-        if target_is_found?
-          if @enzymatic && reacts?
-            @cell.place_particle(:x, true)
-            free_target
-          end
-          bound_arr << 1
-        else
-          bound_arr << 0
-        end
-        steps += 1
-      end
-    end
+    # if mode == :all
+    #   while steps < @duration do
+    #     puts "NOT IMPLEMENTED!"
+    #     move_random_all
+    #     if target_is_found?
+    #       if @enzymatic && reacts?
+    #         @cell.place_particle(:x, true)
+    #         free_target
+    #       end
+    #       bound_arr << 1
+    #     else
+    #       bound_arr << 0
+    #     end
+    #     steps += 1
+    #   end
+    # end
     return bound_arr
-  end
-
-  def reacts?
-    return true if rand(@stickyness) == 0
-    return false
   end
 
   def free_target

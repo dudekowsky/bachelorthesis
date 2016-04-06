@@ -3,6 +3,10 @@ class Cell
     params.each do |key, val|
       instance_variable_set "@#{key}", val
     end
+    @reaction_time ||= Math.exp(@receptor_energy).ceil
+    @forbid_reaction_stop ||= true
+    @forbid_reaction_stop = false unless @enzymatic
+
     @grid = generate_grid(@size)
   end
 
@@ -66,26 +70,26 @@ class Cell
   #decides a random order in which to check all cells
   # and then does the check
 
-  def move_random_all
-    #creates an array with 0 - N-1, where N is the size
-    # of the cell in 1 dimension. then shuffles.
-    # coordinates are codified via
-    # x = val % size
-    # y = (val / size) % size
-    # z = val / size^2
-    order_array = (0...(@size**3)).to_a.shuffle
-    order_array.each do |val|
-      x = val % @size
-      y = (val / @size) % @size
-      z = val / (@size ** 2)
-      type = access([x,y,z])
-      if (type == :x) || (type == :o)
-        if move_particle(x,y,z, @grid, type)
-          set([x,y,z],:_)
-        end
-      end
-    end
-  end
+  # def move_random_all
+  #   #creates an array with 0 - N-1, where N is the size
+  #   # of the cell in 1 dimension. then shuffles.
+  #   # coordinates are codified via
+  #   # x = val % size
+  #   # y = (val / size) % size
+  #   # z = val / size^2
+  #   order_array = (0...(@size**3)).to_a.shuffle
+  #   order_array.each do |val|
+  #     x = val % @size
+  #     y = (val / @size) % @size
+  #     z = val / (@size ** 2)
+  #     type = access([x,y,z])
+  #     if (type == :x) || (type == :o)
+  #       if move_particle(x,y,z, type)
+  #         set([x,y,z],:_)
+  #       end
+  #     end
+  #   end
+  # end
 
   #makes moves in as many random spots, as there are grid cells
   #may move same grid multiple time,
@@ -94,11 +98,22 @@ class Cell
     (@size**3).times do
       x,y,z = rand(@size),rand(@size),rand(@size)
       val = access([x,y,z])
+      next if @forbid_reaction_stop && ([x,y,z] == @target)
+
       if (val == :x) || (val == :o)
-        if move_particle(x,y,z,@grid, val)
+        if move_particle(x,y,z, val)
           set([x,y,z],:_)
         end
       end
+    end
+    reacts? if target_is_found?
+  end
+
+  def reacts?
+    return false unless @enzymatic
+    if rand(@reaction_time) == 0
+      place_particle(:x, true)
+      free_target
     end
   end
 
@@ -166,7 +181,7 @@ class Cell
     particles
   end
 
-  def move_particle(x,y,z,grid, type)
+  def move_particle(x,y,z, type)
     before = [x,y,z]
     after = next_field(before)
     return false if illegal?(after,type)
@@ -215,6 +230,8 @@ class Cell
 
 
   def print_grid
+    puts "Target is: #{@target}"
+    puts "And it is occupied" if target_is_found?
     p @grid
   end
 end
