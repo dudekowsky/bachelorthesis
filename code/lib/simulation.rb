@@ -38,8 +38,8 @@ class Simulation
     bound_time = 0
     if mode == :n
       while steps < @duration do
-        puts steps if (steps % 10 == 0)
-        print_cell
+        #puts steps if (steps % 1000 == 0)
+        #print_cell
         move_random_n
         if target_is_found?
           bound_arr << 1

@@ -1,6 +1,6 @@
 
 
-
+require_relative "lib/auswertung"
 require_relative "lib/cell"
 require_relative "lib/simulation"
 require "descriptive_statistics"
@@ -40,7 +40,7 @@ end
 # sim.call
 def multithread(params)
   executor = ThreadPoolExecutor.new(8, # core_pool_treads
-                                    8, # max_pool_threads
+                                    16, # max_pool_threads
                                     60, # keep_alive_time
                                     TimeUnit::SECONDS,
                                     LinkedBlockingQueue.new)
@@ -91,8 +91,8 @@ def multithread(params)
   stdDeviation = steps_array.map{|subarr| subarr.sum / duration}.standard_deviation
   steps_array.flatten!
   length = 0
-  boundlength_arr = []
-  unboundlength_arr = []
+  boundlength_arr = [0]
+  unboundlength_arr = [0]
   steps_array.each_with_index do |val,idx|
     if val == 1
       length += 1
@@ -118,7 +118,8 @@ def multithread(params)
   puts "#{unboundlength_arr.mean} mean unbound time"
   puts "Bound probability #{mean}, Std. Deviation: #{stdDeviation}, relative: #{stdDeviation.to_f/mean}"
   puts "completion time: #{total_time/ 1000 }s"
-  para_string = "#{crowder_percentage}C#{size}V#{enzymatic}enz#{receptor_energy}rec_en#{attraction}att#{metropolis}metro"
+  para_string = @escaped_para_string % params
+  puts para_string
   # File.open("./ergebnisse/boundlength-#{parastring}", 'w') do |file|
   #   file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness}, attraction = #{attraction}\n")
   #   file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
@@ -146,13 +147,10 @@ def multithread(params)
   #   end
   # end
 
-  File.open("./ergebnisse/PgegenLmit#{para_string}","a") do |file|
-    file.write("#{ligand_percentage}\t#{mean}\t#{stdDeviation}\n")
+  File.open("../ergebnisse/#{para_string}","w") do |file|
+    file.write "#P\tstdDeviation\tbound_mean\tunbound_mean\n"
+    file.write("#{mean}\t#{stdDeviation}\t#{boundlength_arr.mean}\t#{unboundlength_arr.mean}\n")
   end
-  # File.open("./ergebnisse/TgegenLmit#{para_string}","a") do |file|
-  #   file.write("#{ligand_percentage}\t#{boundlength_arr.mean}\t#{stdDeviation}\n")
-  # end
-
 end
 
 # File.open("../ergebnisse/averages.data", 'w') do |file|
@@ -160,87 +158,59 @@ end
 #   file.write("#mean\tcrowder\tsize\tsims\tsim_time\n")
 #   #file.write("#{mean}\t#{crowder_percentage}\t#{size}\t#{num_threads}\t#{total_time}\n")
 # end
-def makefile(params_arr,escaped_para_string, group_para)
-  params_arr.each{|param| param.delete(:ligand_percentage)}
-  params_arr.uniq!
-  File.open("makefile#{group_para}", "w+") do |f|
-    escaped_legend_string = "C%{crowder_percentage} E_rec%{receptor_energy} Att%{attraction} Enz%{enzymatic} Metro%{metropolis}"
-    params_grouped = params_arr.group_by{ |hash| hash[group_para]}
-    params_grouped.each do |key, para_set|
-      para_set_size = para_set.size
-      helptext = ""
-      para_set.each_with_index do |para_hash, idx|
-        legend_string = escaped_legend_string % para_hash
-        para_string = escaped_para_string % para_hash
-        helptext += "'./ergebnisse/PgegenLmit#{para_string}' with lines title '#{legend_string}'"
-        helptext += ", " unless (idx + 1) == para_set_size
-      end
-      text = <<-END
-set terminal png
-set xlabel 'Ligandenanteil in \\%'
-set ylabel "Bindewahrscheinlichkeit"
-set output './ergebnisse/ENZPlotPgegenL#{key}#{group_para}.png'
-plot #{helptext}
-      END
 
-      f.write(text)
-    end
-  end
-  puts "makefile#{group_para} created"
-end
 
 #File.delete("makefile") if File.exist?("makefile")
 # %x(rm ./ergebnisse/PgegenL*)
 
 startzeit = Time.now
-sims = 4
-size = 2
-duration = 1000
-attractions = [0]
-receptor_energies = [2]
-crowder_percentages = [0]
-ligand_percentages = [0]
-enzymmode = [true]
+sims = 8
+size = 10
+duration = 200000
+attractions = [0,0.1,0.5,1]
+receptor_energies = [4.0]
+crowder_percentages = [30,60]
+ligand_percentages = [1]
+enzymmode = [false]
 styles = [:n]
 metros = [true]
 sims_done = 0
 total_sims = 1
-[attractions, crowder_percentages,ligand_percentages,enzymmode,receptor_energies,styles,metros].each do |par_arr|
+sammel_arr = [attractions, crowder_percentages,ligand_percentages,enzymmode,receptor_energies,styles,metros]
+sammel_arr.each do |par_arr|
   total_sims = par_arr.length * total_sims
 end
-escaped_para_string = "%{crowder_percentage}C%{size}V%{enzymatic}enz%{receptor_energy}rec_en%{attraction}att%{metropolis}metro"
+@escaped_para_string = "%{ligand_percentage}L%{crowder_percentage}C%{size}V%{enzymatic}enz%{receptor_energy}rec_en%{attraction}att%{metropolis}metro"
 params_arr = []
 
-FileUtils.mkdir_p './ergebnisse'
 styles.each do |style|
   attractions.each do |attraction|
     crowder_percentages.each do |crowder_percentage|
       metros.each do |metropolis|
         receptor_energies.each do |receptor_energy|
           enzymmode.each do |enzymatic|
-
-            params = {
-              sims: sims,
-              style: style,
-              size: size,
-              crowder_percentage: crowder_percentage,
-              duration: duration,
-              receptor_energy: receptor_energy,
-              enzymatic: enzymatic,
-              attraction: attraction,
-              metropolis: metropolis
-            }
-            para_string = escaped_para_string % params
-            params[:para_string] = para_string
-            path_to_file = "./ergebnisse/PgegenLmit#{para_string}"
-            File.delete(path_to_file) if File.exist?(path_to_file)
-            #next if File.exist?(path_to_file)
             ligand_percentages.each do |ligand_percentage|
-              warn "I am at #{ligand_percentage}\% ligand_percentage"
+
+              params = {
+                sims: sims,
+                style: style,
+                size: size,
+                crowder_percentage: crowder_percentage,
+                duration: duration,
+                receptor_energy: receptor_energy,
+                enzymatic: enzymatic,
+                attraction: attraction,
+                metropolis: metropolis,
+                ligand_percentage: ligand_percentage
+              }
+              para_string = @escaped_para_string % params
+              path_to_file = "./ergebnisse/Pmit#{para_string}"
+              #File.delete(path_to_file) if File.exist?(path_to_file)
+              #next if File.exist?(path_to_file)
               sims_done += 1
               next if crowder_percentage + ligand_percentage >= 90
-              params[:ligand_percentage] = ligand_percentage
-              puts escaped_para_string % params
+
+
               multithread(params)
               params_arr << params
               sims_left = total_sims - sims_done
@@ -258,6 +228,8 @@ styles.each do |style|
   end
 end
 puts "Total Completion Time = #{ Time.now - startzeit}"
+ana = Ana.new(@escaped_para_string)
+ana.makegraph(:attraction, params_arr, [:crowder_percentage])
 # group_parameters = [nil, :receptor_energy, :enzymatic, :crowder_percentage, :attraction]
 # group_parameters.each do |group_para|
 #   makefile(params_arr, escaped_para_string, group_para)
