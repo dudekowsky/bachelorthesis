@@ -18,21 +18,25 @@ class Simulation
     @cell.place_crowder(crowder_percentage)
   end
 
-  def start(mode = :n)
-    steps = 0
-    until target_is_found?
-
-      steps += 1
-      move_random_n if mode == :n
-      move_random_all if mode == :all
-    end
-  return steps
-  end
+  # def start(mode = :n)
+  #
+  #   steps = 0
+  #   energy_array = []
+  #   until target_is_found?
+  #     puts "NOT IMPLEMENTED!!"
+  #     energy_array << current_energy
+  #     # move_random_n returns ligand_energy after move
+  #     energy_array << move_random_n if mode == :n
+  #     move_random_all if mode == :all
+  #   end
+  # return {steps: steps, energy_array: energy_array}
+  # end
 
   def start_with_duration(mode = :n)
     # array for statistic analysis later on.
     # add 1 when bound and 0 when not bound
-    #print_cell
+    # print_cell
+    energy_array = []
     bound_arr = []
     steps = 0
     bound_time = 0
@@ -40,7 +44,7 @@ class Simulation
       while steps < @duration do
         #puts steps if (steps % 1000 == 0)
         #print_cell
-        move_random_n
+        energy_array << move_random_n
         if target_is_found?
           bound_arr << 1
         else
@@ -65,7 +69,7 @@ class Simulation
     #     steps += 1
     #   end
     # end
-    return bound_arr
+    return {steps: bound_arr, energy_array: energy_array}
   end
 
   def free_target
@@ -77,6 +81,7 @@ class Simulation
   end
 
   def move_random_all
+    puts "not IMPLEMENTED!"
     @cell.move_random_all
   end
 

@@ -1,5 +1,5 @@
 
-
+# require 'jruby/profiler'
 require_relative "lib/auswertung"
 require_relative "lib/cell"
 require_relative "lib/simulation"
@@ -35,11 +35,13 @@ class SimStarter
 
   end
 end
-
+def theo_prob(att, size, rec_en)
+  (6*Math.exp(rec_en + att)+ size**3*Math.exp(rec_en))/(6*Math.exp(rec_en + att) + 1000*Math.exp(rec_en) + 6*size**3*Math.exp(att) + size**6)
+end
 # sim = SimStarter.new
 # sim.call
 def multithread(params)
-  executor = ThreadPoolExecutor.new(8, # core_pool_treads
+  executor = ThreadPoolExecutor.new(4, # core_pool_treads
                                     16, # max_pool_threads
                                     60, # keep_alive_time
                                     TimeUnit::SECONDS,
@@ -59,8 +61,9 @@ def multithread(params)
   num_sims = 1
   total_time = 0.0
 
+  result_array = []
   steps_array = []
-
+  energy_array = []
   num_sims.times do |i|
     tasks = []
     t_0 = Time.now
@@ -72,7 +75,14 @@ def multithread(params)
     end
 
     tasks.each do |t|
-      steps_array << t.get
+      result_array << t.get
+    end
+
+    steps_array = result_array.map do |e|
+      e[:steps]
+    end
+    energy_array = result_array.map do |e|
+      e[:energy_array]
     end
   t_1 = Time.now
 
@@ -84,7 +94,7 @@ def multithread(params)
   executor.shutdown()
   puts "Random-#{style} Simulation"
   puts "Weak attraction: #{attraction}, Receptor energy: #{receptor_energy}, Metropolis: #{metropolis}"
-  puts "Size = #{size}^3,#{ligand_percentage}% Ligands #{crowder_percentage}% Crowders, enzymatic mode: #{enzymatic}"
+  puts "Size = #{size}^3, #{ligand_percentage}% Ligands, #{crowder_percentage}% Crowders, enzymatic mode: #{enzymatic}"
   puts "#{num_threads} simulations done. Duration = #{duration} steps"
   p steps_array.map{|subarr| subarr.sum / duration}
   mean = steps_array.map{|subarr| subarr.sum / duration}.mean
@@ -111,15 +121,18 @@ def multithread(params)
       end
     end
   end
+  energy_array.flatten!(1)
+  energy_array
 
 
-
+  energy_histogram = energy_array.group_by{|e| e}
   puts "#{boundlength_arr.mean} mean sticky time"
   puts "#{unboundlength_arr.mean} mean unbound time"
   puts "Bound probability #{mean}, Std. Deviation: #{stdDeviation}, relative: #{stdDeviation.to_f/mean}"
   puts "completion time: #{total_time/ 1000 }s"
   para_string = @escaped_para_string % params
   puts para_string
+
   # File.open("./ergebnisse/boundlength-#{parastring}", 'w') do |file|
   #   file.write("#style = #{style}, size = #{size}, crowder percentage = #{crowder_percentage}, stickyness = #{stickyness}, attraction = #{attraction}\n")
   #   file.write("#max: #{boundlength_arr.max}, min: #{boundlength_arr.min}")
@@ -151,6 +164,13 @@ def multithread(params)
     file.write "#P\tstdDeviation\tbound_mean\tunbound_mean\n"
     file.write("#{mean}\t#{stdDeviation}\t#{boundlength_arr.mean}\t#{unboundlength_arr.mean}\n")
   end
+  new_energy_histogram = energy_histogram.map{ |key, val| {key => val.count / (duration * num_threads) } }
+  File.open("../ergebnisse/energy#{para_string}","w") do |file|
+    new_energy_histogram.each do |entry|
+      file.write "#{entry.keys.flatten[0]} \t #{entry.keys.flatten[1]} \t #{entry.values[0] * 1.0 / (duration*num_threads)}\n"
+    end
+  end
+
 end
 
 # File.open("../ergebnisse/averages.data", 'w') do |file|
@@ -164,13 +184,13 @@ end
 # %x(rm ./ergebnisse/PgegenL*)
 
 startzeit = Time.now
-sims = 8
-size = 10
-duration = 200000
-attractions = [0,0.1,0.5,1]
+sims = 4
+size = 5
+duration = 50000
+attractions = [0.1,3]
 receptor_energies = [4.0]
-crowder_percentages = [30,60]
-ligand_percentages = [1]
+crowder_percentages = [1.0/(size**3)]
+ligand_percentages = [0]
 enzymmode = [false]
 styles = [:n]
 metros = [true]
@@ -203,6 +223,7 @@ styles.each do |style|
                 metropolis: metropolis,
                 ligand_percentage: ligand_percentage
               }
+              puts "Theoretical probability = #{theo_prob(attraction, size, receptor_energy)}"
               para_string = @escaped_para_string % params
               path_to_file = "./ergebnisse/Pmit#{para_string}"
               #File.delete(path_to_file) if File.exist?(path_to_file)
@@ -230,11 +251,6 @@ end
 puts "Total Completion Time = #{ Time.now - startzeit}"
 ana = Ana.new(@escaped_para_string)
 ana.makegraph(:attraction, params_arr, [:crowder_percentage])
-# group_parameters = [nil, :receptor_energy, :enzymatic, :crowder_percentage, :attraction]
-# group_parameters.each do |group_para|
-#   makefile(params_arr, escaped_para_string, group_para)
-#   %x{gnuplot makefile#{group_para}}
-# end
 
 # receptor_energy is in multiples of k*T
 # weak attraction is in multiples of k*T

@@ -8,6 +8,7 @@ class Cell
     @forbid_reaction_stop = false unless @enzymatic
 
     @grid = generate_grid(@size)
+    @count = 0
   end
 
   def generate_grid(size)
@@ -56,7 +57,9 @@ class Cell
   end
 
   def place_crowder(crowder_percentage)
-    crowder_total = (@size ** 3) / 100 * crowder_percentage
+
+    crowder_total = (@size ** 3)*1.0 / 100 * crowder_percentage
+    #puts "crowder_total = #{crowder_total}"
     i = 0
     while i < crowder_total
       x,y,z = rand(@size),rand(@size),rand(@size)
@@ -107,6 +110,12 @@ class Cell
       end
     end
     reacts? if target_is_found?
+    #puts @ligand_energy
+    if @count > 1
+      puts "#{@count} count"
+      print_grid
+    end
+    [@count, target_is_found?]
   end
 
   def reacts?
@@ -118,7 +127,8 @@ class Cell
   end
 
   def access(arr)
-    return @grid[arr[0]][arr[1]][arr[2]]
+    size = @size
+    return @grid[arr[0] % size][arr[1] % size][arr[2] % size]
   end
 
   #has 2 possibilities:
@@ -141,26 +151,37 @@ class Cell
   # calculates energy before and after move and
   # calculates true or false, based if
   # random number between 0 and 1 is bigg
-  def held_by_attraction?(before,after)
+  def held_by_attraction?(before,after, type)
     #false unless access(before) == :x
     if @metropolis == true
       count_before = count_after = 0
 
       if @attraction > 0
+        # puts "hey im counting!"
         count_before = count(before)
         count_after = count(after)
       end
-
-
       e_before = count_before*@attraction + rec_energy(before)
       e_after = count_after*@attraction + rec_energy(after)
-      return (prob(e_before, e_after) < rand)
+      if (prob(e_before, e_after) < rand)
+        (@count = count_before) if type == :x
+        true
+      else
+        (@count = count_after) if type == :x
+        false
+      end
 
     else
       puts "NOT IMPLEMENTED YET"
-      count_before = count(before)
-      e_before = count_before*@attraction + rec_energy(before)
-      return (prob(e_before) < rand)
+      # count_before = count(before)
+      # e_before = count_before*@attraction + rec_energy(before)
+      # if (prob(e_before) < rand)
+      #   @ligand_energy = e_before if type == :x
+      #   true
+      # else
+      #   @ligand_energy = e_after if type == :x
+      #   false
+      # end
     end
   end
 
@@ -170,22 +191,21 @@ class Cell
 
   def count(coordinates)
     arr = []
-    particles = 0
-    coordinates.each do |dim|
-      arr << ((dim + 1) % @size)
-      arr << ((dim - 1) % @size)
+    [-1,1].each do |number|
+      arr << access([coordinates[0] + number, coordinates[1], coordinates[2]])
+      arr << access( [coordinates[0], coordinates[1] + number, coordinates[2]])
+      arr << access( [coordinates[0], coordinates[1], coordinates[2] + number])
     end
-    arr.each do |coord|
-      particles += 1 if access(coord) == :o
-    end
-    particles
+    arr.count{|e| e == :o}
   end
 
   def move_particle(x,y,z, type)
     before = [x,y,z]
     after = next_field(before)
     return false if illegal?(after,type)
-    return false if held_by_attraction?(before, after)
+    if type == :x
+      return false if held_by_attraction?(before, after,type)
+    end
     set(after, type)
     return true
   end
