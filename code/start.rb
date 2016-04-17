@@ -35,6 +35,9 @@ class SimStarter
 
   end
 end
+def theo_prob(att, size, rec_en)
+  (6*Math.exp(rec_en + att)+ size**3*Math.exp(rec_en))/(6*Math.exp(rec_en + att) + 1000*Math.exp(rec_en) + 6*size**3*Math.exp(att) + size**6)
+end
 
 # sim = SimStarter.new
 # sim.call
@@ -166,7 +169,7 @@ end
 startzeit = Time.now
 sims = 8
 size = 10
-duration = 200000
+duration = 20000
 attractions = [0,0.1,0.5,1]
 receptor_energies = [4.0]
 crowder_percentages = [30,60]
@@ -203,6 +206,7 @@ styles.each do |style|
                 metropolis: metropolis,
                 ligand_percentage: ligand_percentage
               }
+              puts "theoretical probability: #{theo_prob(attraction, size, receptor_energy)}"
               para_string = @escaped_para_string % params
               path_to_file = "./ergebnisse/Pmit#{para_string}"
               #File.delete(path_to_file) if File.exist?(path_to_file)
