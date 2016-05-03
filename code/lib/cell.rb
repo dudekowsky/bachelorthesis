@@ -9,6 +9,7 @@ class Cell
 
     @grid = generate_grid(@size)
     @count = 0
+    @last_used_ligand = [0,0,0]
   end
 
   def generate_grid(size)
@@ -111,11 +112,7 @@ class Cell
     end
     reacts? if target_is_found?
     #puts @ligand_energy
-    if @count > 1
-      puts "#{@count} count"
-      print_grid
-    end
-    [@count, target_is_found?]
+    [count(@target, :x), target_is_found?]
   end
 
   def reacts?
@@ -152,22 +149,24 @@ class Cell
   # calculates true or false, based if
   # random number between 0 and 1 is bigg
   def held_by_attraction?(before,after, type)
+    return false unless type == :x
     #false unless access(before) == :x
     if @metropolis == true
-      count_before = count_after = 0
-
-      if @attraction > 0
         # puts "hey im counting!"
-        count_before = count(before)
-        count_after = count(after)
+      count_before = count(before,type)
+      count_after = count(after,type)
+      if type == :x
+        e_before = count_before*@attraction + rec_energy(before)
+        e_after = count_after*@attraction + rec_energy(after)
+      else
+        e_before = count_before*@attraction
+        e_after = count_after*@attraction
       end
-      e_before = count_before*@attraction + rec_energy(before)
-      e_after = count_after*@attraction + rec_energy(after)
       if (prob(e_before, e_after) < rand)
-        (@count = count_before) if type == :x
+        @count = count_before if type == :x
         true
       else
-        (@count = count_after) if type == :x
+        @count = count_after if type == :x
         false
       end
 
@@ -184,28 +183,29 @@ class Cell
       # end
     end
   end
-
-  def prob(before, after = 0)
-    Math.exp(-(before - after))
-  end
-
-  def count(coordinates)
+  def count(coordinates,type)
     arr = []
     [-1,1].each do |number|
       arr << access([coordinates[0] + number, coordinates[1], coordinates[2]])
       arr << access( [coordinates[0], coordinates[1] + number, coordinates[2]])
       arr << access( [coordinates[0], coordinates[1], coordinates[2] + number])
     end
-    arr.count{|e| e == :o}
+    return arr.count{|e| e == :o} + arr.count{|e| e == :x } if type == :o
+    return arr.count{|e| e == :o}
   end
+
+  def prob(before, after = 0)
+    Math.exp(-(before - after))
+  end
+
 
   def move_particle(x,y,z, type)
     before = [x,y,z]
+    @last_used_ligand = before if type == :x
     after = next_field(before)
     return false if illegal?(after,type)
-    if type == :x
-      return false if held_by_attraction?(before, after,type)
-    end
+    return false if held_by_attraction?(before, after,type)
+    @last_used_ligand = after if type == :x
     set(after, type)
     return true
   end

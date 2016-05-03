@@ -36,12 +36,13 @@ class SimStarter
   end
 end
 def theo_prob(att, size, rec_en)
-  (6*Math.exp(rec_en + att)+ size**3*Math.exp(rec_en))/(6*Math.exp(rec_en + att) + 1000*Math.exp(rec_en) + 6*size**3*Math.exp(att) + size**6)
+  freevol = size**3 - 7
+  (6*Math.exp(rec_en + att)+ freevol*Math.exp(rec_en))/(6*Math.exp(rec_en + att) + freevol*Math.exp(rec_en) + freevol*Math.exp(att) + freevol**2)
 end
 # sim = SimStarter.new
 # sim.call
 def multithread(params)
-  executor = ThreadPoolExecutor.new(4, # core_pool_treads
+  executor = ThreadPoolExecutor.new(16, # core_pool_treads
                                     16, # max_pool_threads
                                     60, # keep_alive_time
                                     TimeUnit::SECONDS,
@@ -122,13 +123,12 @@ def multithread(params)
     end
   end
   energy_array.flatten!(1)
-  energy_array
-
 
   energy_histogram = energy_array.group_by{|e| e}
   puts "#{boundlength_arr.mean} mean sticky time"
   puts "#{unboundlength_arr.mean} mean unbound time"
   puts "Bound probability #{mean}, Std. Deviation: #{stdDeviation}, relative: #{stdDeviation.to_f/mean}"
+  puts "Theoretical probability = #{theo_prob(attraction, size, receptor_energy)}"
   puts "completion time: #{total_time/ 1000 }s"
   para_string = @escaped_para_string % params
   puts para_string
@@ -164,10 +164,12 @@ def multithread(params)
     file.write "#P\tstdDeviation\tbound_mean\tunbound_mean\n"
     file.write("#{mean}\t#{stdDeviation}\t#{boundlength_arr.mean}\t#{unboundlength_arr.mean}\n")
   end
-  new_energy_histogram = energy_histogram.map{ |key, val| {key => val.count / (duration * num_threads) } }
+  new_energy_histogram = energy_histogram.map{ |key, val| {key => val.count * 1.0 } }
+  p new_energy_histogram
   File.open("../ergebnisse/energy#{para_string}","w") do |file|
     new_energy_histogram.each do |entry|
-      file.write "#{entry.keys.flatten[0]} \t #{entry.keys.flatten[1]} \t #{entry.values[0] * 1.0 / (duration*num_threads)}\n"
+      string = "#{entry.keys.flatten[0]} \t #{entry.keys.flatten[1]} \t #{entry.values[0] * 1.0 / (duration*num_threads)}\n"
+      file.write string
     end
   end
 
@@ -184,13 +186,13 @@ end
 # %x(rm ./ergebnisse/PgegenL*)
 
 startzeit = Time.now
-sims = 4
-size = 5
-duration = 50000
-attractions = [0.1,3]
+sims = 16
+size = 8
+duration = 200000
+attractions = [0,1,2,3,10,20]
 receptor_energies = [4.0]
-crowder_percentages = [1.0/(size**3)]
-ligand_percentages = [0]
+crowder_percentages = [0,1,5,15,30]
+ligand_percentages = [0,1,2,4,8,16,32]
 enzymmode = [false]
 styles = [:n]
 metros = [true]
@@ -222,8 +224,8 @@ styles.each do |style|
                 attraction: attraction,
                 metropolis: metropolis,
                 ligand_percentage: ligand_percentage
+                #different watch modes cannot go in one pass
               }
-              puts "Theoretical probability = #{theo_prob(attraction, size, receptor_energy)}"
               para_string = @escaped_para_string % params
               path_to_file = "./ergebnisse/Pmit#{para_string}"
               #File.delete(path_to_file) if File.exist?(path_to_file)
