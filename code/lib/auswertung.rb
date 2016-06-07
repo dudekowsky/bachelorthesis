@@ -26,16 +26,20 @@ class Ana
     makefiles = []
     filedata = sort_values_into_one_file(x_axis, params_arr, curve_param)
     makefiles = make_makefiles(filedata, x_axis, curve_param)
-    makefiles << sort_and_make_energy(params_arr)
+    [true, false].each do |bool|
+      makefiles << sort_and_make_energy(params_arr, bool)
+    end
     load_into_gnuplot(makefiles)
+    kplot
   end
+
   def load_into_gnuplot(makefiles)
     makefiles.each do |makefile|
       %x{gnuplot #{makefile}}
     end
   end
 
-  def sort_and_make_energy(params_arr)
+  def sort_and_make_energy(params_arr,outsidebool)
     curve_params = [:attraction]
     grouped_arr = params_arr.group_by{|outerhash| curve_params.map{|curve_param| outerhash[curve_param]}[0]}
     valuehash = {}
@@ -65,6 +69,9 @@ class Ana
       sorted_data += attri.to_s
     end
     bools.each do |bool|
+      next unless bool.to_s == outsidebool.to_s
+      puts bool
+      puts outsidebool
       neighbour_counts.each do |ncount|
         sorted_data += "\n"
         sorted_data += "#{ncount}#{bool}"
@@ -74,7 +81,7 @@ class Ana
         end
       end
     end
-    filename = "../ergebnisse/sortiertewerte/energy"
+    filename = "../ergebnisse/sortiertewerte/energy#{outsidebool}"
     File.open(filename, "w+") do |file|
       file.write sorted_data
     end
@@ -89,7 +96,7 @@ clear
 reset
 unset key
 set terminal pngcairo size 1024, 768
-set output '../bilder/energy.png'
+set output '../bilder/energy#{outsidebool}.png'
 # Make the x axis labels easier to read.
 set xtics rotate out
 # Select histogram data
@@ -103,7 +110,7 @@ set style histogram clustered
 plot #{helptext}
     END
 
-    output_file = "../ergebnisse/sortiertewerte/makeenergy"
+    output_file = "../ergebnisse/sortiertewerte/makeenergy#{outsidebool}"
     File.open(output_file,"w+") do |file|
       file.write(text)
     end
@@ -113,6 +120,7 @@ plot #{helptext}
   #curve param means the parameter as in a family of curves
   def sort_values_into_one_file(x_axis, params_arr, curve_params )
     output = []
+
     grouped_arr = params_arr.group_by{|outerhash| curve_params.map{|curve_param| outerhash[curve_param]}}
 
     grouped_arr.each do |grouper, x_arr|
@@ -129,9 +137,28 @@ plot #{helptext}
       File.open(filename, "w+") do |file|
         file.write values
       end
+
+      k_fit(filename, constant_parameters[:crowder_percentage], constant_parameters[:attraction]) if [:crowder_percentage, :attraction] == curve_params
     end
     output
   end
+  def kplot
+
+  end
+  # fit function P(L)_{C,Att} = L / (L + K) and write K, C and Att in a file for later Splot
+  def k_fit(filename, crowder_percentage, attraction)
+    text = <<-END
+set print 'kfit.txt' append;
+f(x) = x / (k + x); fit f(x) '#{filename}' via k;
+print k, #{crowder_percentage}, #{attraction};
+    END
+    File.open("temp.txt","w+") do |file|
+      file.write(text)
+    end
+
+  %x{gnuplot temp.txt}
+  end
+
   def make_makefiles(filedata, x_axis, curve_param)
     makefiles = []
     [{line: 2, abbr: "P", ylabel: "Bound Probability"},

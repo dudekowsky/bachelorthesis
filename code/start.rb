@@ -187,12 +187,12 @@ end
 # %x(rm ./ergebnisse/PgegenL*)
 
 startzeit = Time.now
-sims = 8
-size = 10
-duration = 20000
-attractions = [0,0.1,0.5,1]
+sims = 16
+size = 8
+duration = 200000
+attractions = [0,0.1,0.3,0.7,1,2,3,10,20]
 receptor_energies = [4.0]
-crowder_percentages = [0,1,5,15,30]
+crowder_percentages = [5]#[0,1,5,15,30]
 ligand_percentages = [0,1,2,4,8,16,32]
 enzymmode = [false]
 styles = [:n]
@@ -236,7 +236,7 @@ styles.each do |style|
               next if crowder_percentage + ligand_percentage >= 90
 
 
-              multithread(params)
+              # multithread(params)
               params_arr << params
               sims_left = total_sims - sims_done
               time_spent = Time.now - startzeit
@@ -254,7 +254,7 @@ styles.each do |style|
 end
 puts "Total Completion Time = #{ Time.now - startzeit}"
 ana = Ana.new(@escaped_para_string)
-ana.makegraph(:attraction, params_arr, [:crowder_percentage])
+ana.makegraph(:ligand_percentage, params_arr, [:crowder_percentage, :attraction])
 
 # receptor_energy is in multiples of k*T
 # weak attraction is in multiples of k*T

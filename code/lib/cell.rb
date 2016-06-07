@@ -111,8 +111,16 @@ class Cell
       end
     end
     reacts? if target_is_found?
-    #puts @ligand_energy
-    [count(@target, :x), target_is_found?]
+    # two possible outputs:  either, look at receptor at every step,
+    # or look at random ligand if unbound and at receptor if bound.
+    # for always random ligand, use: "[count(@last_used_ligand, :x,target_is_found?)]"
+    # for always receptor, just return "[count(@target, :x), target_is_found?]"
+    # for random, use if construction:
+    # if target_is_found?
+      [count(@target, :x), target_is_found?]
+    # else
+      # [count(@last_used_ligand, :x), target_is_found?]
+    # end
   end
 
   def reacts?
