@@ -1,0 +1,3 @@
+set print 'kfit.txt' append;
+f(x) = x / (k + x); fit f(x) '../ergebnisse/sortiertewerte/xligand_percentageparacrowder_percentageattraction3020sims16stylensize8crowder_percentage30duration200000receptor_energy4.0enzymaticfalseattraction20metropolistrue' via k;
+print k, 30, 20;

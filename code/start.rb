@@ -192,8 +192,8 @@ size = 8
 duration = 200000
 attractions = [0,0.1,0.3,0.7,1,2,3,10,20]
 receptor_energies = [4.0]
-crowder_percentages = [5]#[0,1,5,15,30]
-ligand_percentages = [0,1,2,4,8,16,32]
+crowder_percentages = [0,1,5,15,30]
+ligand_percentages = [4]#[0,1,2,4,8,16,32]
 enzymmode = [false]
 styles = [:n]
 metros = [true]
@@ -254,7 +254,7 @@ styles.each do |style|
 end
 puts "Total Completion Time = #{ Time.now - startzeit}"
 ana = Ana.new(@escaped_para_string)
-ana.makegraph(:ligand_percentage, params_arr, [:crowder_percentage, :attraction])
+ana.makegraph(:attraction, params_arr, [:crowder_percentage, :ligand_percentage])
 
 # receptor_energy is in multiples of k*T
 # weak attraction is in multiples of k*T

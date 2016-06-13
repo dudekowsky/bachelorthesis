@@ -23,14 +23,72 @@ class Ana
   end
 
   def makegraph(x_axis, params_arr, curve_param)
+    File.delete "kfit.txt" if File.exists? "kfit.txt"
     makefiles = []
     filedata = sort_values_into_one_file(x_axis, params_arr, curve_param)
     makefiles = make_makefiles(filedata, x_axis, curve_param)
     [true, false].each do |bool|
       makefiles << sort_and_make_energy(params_arr, bool)
     end
+    find_attr_breaking_point(filedata)
+    #makefiles << kplot
     load_into_gnuplot(makefiles)
-    kplot
+  end
+
+  def find_attr_breaking_point(filedata)
+    const_line = 0
+    filedata.each do |tuple|
+      filename = tuple[1]
+      if tuple[0][0] == 0
+        const_line = File.readlines(filename)[0].split[1].to_f
+      else
+        low = find_low(filename, const_line)
+        puts "low inspect:"
+        puts low.inspect
+        high = find_high(filename, const_line)
+        puts "high inspect:", high.inspect
+        intersection = interpolate(const_line, low, high)
+        puts "intersection at: attr = #{intersection}"
+      end
+      p tuple
+      puts "----"
+    end
+  end
+  # interpolate straight line with y = a*x + b
+  # set offset to lower value, so you don't need to calc b
+  # then calculate the sought after x with (y)/a = x
+  #
+  def interpolate(value, low_tuple, high_tuple)
+    attr_low, p_low = low_tuple[0], low_tuple[1]
+    attr_high, p_high = high_tuple[0], high_tuple[1]
+    puts p_low.inspect,
+    attr_low.inspect,
+    p_high.inspect,
+    attr_high.inspect
+    a = (p_low - p_high) / (attr_low - attr_high)
+    reduced_value = value - p_low
+    return (reduced_value / a) + attr_low
+  end
+
+  def find_high(filename, value)
+    prob = 0
+    attraction = 0
+    lines = File.readlines filename
+    lines.each do |line|
+      return [attraction, prob] if line.split[1].to_f <= value && attraction > 0
+      prob = line.split[1].to_f
+      attraction = line.split[0].to_f
+    end
+    raise "find high went wrong"
+  end
+
+  def find_low(filename, value)
+    lines = File.readlines filename
+    lines.each do |line|
+      prob = line.split[1].to_f
+      attraction = line.split[0].to_f
+      return [attraction, prob] if prob <= value
+    end
   end
 
   def load_into_gnuplot(makefiles)
@@ -143,8 +201,42 @@ plot #{helptext}
     output
   end
   def kplot
+    grouped = File.readlines("kfit.txt").
+    map { |line| line.split }. #first is Value of K, second is crowder percentage, third is attraction
+    group_by { |line| line[1]} #group by crowder_percentage
+    keys = grouped.keys
+    #seperate into different files because I
+    #cannot figure out a nice way for gnuplot to do
+    #curve families. probably there is, but you know: gnuplot :D
+    grouped.each do |grouper, arr|
+      string = ""
+      arr.each do |tuple|
+        string << "#{tuple[2]}, #{tuple[0]} \n"
+      end
+      File.write("K_for_C#{grouper}.txt",string)
+    end
 
-  end
+    helptext = ""
+    keys.each do |grouper|
+      helptext += "'K_for_C#{grouper}.txt' using 1:2 with lines title 'C#{grouper}', "
+    end
+    helptext[-2] = ""
+
+    text = <<-END
+clear
+reset
+unset key
+set terminal pngcairo size 1024, 768
+set output '../bilder/kplot.png'
+set key outside tmargin
+set xlabel 'Attr in kT'
+set ylabel 'K'
+plot #{helptext}
+    END
+  filename = "makefile_k"
+  File.write(filename, text)
+  return filename
+end
   # fit function P(L)_{C,Att} = L / (L + K) and write K, C and Att in a file for later Splot
   def k_fit(filename, crowder_percentage, attraction)
     text = <<-END
@@ -184,6 +276,7 @@ print k, #{crowder_percentage}, #{attraction};
     text = <<-END
 set terminal pngcairo size 1024, 768
 set key outside tmargin
+set logscale x
 set xlabel '#{x_axis}'
 set ylabel "#{specify[:ylabel]}"
 set output '../bilder/#{specify[:abbr]}gegenx#{x_axis}para.png'

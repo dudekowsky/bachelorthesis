@@ -1,0 +1,9 @@
+clear
+reset
+unset key
+set terminal pngcairo size 1024, 768
+set output '../bilder/kplot.png'
+set key outside tmargin
+set xlabel 'Attr in kT'
+set ylabel 'K'
+plot 'K_for_C0.txt' using 1:2 with lines title 'C0', 'K_for_C1.txt' using 1:2 with lines title 'C1', 'K_for_C5.txt' using 1:2 with lines title 'C5', 'K_for_C15.txt' using 1:2 with lines title 'C15', 'K_for_C30.txt' using 1:2 with lines title 'C30' 
